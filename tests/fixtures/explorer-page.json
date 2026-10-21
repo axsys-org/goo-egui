@@ -1,0 +1,2525 @@
+{
+  "id": "/0x11/app/ios_demo",
+  "life": "1",
+  "axis": "z",
+  "topology": "tree",
+  "type": "namespace-record",
+  "incremental": true,
+  "bounded": true,
+  "epoch": "92",
+  "parent": "/0x11/app/ios_demo",
+  "next": null,
+  "omitted": 0,
+  "members": [
+    {
+      "key": "/0x11/app/ios_demo",
+      "subject": "/0x11/app/ios_demo",
+      "source": "/0x11/app/ios_demo",
+      "sourceLife": "1",
+      "life": "1",
+      "type": "namespace-record",
+      "expected": "1",
+      "status": "available",
+      "axis": "z",
+      "parent": null,
+      "hasChildren": true,
+      "topology": "tree"
+    },
+    {
+      "key": "/0x11/app/ios_demo/note",
+      "subject": "/0x11/app/ios_demo/note",
+      "source": "/0x11/app/ios_demo",
+      "sourceLife": "1",
+      "life": "1",
+      "type": "namespace-record",
+      "expected": "1",
+      "status": "available",
+      "axis": "z",
+      "parent": "/0x11/app/ios_demo",
+      "hasChildren": false,
+      "topology": "tree"
+    },
+    {
+      "key": "/0x11/app/ios_demo/notes",
+      "subject": "/0x11/app/ios_demo/notes",
+      "source": "/0x11/app/ios_demo",
+      "sourceLife": "1",
+      "life": "1",
+      "type": "namespace-record",
+      "expected": "1",
+      "status": "available",
+      "axis": "z",
+      "parent": "/0x11/app/ios_demo",
+      "hasChildren": true,
+      "topology": "tree"
+    },
+    {
+      "key": "/0x11/app/ios_demo/workspace",
+      "subject": "/0x11/app/ios_demo/workspace",
+      "source": "/0x11/app/ios_demo",
+      "sourceLife": "1",
+      "life": "1",
+      "type": "namespace-record",
+      "expected": "1",
+      "status": "available",
+      "axis": "z",
+      "parent": "/0x11/app/ios_demo",
+      "hasChildren": false,
+      "topology": "tree"
+    }
+  ],
+  "presentations": [
+    {
+      "key": "/0x11/app/ios_demo",
+      "slot": "/sys/slot/inspector_summary",
+      "bundle": {
+        "version": 1,
+        "ok": true,
+        "layoutPolicy": "pane-v1",
+        "context": {
+          "width": 240.0,
+          "textScale": 1.0,
+          "direction": "ltr"
+        },
+        "layouts": [
+          {
+            "size": "sm",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 240.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo",
+                "target": "/0x11/app/ios_demo",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 240.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 240.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 240.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "Grove installation.",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 240.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "Grove installation.",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 97.46923828125,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "Grove installation.",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          },
+          {
+            "size": "md",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 480.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo",
+                "target": "/0x11/app/ios_demo",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 480.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 480.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 480.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "Grove installation.",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 480.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "Grove installation.",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 97.46923828125,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "Grove installation.",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          },
+          {
+            "size": "lg",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 720.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo",
+                "target": "/0x11/app/ios_demo",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 720.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 720.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 720.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "Grove installation.",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 720.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "Grove installation.",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 97.46923828125,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "Grove installation.",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "/0x11/app/ios_demo/note",
+      "slot": "/sys/slot/inspector_summary",
+      "bundle": {
+        "version": 1,
+        "ok": true,
+        "layoutPolicy": "pane-v1",
+        "context": {
+          "width": 240.0,
+          "textScale": 1.0,
+          "direction": "ltr"
+        },
+        "layouts": [
+          {
+            "size": "sm",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 240.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo/note",
+                "target": "/0x11/app/ios_demo/note",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 240.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 240.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 240.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "/0x11/app/ios_demo/note",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 240.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "/0x11/app/ios_demo/note",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 135.1689453125,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "/0x11/app/ios_demo/note",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          },
+          {
+            "size": "md",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 480.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo/note",
+                "target": "/0x11/app/ios_demo/note",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 480.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 480.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 480.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "/0x11/app/ios_demo/note",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 480.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "/0x11/app/ios_demo/note",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 135.1689453125,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "/0x11/app/ios_demo/note",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          },
+          {
+            "size": "lg",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 720.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo/note",
+                "target": "/0x11/app/ios_demo/note",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 720.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 720.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 720.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "/0x11/app/ios_demo/note",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 720.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "/0x11/app/ios_demo/note",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 135.1689453125,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "/0x11/app/ios_demo/note",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "/0x11/app/ios_demo/notes",
+      "slot": "/sys/slot/inspector_summary",
+      "bundle": {
+        "version": 1,
+        "ok": true,
+        "layoutPolicy": "pane-v1",
+        "context": {
+          "width": 240.0,
+          "textScale": 1.0,
+          "direction": "ltr"
+        },
+        "layouts": [
+          {
+            "size": "sm",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 240.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo/notes",
+                "target": "/0x11/app/ios_demo/notes",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 240.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 240.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 240.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "/0x11/app/ios_demo/notes",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 240.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "/0x11/app/ios_demo/notes",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 141.2705078125,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "/0x11/app/ios_demo/notes",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          },
+          {
+            "size": "md",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 480.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo/notes",
+                "target": "/0x11/app/ios_demo/notes",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 480.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 480.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 480.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "/0x11/app/ios_demo/notes",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 480.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "/0x11/app/ios_demo/notes",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 141.2705078125,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "/0x11/app/ios_demo/notes",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          },
+          {
+            "size": "lg",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 720.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo/notes",
+                "target": "/0x11/app/ios_demo/notes",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 720.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 720.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 720.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "/0x11/app/ios_demo/notes",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 720.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "/0x11/app/ios_demo/notes",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 141.2705078125,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "/0x11/app/ios_demo/notes",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "/0x11/app/ios_demo/workspace",
+      "slot": "/sys/slot/inspector_summary",
+      "bundle": {
+        "version": 1,
+        "ok": true,
+        "layoutPolicy": "pane-v1",
+        "context": {
+          "width": 240.0,
+          "textScale": 1.0,
+          "direction": "ltr"
+        },
+        "layouts": [
+          {
+            "size": "sm",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 240.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo/workspace",
+                "target": "/0x11/app/ios_demo/workspace",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 240.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 240.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 240.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "Living notes",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 240.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "Living notes",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 65.10302734375,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "Living notes",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          },
+          {
+            "size": "md",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 480.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo/workspace",
+                "target": "/0x11/app/ios_demo/workspace",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 480.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 480.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 480.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "Living notes",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 480.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "Living notes",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 65.10302734375,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "Living notes",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          },
+          {
+            "size": "lg",
+            "render": {
+              "version": 1,
+              "ok": true,
+              "profile": {
+                "id": "mash-goo",
+                "version": 1,
+                "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+              },
+              "context": {
+                "width": 720.0,
+                "textScale": 1.0,
+                "direction": "ltr"
+              },
+              "snapshot": {
+                "life": "1",
+                "subject": "/0x11/app/ios_demo/workspace",
+                "target": "/0x11/app/ios_demo/workspace",
+                "expected": "1",
+                "displayed": "1",
+                "publication": "6"
+              },
+              "view": "/0x11/gov/goo_inspector/summary",
+              "kind": "view",
+              "display": {
+                "version": 1,
+                "profile": {
+                  "id": "mash-goo",
+                  "version": 1,
+                  "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+                },
+                "context": {
+                  "width": 720.0,
+                  "textScale": 1.0,
+                  "direction": "ltr"
+                },
+                "coordinates": "absolute-css-px",
+                "width": 720.0,
+                "height": 15.95,
+                "nodes": [
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:0",
+                    "parentId": null,
+                    "kind": "group",
+                    "slot": "col",
+                    "payload": "",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 720.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 14.0,
+                      "lineHeight": 20.72,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#182c30",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#182c30"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "group",
+                      "label": "",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  },
+                  {
+                    "id": "/0x11/gov/goo_inspector/summary:1",
+                    "parentId": "/0x11/gov/goo_inspector/summary:0",
+                    "kind": "text",
+                    "slot": "label",
+                    "payload": "Living notes",
+                    "src": null,
+                    "box": {
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": 720.0,
+                      "height": 15.95
+                    },
+                    "textStyle": {
+                      "fontId": "sans650",
+                      "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+                      "family": "Goo Sans",
+                      "weight": 650,
+                      "style": "normal",
+                      "fontSize": 11.0,
+                      "lineHeight": 15.95,
+                      "letterSpacing": 0.0,
+                      "insetX": 0.0,
+                      "insetY": 0.0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "lines": [
+                      {
+                        "text": "Living notes",
+                        "box": {
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": 65.10302734375,
+                          "height": 15.95
+                        },
+                        "textX": 0.0,
+                        "baseline": 11.97646484375,
+                        "prefixAdvance": 0.0
+                      }
+                    ],
+                    "paint": {
+                      "version": 1,
+                      "units": "css-px",
+                      "colorSpace": "srgb",
+                      "foreground": "#3c5750",
+                      "background": {
+                        "kind": "none",
+                        "color": null,
+                        "angleDegrees": null,
+                        "stops": []
+                      },
+                      "border": {
+                        "width": 0.0,
+                        "color": "#3c5750"
+                      },
+                      "corners": {
+                        "kind": "radius",
+                        "radius": 0.0
+                      },
+                      "clip": false,
+                      "states": {
+                        "highlight": {
+                          "width": 2.0,
+                          "color": "#688b43",
+                          "offset": 3.0
+                        },
+                        "focus": null
+                      },
+                      "marker": null,
+                      "image": null
+                    },
+                    "semantics": {
+                      "version": 1,
+                      "role": "text",
+                      "label": "Living notes",
+                      "value": null,
+                      "editable": null,
+                      "multiline": null,
+                      "range": null
+                    }
+                  }
+                ]
+              },
+              "controls": [],
+              "description": null,
+              "host": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

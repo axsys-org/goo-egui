@@ -1,0 +1,55 @@
+{
+  "contractVersion": 1,
+  "profile": "mash-goo@1",
+  "profileRevision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979",
+  "context": {
+    "direction": [
+      "ltr"
+    ],
+    "textScale": [
+      1
+    ]
+  },
+  "primitives": [
+    "group",
+    "text",
+    "code",
+    "input",
+    "button"
+  ],
+  "fill": [
+    "none",
+    "solid"
+  ],
+  "maxPanes": 8,
+  "maxMembersPerSource": 64,
+  "sourceTopology": "children",
+  "bindingKinds": [
+    "input",
+    "invoke",
+    "none"
+  ],
+  "unsupported": [
+    "images",
+    "avatar",
+    "presence",
+    "media",
+    "bar",
+    "markers",
+    "gradients",
+    "ellipse",
+    "rounded-content-clip",
+    "become",
+    "invoke-and-become",
+    "trees",
+    "patch",
+    "host",
+    "layout-bundles",
+    "prepared-list-summaries"
+  ],
+  "recovery": "in-memory",
+  "platformVerified": [
+    "macOS arm64"
+  ],
+  "nativeTextWidget": "egui TextEdit with winit IME/clipboard and AccessKit, not AppKit NSTextField"
+}

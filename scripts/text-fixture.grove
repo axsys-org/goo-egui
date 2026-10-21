@@ -1,0 +1,20 @@
+run_text_type =
+  @type
+  ! foil
+  goo/text/pail
+  + read
+    \ value=pail
+    ^ maybe[run_text_type]
+    ?> value=goo/text/pail value .none
+    | ./some value
+  + write
+    \ value=run_text_type
+    ^ pail
+    value
+  + contract
+    ^ curb
+    | curb/of_type (^ goo/text/pail)
+
+styled =
+  @slot
+

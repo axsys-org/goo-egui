@@ -1,0 +1,6049 @@
+[
+  {
+    "name": "decorated",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 300.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 300.0,
+      "height": 230.2,
+      "nodes": [
+        {
+          "id": "paint",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 300.0,
+            "height": 230.2
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "primary",
+          "parentId": "paint",
+          "kind": "button",
+          "role": "action",
+          "slot": "action",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#fffef6",
+            "background": {
+              "kind": "solid",
+              "color": "#34573e"
+            },
+            "border": {
+              "width": 1,
+              "color": "#34573e"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "button",
+            "label": "Primary"
+          },
+          "config": {
+            "primary": true
+          },
+          "payload": "Primary",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 68.0,
+            "height": 33.4
+          },
+          "textStyle": {
+            "fontId": "sans550",
+            "fontSHA256": "1fcec774cd5d059f1526792d770516ed07c3689a281540b4c7afaf91c9d4da46",
+            "family": "Goo Sans",
+            "weight": 550,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 15.399999999999999,
+            "letterSpacing": 0,
+            "insetX": 26.0,
+            "insetY": 18.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Primary",
+              "box": {
+                "x": 13.47705078125,
+                "y": 9.0,
+                "width": 41.0458984375,
+                "height": 15.399999999999999
+              },
+              "textX": 13.47705078125,
+              "baseline": 20.70146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "destructive",
+          "parentId": "paint",
+          "kind": "button",
+          "role": "action",
+          "slot": "action/destructive",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#9a4938",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 1,
+              "color": "#ddbdac"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "button",
+            "label": "Delete"
+          },
+          "config": {},
+          "payload": "Delete",
+          "box": {
+            "x": 0,
+            "y": 49.4,
+            "width": 61.0,
+            "height": 33.4
+          },
+          "textStyle": {
+            "fontId": "sans550",
+            "fontSHA256": "1fcec774cd5d059f1526792d770516ed07c3689a281540b4c7afaf91c9d4da46",
+            "family": "Goo Sans",
+            "weight": 550,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 15.399999999999999,
+            "letterSpacing": 0,
+            "insetX": 26.0,
+            "insetY": 18.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Delete",
+              "box": {
+                "x": 13.484375,
+                "y": 58.4,
+                "width": 34.03125,
+                "height": 15.399999999999999
+              },
+              "textX": 13.484375,
+              "baseline": 70.10146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "both",
+          "parentId": "paint",
+          "kind": "button",
+          "role": "action",
+          "slot": "action/destructive",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#9a4938",
+            "background": {
+              "kind": "solid",
+              "color": "#34573e"
+            },
+            "border": {
+              "width": 1,
+              "color": "#ddbdac"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "button",
+            "label": "Primary delete"
+          },
+          "config": {
+            "primary": true
+          },
+          "payload": "Primary delete",
+          "box": {
+            "x": 0,
+            "y": 98.8,
+            "width": 103.0,
+            "height": 33.4
+          },
+          "textStyle": {
+            "fontId": "sans550",
+            "fontSHA256": "1fcec774cd5d059f1526792d770516ed07c3689a281540b4c7afaf91c9d4da46",
+            "family": "Goo Sans",
+            "weight": 550,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 15.399999999999999,
+            "letterSpacing": 0,
+            "insetX": 26.0,
+            "insetY": 18.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Primary delete",
+              "box": {
+                "x": 13.09130859375,
+                "y": 107.8,
+                "width": 76.8173828125,
+                "height": 15.399999999999999
+              },
+              "textX": 13.09130859375,
+              "baseline": 119.50146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "value",
+          "parentId": "paint",
+          "kind": "bar",
+          "role": "progress",
+          "slot": "progress",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "linear-gradient",
+              "angleDegrees": 90,
+              "stops": [
+                {
+                  "offset": 0.25,
+                  "color": "#76965e"
+                },
+                {
+                  "offset": 0.25,
+                  "color": "#e4ead8"
+                }
+              ]
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 10
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "progressbar",
+            "label": "Completion",
+            "range": {
+              "minimum": 0,
+              "maximum": 100.0,
+              "value": 25.0
+            }
+          },
+          "config": {
+            "label": "Completion",
+            "value": 25.0,
+            "max": 100.0
+          },
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 148.2,
+            "width": 120.0,
+            "height": 6.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "overflow",
+          "parentId": "paint",
+          "kind": "bar",
+          "role": "progress",
+          "slot": "progress",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "linear-gradient",
+              "angleDegrees": 90,
+              "stops": [
+                {
+                  "offset": 0.73,
+                  "color": "#76965e"
+                },
+                {
+                  "offset": 0.73,
+                  "color": "#e4ead8"
+                }
+              ]
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 10
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "progressbar",
+            "label": "progress",
+            "range": {
+              "minimum": 0,
+              "maximum": 100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336,
+              "value": 100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336
+            }
+          },
+          "config": {
+            "value": 100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336,
+            "max": 100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336
+          },
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 170.2,
+            "width": 120.0,
+            "height": 6.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "named",
+          "parentId": "paint",
+          "kind": "input",
+          "role": "input",
+          "slot": "input",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#354e41",
+            "background": {
+              "kind": "solid",
+              "color": "#fffefa"
+            },
+            "border": {
+              "width": 1,
+              "color": "#bdcaba"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "textbox",
+            "label": "Name",
+            "value": "Draft",
+            "editable": true,
+            "multiline": false
+          },
+          "config": {
+            "label": "Name"
+          },
+          "payload": "Draft",
+          "box": {
+            "x": 0,
+            "y": 192.2,
+            "width": 300.0,
+            "height": 38.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 12.0,
+            "lineHeight": 18.0,
+            "letterSpacing": 0,
+            "insetX": 22.0,
+            "insetY": 20.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        }
+      ]
+    }
+  },
+  {
+    "name": "row-center",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 120.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 120.0,
+      "height": 54.0,
+      "nodes": [
+        {
+          "id": "pair",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 120.0,
+            "height": 54.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "avatar",
+          "parentId": "pair",
+          "kind": "avatar",
+          "role": "avatar",
+          "slot": "avatar",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#405b40",
+            "background": {
+              "kind": "solid",
+              "color": "#dce8d4"
+            },
+            "border": {
+              "width": 0,
+              "color": "#405b40"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "AB"
+          },
+          "config": {},
+          "payload": "AB",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 54.0,
+            "height": 54.0
+          },
+          "textStyle": {
+            "fontId": "sans520",
+            "fontSHA256": "7be82064c4992983a18fefe238e0f734a60c40dcddd8b83eea864acaa58427c0",
+            "family": "Goo Sans",
+            "weight": 520,
+            "style": "normal",
+            "fontSize": 18.0,
+            "lineHeight": 27.0,
+            "letterSpacing": -0.5,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "AB",
+              "box": {
+                "x": 15.17333984375,
+                "y": 13.5,
+                "width": 23.6533203125,
+                "height": 27.0
+              },
+              "textX": 15.17333984375,
+              "baseline": 33.5478515625,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "presence",
+          "parentId": "pair",
+          "kind": "presence",
+          "role": "presence",
+          "slot": "presence",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "solid",
+              "color": "#65894d"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "presence"
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 70.0,
+            "y": 22.5,
+            "width": 9.0,
+            "height": 9.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        }
+      ]
+    }
+  },
+  {
+    "name": "row-rtl",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 120.0,
+        "textScale": 1.0,
+        "direction": "rtl"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 120.0,
+      "height": 54.0,
+      "nodes": [
+        {
+          "id": "pair",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 120.0,
+            "height": 54.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "avatar",
+          "parentId": "pair",
+          "kind": "avatar",
+          "role": "avatar",
+          "slot": "avatar",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#405b40",
+            "background": {
+              "kind": "solid",
+              "color": "#dce8d4"
+            },
+            "border": {
+              "width": 0,
+              "color": "#405b40"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "AB"
+          },
+          "config": {},
+          "payload": "AB",
+          "box": {
+            "x": 66.0,
+            "y": 0,
+            "width": 54.0,
+            "height": 54.0
+          },
+          "textStyle": {
+            "fontId": "sans520",
+            "fontSHA256": "7be82064c4992983a18fefe238e0f734a60c40dcddd8b83eea864acaa58427c0",
+            "family": "Goo Sans",
+            "weight": 520,
+            "style": "normal",
+            "fontSize": 18.0,
+            "lineHeight": 27.0,
+            "letterSpacing": -0.5,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "AB",
+              "box": {
+                "x": 81.17333984375,
+                "y": 13.5,
+                "width": 23.6533203125,
+                "height": 27.0
+              },
+              "textX": 81.17333984375,
+              "baseline": 33.5478515625,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "presence",
+          "parentId": "pair",
+          "kind": "presence",
+          "role": "presence",
+          "slot": "presence",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "solid",
+              "color": "#65894d"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "presence"
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 41.0,
+            "y": 22.5,
+            "width": 9.0,
+            "height": 9.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        }
+      ]
+    }
+  },
+  {
+    "name": "column",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 120.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 120.0,
+      "height": 79.0,
+      "nodes": [
+        {
+          "id": "pair",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 120.0,
+            "height": 79.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "avatar",
+          "parentId": "pair",
+          "kind": "avatar",
+          "role": "avatar",
+          "slot": "avatar",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#405b40",
+            "background": {
+              "kind": "solid",
+              "color": "#dce8d4"
+            },
+            "border": {
+              "width": 0,
+              "color": "#405b40"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "AB"
+          },
+          "config": {},
+          "payload": "AB",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 54.0,
+            "height": 54.0
+          },
+          "textStyle": {
+            "fontId": "sans520",
+            "fontSHA256": "7be82064c4992983a18fefe238e0f734a60c40dcddd8b83eea864acaa58427c0",
+            "family": "Goo Sans",
+            "weight": 520,
+            "style": "normal",
+            "fontSize": 18.0,
+            "lineHeight": 27.0,
+            "letterSpacing": -0.5,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "AB",
+              "box": {
+                "x": 15.17333984375,
+                "y": 13.5,
+                "width": 23.6533203125,
+                "height": 27.0
+              },
+              "textX": 15.17333984375,
+              "baseline": 33.5478515625,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "presence",
+          "parentId": "pair",
+          "kind": "presence",
+          "role": "presence",
+          "slot": "presence",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "solid",
+              "color": "#65894d"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "presence"
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 70.0,
+            "width": 9.0,
+            "height": 9.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        }
+      ]
+    }
+  },
+  {
+    "name": "nested-start",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 240.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 240.0,
+      "height": 79.0,
+      "nodes": [
+        {
+          "id": "nested",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 240.0,
+            "height": 79.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "pair",
+          "parentId": "nested",
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 54.0,
+            "height": 79.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "avatar",
+          "parentId": "pair",
+          "kind": "avatar",
+          "role": "avatar",
+          "slot": "avatar",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#405b40",
+            "background": {
+              "kind": "solid",
+              "color": "#dce8d4"
+            },
+            "border": {
+              "width": 0,
+              "color": "#405b40"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "AB"
+          },
+          "config": {},
+          "payload": "AB",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 54.0,
+            "height": 54.0
+          },
+          "textStyle": {
+            "fontId": "sans520",
+            "fontSHA256": "7be82064c4992983a18fefe238e0f734a60c40dcddd8b83eea864acaa58427c0",
+            "family": "Goo Sans",
+            "weight": 520,
+            "style": "normal",
+            "fontSize": 18.0,
+            "lineHeight": 27.0,
+            "letterSpacing": -0.5,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "AB",
+              "box": {
+                "x": 15.17333984375,
+                "y": 13.5,
+                "width": 23.6533203125,
+                "height": 27.0
+              },
+              "textX": 15.17333984375,
+              "baseline": 33.5478515625,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "presence",
+          "parentId": "pair",
+          "kind": "presence",
+          "role": "presence",
+          "slot": "presence",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "solid",
+              "color": "#65894d"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "presence"
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 70.0,
+            "width": 9.0,
+            "height": 9.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "title",
+          "parentId": "nested",
+          "kind": "text",
+          "role": "title",
+          "slot": "title",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "A title"
+          },
+          "config": {},
+          "payload": "A title",
+          "box": {
+            "x": 70.0,
+            "y": 0,
+            "width": 58.0,
+            "height": 25.959999999999997
+          },
+          "textStyle": {
+            "fontId": "sans620",
+            "fontSHA256": "ad2721daa8d7777c6de64887aedab0b923a873213cb7b790e48e6b573b801e45",
+            "family": "Goo Sans",
+            "weight": 620,
+            "style": "normal",
+            "fontSize": 22.0,
+            "lineHeight": 25.959999999999997,
+            "letterSpacing": -0.65,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "A title",
+              "box": {
+                "x": 70.0,
+                "y": 0,
+                "width": 57.303515625,
+                "height": 25.959999999999997
+              },
+              "textX": 70.0,
+              "baseline": 20.982929687499997,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "multiline",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 160.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 160.0,
+      "height": 213.10000000000002,
+      "nodes": [
+        {
+          "id": "multiline",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 160.0,
+            "height": 213.10000000000002
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "body",
+          "parentId": "multiline",
+          "kind": "text",
+          "role": "body",
+          "slot": "body",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#425650",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#425650"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "Several words form more than one explicit line when the supplied width is narrow."
+          },
+          "config": {},
+          "payload": "Several words form more than one explicit line when the supplied width is narrow.",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 160.0,
+            "height": 85.8
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 13.0,
+            "lineHeight": 21.45,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Several words form more ",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 159.4658203125,
+                "height": 21.45
+              },
+              "textX": 0,
+              "baseline": 15.45400390625,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "than one explicit line ",
+              "box": {
+                "x": 0,
+                "y": 21.45,
+                "width": 129.91748046875,
+                "height": 21.45
+              },
+              "textX": 0,
+              "baseline": 36.90400390625,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "when the supplied width ",
+              "box": {
+                "x": 0,
+                "y": 42.9,
+                "width": 153.72119140625,
+                "height": 21.45
+              },
+              "textX": 0,
+              "baseline": 58.35400390625,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "is narrow.",
+              "box": {
+                "x": 0,
+                "y": 64.35,
+                "width": 60.61376953125,
+                "height": 21.45
+              },
+              "textX": 0,
+              "baseline": 79.80400390624999,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "status",
+          "parentId": "multiline",
+          "kind": "text",
+          "role": "status",
+          "slot": "status",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#45674a",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#45674a"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            },
+            "marker": {
+              "kind": "circle",
+              "diameter": 8.0,
+              "gap": 5.0,
+              "color": "foreground"
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "Available after the next refresh"
+          },
+          "config": {},
+          "payload": "Available after the next refresh",
+          "box": {
+            "x": 0,
+            "y": 101.8,
+            "width": 160.0,
+            "height": 33.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 16.5,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Available after the next ",
+              "box": {
+                "x": 0,
+                "y": 101.8,
+                "width": 136.0732421875,
+                "height": 16.5
+              },
+              "textX": 13.0,
+              "baseline": 114.05146484375,
+              "prefixAdvance": 13.0
+            },
+            {
+              "text": "refresh",
+              "box": {
+                "x": 0,
+                "y": 118.3,
+                "width": 37.490234375,
+                "height": 16.5
+              },
+              "textX": 0,
+              "baseline": 130.55146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "code",
+          "parentId": "multiline",
+          "kind": "code",
+          "role": "code",
+          "slot": "code",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#526347",
+            "background": {
+              "kind": "solid",
+              "color": "#f0f3e9"
+            },
+            "border": {
+              "width": 1,
+              "color": "#dce3d0"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "let answer = 42\nanswer"
+          },
+          "config": {},
+          "payload": "let answer = 42\nanswer",
+          "box": {
+            "x": 0,
+            "y": 150.8,
+            "width": 160.0,
+            "height": 62.3
+          },
+          "textStyle": {
+            "fontId": "mono400",
+            "fontSHA256": "15d73e236388b3f8f7703dc4ff04a9ec41e095d01d94bd6d243f908e3172e41b",
+            "family": "Goo Mono",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 18.15,
+            "letterSpacing": 0,
+            "insetX": 26.0,
+            "insetY": 26.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "let answer = 42",
+              "box": {
+                "x": 13.0,
+                "y": 163.8,
+                "width": 99.01611328125,
+                "height": 18.15
+              },
+              "textX": 13.0,
+              "baseline": 177.147705078125,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "answer",
+              "box": {
+                "x": 13.0,
+                "y": 181.95000000000002,
+                "width": 39.6064453125,
+                "height": 18.15
+              },
+              "textX": 13.0,
+              "baseline": 195.297705078125,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "multiline-rtl",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 160.0,
+        "textScale": 1.0,
+        "direction": "rtl"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 160.0,
+      "height": 213.10000000000002,
+      "nodes": [
+        {
+          "id": "multiline",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 160.0,
+            "height": 213.10000000000002
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "body",
+          "parentId": "multiline",
+          "kind": "text",
+          "role": "body",
+          "slot": "body",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#425650",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#425650"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "Several words form more than one explicit line when the supplied width is narrow."
+          },
+          "config": {},
+          "payload": "Several words form more than one explicit line when the supplied width is narrow.",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 160.0,
+            "height": 85.8
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 13.0,
+            "lineHeight": 21.45,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Several words form more ",
+              "box": {
+                "x": 0.5341796875,
+                "y": 0,
+                "width": 159.4658203125,
+                "height": 21.45
+              },
+              "textX": 0.5341796875,
+              "baseline": 15.45400390625,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "than one explicit line ",
+              "box": {
+                "x": 30.08251953125,
+                "y": 21.45,
+                "width": 129.91748046875,
+                "height": 21.45
+              },
+              "textX": 30.08251953125,
+              "baseline": 36.90400390625,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "when the supplied width ",
+              "box": {
+                "x": 6.27880859375,
+                "y": 42.9,
+                "width": 153.72119140625,
+                "height": 21.45
+              },
+              "textX": 6.27880859375,
+              "baseline": 58.35400390625,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "is narrow.",
+              "box": {
+                "x": 99.38623046875,
+                "y": 64.35,
+                "width": 60.61376953125,
+                "height": 21.45
+              },
+              "textX": 99.38623046875,
+              "baseline": 79.80400390624999,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "status",
+          "parentId": "multiline",
+          "kind": "text",
+          "role": "status",
+          "slot": "status",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#45674a",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#45674a"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            },
+            "marker": {
+              "kind": "circle",
+              "diameter": 8.0,
+              "gap": 5.0,
+              "color": "foreground"
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "Available after the next refresh"
+          },
+          "config": {},
+          "payload": "Available after the next refresh",
+          "box": {
+            "x": 0,
+            "y": 101.8,
+            "width": 160.0,
+            "height": 33.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 16.5,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Available after the next ",
+              "box": {
+                "x": 23.9267578125,
+                "y": 101.8,
+                "width": 136.0732421875,
+                "height": 16.5
+              },
+              "textX": 23.9267578125,
+              "baseline": 114.05146484375,
+              "prefixAdvance": 13.0
+            },
+            {
+              "text": "refresh",
+              "box": {
+                "x": 122.509765625,
+                "y": 118.3,
+                "width": 37.490234375,
+                "height": 16.5
+              },
+              "textX": 122.509765625,
+              "baseline": 130.55146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "code",
+          "parentId": "multiline",
+          "kind": "code",
+          "role": "code",
+          "slot": "code",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#526347",
+            "background": {
+              "kind": "solid",
+              "color": "#f0f3e9"
+            },
+            "border": {
+              "width": 1,
+              "color": "#dce3d0"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "let answer = 42\nanswer"
+          },
+          "config": {},
+          "payload": "let answer = 42\nanswer",
+          "box": {
+            "x": 0,
+            "y": 150.8,
+            "width": 160.0,
+            "height": 62.3
+          },
+          "textStyle": {
+            "fontId": "mono400",
+            "fontSHA256": "15d73e236388b3f8f7703dc4ff04a9ec41e095d01d94bd6d243f908e3172e41b",
+            "family": "Goo Mono",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 18.15,
+            "letterSpacing": 0,
+            "insetX": 26.0,
+            "insetY": 26.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "let answer = 42",
+              "box": {
+                "x": 47.98388671875,
+                "y": 163.8,
+                "width": 99.01611328125,
+                "height": 18.15
+              },
+              "textX": 47.98388671875,
+              "baseline": 177.147705078125,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "answer",
+              "box": {
+                "x": 107.3935546875,
+                "y": 181.95000000000002,
+                "width": 39.6064453125,
+                "height": 18.15
+              },
+              "textX": 107.3935546875,
+              "baseline": 195.297705078125,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "row-wrap",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 130.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 130.0,
+      "height": 132.2,
+      "nodes": [
+        {
+          "id": "wrap",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 130.0,
+            "height": 132.2
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "first",
+          "parentId": "wrap",
+          "kind": "button",
+          "role": "action",
+          "slot": "action",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#000000",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 1,
+              "color": "#c6d0bf"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "button",
+            "label": "First action"
+          },
+          "config": {},
+          "payload": "First action",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 85.0,
+            "height": 33.4
+          },
+          "textStyle": {
+            "fontId": "sans550",
+            "fontSHA256": "1fcec774cd5d059f1526792d770516ed07c3689a281540b4c7afaf91c9d4da46",
+            "family": "Goo Sans",
+            "weight": 550,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 15.399999999999999,
+            "letterSpacing": 0,
+            "insetX": 26.0,
+            "insetY": 18.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "First action",
+              "box": {
+                "x": 13.05029296875,
+                "y": 9.0,
+                "width": 58.8994140625,
+                "height": 15.399999999999999
+              },
+              "textX": 13.05029296875,
+              "baseline": 20.70146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "second",
+          "parentId": "wrap",
+          "kind": "button",
+          "role": "action",
+          "slot": "action",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#000000",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 1,
+              "color": "#c6d0bf"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "button",
+            "label": "Second action"
+          },
+          "config": {},
+          "payload": "Second action",
+          "box": {
+            "x": 0,
+            "y": 49.4,
+            "width": 102.0,
+            "height": 33.4
+          },
+          "textStyle": {
+            "fontId": "sans550",
+            "fontSHA256": "1fcec774cd5d059f1526792d770516ed07c3689a281540b4c7afaf91c9d4da46",
+            "family": "Goo Sans",
+            "weight": 550,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 15.399999999999999,
+            "letterSpacing": 0,
+            "insetX": 26.0,
+            "insetY": 18.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Second action",
+              "box": {
+                "x": 13.17138671875,
+                "y": 58.4,
+                "width": 75.6572265625,
+                "height": 15.399999999999999
+              },
+              "textX": 13.17138671875,
+              "baseline": 70.10146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "third",
+          "parentId": "wrap",
+          "kind": "button",
+          "role": "action",
+          "slot": "action",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#000000",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 1,
+              "color": "#c6d0bf"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "button",
+            "label": "Third action"
+          },
+          "config": {},
+          "payload": "Third action",
+          "box": {
+            "x": 0,
+            "y": 98.8,
+            "width": 90.0,
+            "height": 33.4
+          },
+          "textStyle": {
+            "fontId": "sans550",
+            "fontSHA256": "1fcec774cd5d059f1526792d770516ed07c3689a281540b4c7afaf91c9d4da46",
+            "family": "Goo Sans",
+            "weight": 550,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 15.399999999999999,
+            "letterSpacing": 0,
+            "insetX": 26.0,
+            "insetY": 18.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Third action",
+              "box": {
+                "x": 13.318603515625,
+                "y": 107.8,
+                "width": 63.36279296875,
+                "height": 15.399999999999999
+              },
+              "textX": 13.318603515625,
+              "baseline": 119.50146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "scaled-controls",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 300.0,
+        "textScale": 2.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 300.0,
+      "height": 364.9111111111111,
+      "nodes": [
+        {
+          "id": "controls",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 300.0,
+            "height": 364.9111111111111
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 28.0,
+            "lineHeight": 41.44,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "button",
+          "parentId": "controls",
+          "kind": "button",
+          "role": "action",
+          "slot": "action",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#000000",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 1,
+              "color": "#c6d0bf"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "button",
+            "label": "Save changes"
+          },
+          "config": {},
+          "payload": "Save changes",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 175.0,
+            "height": 48.8
+          },
+          "textStyle": {
+            "fontId": "sans550",
+            "fontSHA256": "1fcec774cd5d059f1526792d770516ed07c3689a281540b4c7afaf91c9d4da46",
+            "family": "Goo Sans",
+            "weight": 550,
+            "style": "normal",
+            "fontSize": 22.0,
+            "lineHeight": 30.799999999999997,
+            "letterSpacing": 0,
+            "insetX": 26.0,
+            "insetY": 18.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Save changes",
+              "box": {
+                "x": 13.0458984375,
+                "y": 9.0,
+                "width": 148.908203125,
+                "height": 30.799999999999997
+              },
+              "textX": 13.0458984375,
+              "baseline": 32.4029296875,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "input",
+          "parentId": "controls",
+          "kind": "input",
+          "role": "input",
+          "slot": "input",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#354e41",
+            "background": {
+              "kind": "solid",
+              "color": "#fffefa"
+            },
+            "border": {
+              "width": 1,
+              "color": "#bdcaba"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "textbox",
+            "label": "input",
+            "value": "draft value",
+            "editable": true,
+            "multiline": false
+          },
+          "config": {},
+          "payload": "draft value",
+          "box": {
+            "x": 0,
+            "y": 64.8,
+            "width": 300.0,
+            "height": 56.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 24.0,
+            "lineHeight": 36.0,
+            "letterSpacing": 0,
+            "insetX": 22.0,
+            "insetY": 20.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "progress",
+          "parentId": "controls",
+          "kind": "bar",
+          "role": "progress",
+          "slot": "progress",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "linear-gradient",
+              "angleDegrees": 90,
+              "stops": [
+                {
+                  "offset": 0.73,
+                  "color": "#76965e"
+                },
+                {
+                  "offset": 0.73,
+                  "color": "#e4ead8"
+                }
+              ]
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 10
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "progressbar",
+            "label": "progress",
+            "range": null
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 136.8,
+            "width": 120.0,
+            "height": 6.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 28.0,
+            "lineHeight": 41.44,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "media",
+          "parentId": "controls",
+          "kind": "media",
+          "role": "media",
+          "slot": "media",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "linear-gradient",
+              "angleDegrees": 138,
+              "stops": [
+                {
+                  "offset": 0,
+                  "color": "#cddcc4"
+                },
+                {
+                  "offset": 1,
+                  "color": "#819977"
+                }
+              ]
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 6
+            },
+            "clip": true,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "media"
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 158.8,
+            "width": 300.0,
+            "height": 111.1111111111111
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 28.0,
+            "lineHeight": 41.44,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "presence",
+          "parentId": "controls",
+          "kind": "presence",
+          "role": "presence",
+          "slot": "presence",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "solid",
+              "color": "#65894d"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "presence"
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 285.9111111111111,
+            "width": 9.0,
+            "height": 9.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 28.0,
+            "lineHeight": 41.44,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "avatar",
+          "parentId": "controls",
+          "kind": "avatar",
+          "role": "avatar",
+          "slot": "avatar",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#405b40",
+            "background": {
+              "kind": "solid",
+              "color": "#dce8d4"
+            },
+            "border": {
+              "width": 0,
+              "color": "#405b40"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "AB"
+          },
+          "config": {},
+          "payload": "AB",
+          "box": {
+            "x": 0,
+            "y": 310.9111111111111,
+            "width": 54.0,
+            "height": 54.0
+          },
+          "textStyle": {
+            "fontId": "sans520",
+            "fontSHA256": "7be82064c4992983a18fefe238e0f734a60c40dcddd8b83eea864acaa58427c0",
+            "family": "Goo Sans",
+            "weight": 520,
+            "style": "normal",
+            "fontSize": 36.0,
+            "lineHeight": 54.0,
+            "letterSpacing": -0.5,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "AB",
+              "box": {
+                "x": 2.8466796875,
+                "y": 310.9111111111111,
+                "width": 48.306640625,
+                "height": 54.0
+              },
+              "textX": 2.8466796875,
+              "baseline": 351.0068142361111,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "editable-whitespace",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 200.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 200.0,
+      "height": 38.0,
+      "nodes": [
+        {
+          "id": "editable",
+          "parentId": null,
+          "kind": "input",
+          "role": "input",
+          "slot": "input",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#354e41",
+            "background": {
+              "kind": "solid",
+              "color": "#fffefa"
+            },
+            "border": {
+              "width": 1,
+              "color": "#bdcaba"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 5
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              },
+              "focus": {
+                "width": 3,
+                "color": "#6b8dba",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "textbox",
+            "label": "input",
+            "value": "  draft\ttab\r\nnext  ",
+            "editable": true,
+            "multiline": false
+          },
+          "config": {},
+          "payload": "  draft\ttab\r\nnext  ",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 200.0,
+            "height": 38.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 12.0,
+            "lineHeight": 18.0,
+            "letterSpacing": 0,
+            "insetX": 22.0,
+            "insetY": 20.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        }
+      ]
+    }
+  },
+  {
+    "name": "static-labels",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 200.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 200.0,
+      "height": 191.07407407407408,
+      "nodes": [
+        {
+          "id": "static-labels",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 200.0,
+            "height": 191.07407407407408
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "avatar-label",
+          "parentId": "static-labels",
+          "kind": "avatar",
+          "role": "avatar",
+          "slot": "avatar",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#405b40",
+            "background": {
+              "kind": "solid",
+              "color": "#dce8d4"
+            },
+            "border": {
+              "width": 0,
+              "color": "#405b40"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "  long  static\tlabel\r\nwith spaces  "
+          },
+          "config": {},
+          "payload": "  long  static\tlabel\r\nwith spaces  ",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 54.0,
+            "height": 54.0
+          },
+          "textStyle": {
+            "fontId": "sans520",
+            "fontSHA256": "7be82064c4992983a18fefe238e0f734a60c40dcddd8b83eea864acaa58427c0",
+            "family": "Goo Sans",
+            "weight": 520,
+            "style": "normal",
+            "fontSize": 18.0,
+            "lineHeight": 27.0,
+            "letterSpacing": -0.5,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "long static label with spaces",
+              "box": {
+                "x": -87.42138671875,
+                "y": 13.5,
+                "width": 228.8427734375,
+                "height": 27.0
+              },
+              "textX": -87.42138671875,
+              "baseline": 33.5478515625,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "media-label",
+          "parentId": "static-labels",
+          "kind": "media",
+          "role": "media",
+          "slot": "media",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "linear-gradient",
+              "angleDegrees": 138,
+              "stops": [
+                {
+                  "offset": 0,
+                  "color": "#cddcc4"
+                },
+                {
+                  "offset": 1,
+                  "color": "#819977"
+                }
+              ]
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 6
+            },
+            "clip": true,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "  long  static\tlabel\r\nwith spaces  "
+          },
+          "config": {},
+          "payload": "  long  static\tlabel\r\nwith spaces  ",
+          "box": {
+            "x": 0,
+            "y": 70.0,
+            "width": 200.0,
+            "height": 74.07407407407408
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "long static label with spaces",
+              "box": {
+                "x": 0,
+                "y": 70.0,
+                "width": 186.6484375,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 85.4527734375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "presence-label",
+          "parentId": "static-labels",
+          "kind": "presence",
+          "role": "presence",
+          "slot": "presence",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "solid",
+              "color": "#65894d"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "ellipse"
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "  long  static\tlabel\r\nwith spaces  "
+          },
+          "config": {},
+          "payload": "  long  static\tlabel\r\nwith spaces  ",
+          "box": {
+            "x": 0,
+            "y": 160.07407407407408,
+            "width": 9.0,
+            "height": 9.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "long static label with spaces",
+              "box": {
+                "x": 0,
+                "y": 160.07407407407408,
+                "width": 186.6484375,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 175.5268475115741,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "bar-label",
+          "parentId": "static-labels",
+          "kind": "bar",
+          "role": "progress",
+          "slot": "progress",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "linear-gradient",
+              "angleDegrees": 90,
+              "stops": [
+                {
+                  "offset": 0.73,
+                  "color": "#76965e"
+                },
+                {
+                  "offset": 0.73,
+                  "color": "#e4ead8"
+                }
+              ]
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 10
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "progressbar",
+            "label": "progress",
+            "range": null
+          },
+          "config": {},
+          "payload": "  long  static\tlabel\r\nwith spaces  ",
+          "box": {
+            "x": 0,
+            "y": 185.07407407407408,
+            "width": 120.0,
+            "height": 6.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "long static label with spaces",
+              "box": {
+                "x": 0,
+                "y": 185.07407407407408,
+                "width": 186.6484375,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 200.5268475115741,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "image",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 270.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 270.0,
+      "height": 100.0,
+      "nodes": [
+        {
+          "id": "image",
+          "parentId": null,
+          "kind": "media",
+          "role": "media",
+          "slot": "media",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "linear-gradient",
+              "angleDegrees": 138,
+              "stops": [
+                {
+                  "offset": 0,
+                  "color": "#cddcc4"
+                },
+                {
+                  "offset": 1,
+                  "color": "#819977"
+                }
+              ]
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 6
+            },
+            "clip": true,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            },
+            "image": {
+              "fit": "cover",
+              "clipToCorners": true
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "image",
+            "label": "media"
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 270.0,
+            "height": 100.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [],
+          "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='270' height='100'%3E%3Crect width='270' height='100' fill='%23819977'/%3E%3C/svg%3E"
+        }
+      ]
+    }
+  },
+  {
+    "name": "typography",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 500.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 500.0,
+      "height": 1056.8200000000002,
+      "nodes": [
+        {
+          "id": "typography",
+          "parentId": null,
+          "kind": "group",
+          "role": "group",
+          "slot": "group",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "group",
+            "label": ""
+          },
+          "config": {},
+          "payload": "",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 500.0,
+            "height": 1056.8200000000002
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": []
+        },
+        {
+          "id": "title",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "title",
+          "slot": "title",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "title Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "title Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 500.0,
+            "height": 25.959999999999997
+          },
+          "textStyle": {
+            "fontId": "sans620",
+            "fontSHA256": "ad2721daa8d7777c6de64887aedab0b923a873213cb7b790e48e6b573b801e45",
+            "family": "Goo Sans",
+            "weight": 620,
+            "style": "normal",
+            "fontSize": 22.0,
+            "lineHeight": 25.959999999999997,
+            "letterSpacing": -0.65,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "title Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 221.02382812499994,
+                "height": 25.959999999999997
+              },
+              "textX": 0,
+              "baseline": 20.982929687499997,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "subtitle",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "subtitle",
+          "slot": "subtitle",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#5f726b",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#5f726b"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "subtitle Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "subtitle Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 41.959999999999994,
+            "width": 500.0,
+            "height": 18.2
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 13.0,
+            "lineHeight": 18.2,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "subtitle Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 41.959999999999994,
+                "width": 157.9931640625,
+                "height": 18.2
+              },
+              "textX": 0,
+              "baseline": 55.789003906249995,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "label",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "label",
+          "slot": "label",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#3c5750",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#3c5750"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "label Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "label Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 76.16,
+            "width": 500.0,
+            "height": 15.95
+          },
+          "textStyle": {
+            "fontId": "sans650",
+            "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+            "family": "Goo Sans",
+            "weight": 650,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 15.95,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "label Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 76.16,
+                "width": 123.041015625,
+                "height": 15.95
+              },
+              "textX": 0,
+              "baseline": 88.13646484374999,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "body",
+          "slot": "body",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#425650",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#425650"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "body Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "body Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 108.11,
+            "width": 500.0,
+            "height": 21.45
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 13.0,
+            "lineHeight": 21.45,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "body Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 108.11,
+                "width": 144.12353515625,
+                "height": 21.45
+              },
+              "textX": 0,
+              "baseline": 123.56400390625,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "summary",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "summary",
+          "slot": "summary",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#5b6d65",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#5b6d65"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "summary Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "summary Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 145.56,
+            "width": 500.0,
+            "height": 19.5
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 13.0,
+            "lineHeight": 19.5,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "summary Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 145.56,
+                "width": 169.9267578125,
+                "height": 19.5
+              },
+              "textX": 0,
+              "baseline": 160.03900390625,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "hint",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "hint",
+          "slot": "hint",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#7a847a",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#7a847a"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "hint Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "hint Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 181.06,
+            "width": 500.0,
+            "height": 17.05
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 17.05,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "hint Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 181.06,
+                "width": 114.96826171875,
+                "height": 17.05
+              },
+              "textX": 0,
+              "baseline": 193.58646484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "caption",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "caption",
+          "slot": "caption",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#556e61",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#556e61"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "caption Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "caption Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 214.11,
+            "width": 500.0,
+            "height": 16.5
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 16.5,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "caption Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 214.11,
+                "width": 134.255859375,
+                "height": 16.5
+              },
+              "textX": 0,
+              "baseline": 226.36146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "credit",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "credit",
+          "slot": "credit",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#7f887e",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#7f887e"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "credit Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "credit Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 246.61,
+            "width": 500.0,
+            "height": 15.5
+          },
+          "textStyle": {
+            "fontId": "mono400",
+            "fontSHA256": "15d73e236388b3f8f7703dc4ff04a9ec41e095d01d94bd6d243f908e3172e41b",
+            "family": "Goo Mono",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 10.0,
+            "lineHeight": 15.5,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "credit Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 246.61,
+                "width": 132.021484375,
+                "height": 15.5
+              },
+              "textX": 0,
+              "baseline": 258.24427734375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "provenance",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "provenance",
+          "slot": "provenance",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#68796b",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#68796b"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "provenance Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "provenance Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 278.11,
+            "width": 500.0,
+            "height": 15.5
+          },
+          "textStyle": {
+            "fontId": "mono400",
+            "fontSHA256": "15d73e236388b3f8f7703dc4ff04a9ec41e095d01d94bd6d243f908e3172e41b",
+            "family": "Goo Mono",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 10.0,
+            "lineHeight": 15.5,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "provenance Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 278.11,
+                "width": 156.025390625,
+                "height": 15.5
+              },
+              "textX": 0,
+              "baseline": 289.74427734375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "value",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "value",
+          "slot": "value",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "value Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "value Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 309.61,
+            "width": 500.0,
+            "height": 22.4
+          },
+          "textStyle": {
+            "fontId": "mono400",
+            "fontSHA256": "15d73e236388b3f8f7703dc4ff04a9ec41e095d01d94bd6d243f908e3172e41b",
+            "family": "Goo Mono",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 16.0,
+            "lineHeight": 22.4,
+            "letterSpacing": -0.4,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "value Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 309.61,
+                "width": 193.23281249999994,
+                "height": 22.4
+              },
+              "textX": 0,
+              "baseline": 327.02484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "unit",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "unit",
+          "slot": "unit",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#697d6c",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#697d6c"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "unit Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "unit Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 348.01,
+            "width": 500.0,
+            "height": 15.399999999999999
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 15.399999999999999,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "unit Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 348.01,
+                "width": 114.96826171875,
+                "height": 15.399999999999999
+              },
+              "textX": 0,
+              "baseline": 359.71146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "qualifier",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "qualifier",
+          "slot": "qualifier",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#697d6c",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#697d6c"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "qualifier Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "qualifier Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 379.40999999999997,
+            "width": 500.0,
+            "height": 15.399999999999999
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 15.399999999999999,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "qualifier Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 379.40999999999997,
+                "width": 137.736328125,
+                "height": 15.399999999999999
+              },
+              "textX": 0,
+              "baseline": 391.11146484374996,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "metadata",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "metadata",
+          "slot": "metadata",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#7a887b",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#7a887b"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "metadata Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "metadata Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 410.80999999999995,
+            "width": 500.0,
+            "height": 15.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 10.0,
+            "lineHeight": 15.0,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "metadata Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 410.80999999999995,
+                "width": 131.103515625,
+                "height": 15.0
+              },
+              "textX": 0,
+              "baseline": 421.94769531249995,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "author",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "author",
+          "slot": "author",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#7a887b",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#7a887b"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "author Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "author Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 441.80999999999995,
+            "width": 500.0,
+            "height": 15.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 10.0,
+            "lineHeight": 15.0,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "author Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 441.80999999999995,
+                "width": 117.4755859375,
+                "height": 15.0
+              },
+              "textX": 0,
+              "baseline": 452.94769531249995,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "timestamp",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "timestamp",
+          "slot": "timestamp",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#7a887b",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#7a887b"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "timestamp Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "timestamp Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 472.80999999999995,
+            "width": 500.0,
+            "height": 15.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 10.0,
+            "lineHeight": 15.0,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "timestamp Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 472.80999999999995,
+                "width": 136.3330078125,
+                "height": 15.0
+              },
+              "textX": 0,
+              "baseline": 483.94769531249995,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "status",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "status",
+          "slot": "status",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#45674a",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#45674a"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            },
+            "marker": {
+              "kind": "circle",
+              "diameter": 8.0,
+              "gap": 5.0,
+              "color": "foreground"
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "status Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "status Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 503.80999999999995,
+            "width": 500.0,
+            "height": 16.5
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 16.5,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "status Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 503.80999999999995,
+                "width": 140.19287109375,
+                "height": 16.5
+              },
+              "textX": 13.0,
+              "baseline": 516.06146484375,
+              "prefixAdvance": 13.0
+            }
+          ]
+        },
+        {
+          "id": "error",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "error",
+          "slot": "error",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#9f4c36",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#9f4c36"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "error Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "error Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 536.31,
+            "width": 500.0,
+            "height": 16.5
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 16.5,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "! error Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 536.31,
+                "width": 127.3916015625,
+                "height": 16.5
+              },
+              "textX": 0,
+              "baseline": 548.56146484375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "diagnostic",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "diagnostic",
+          "slot": "diagnostic",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#587441",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#587441"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "diagnostic Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "diagnostic Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 568.81,
+            "width": 500.0,
+            "height": 15.0
+          },
+          "textStyle": {
+            "fontId": "mono400",
+            "fontSHA256": "15d73e236388b3f8f7703dc4ff04a9ec41e095d01d94bd6d243f908e3172e41b",
+            "family": "Goo Mono",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 10.0,
+            "lineHeight": 15.0,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "diagnostic Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 568.81,
+                "width": 156.025390625,
+                "height": 15.0
+              },
+              "textX": 0,
+              "baseline": 580.19427734375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "output",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "output",
+          "slot": "output",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#405f50",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#405f50"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "output Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "output Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 599.81,
+            "width": 500.0,
+            "height": 16.5
+          },
+          "textStyle": {
+            "fontId": "mono400",
+            "fontSHA256": "15d73e236388b3f8f7703dc4ff04a9ec41e095d01d94bd6d243f908e3172e41b",
+            "family": "Goo Mono",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 11.0,
+            "lineHeight": 16.5,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "output Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 599.81,
+                "width": 145.2236328125,
+                "height": 16.5
+              },
+              "textX": 0,
+              "baseline": 612.332705078125,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "quote",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "quote",
+          "slot": "quote",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#526954",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#526954"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "quote Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "quote Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 632.31,
+            "width": 500.0,
+            "height": 22.950000000000003
+          },
+          "textStyle": {
+            "fontId": "italic400",
+            "fontSHA256": "35a38341164b786e373c2af0ae181ee4ffbf2249b307792b95f59adcae8f545a",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "italic",
+            "fontSize": 17.0,
+            "lineHeight": 22.950000000000003,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "quote Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 632.31,
+                "width": 194.6865234375,
+                "height": 22.950000000000003
+              },
+              "textX": 0,
+              "baseline": 649.96908203125,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "attribution",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "attribution",
+          "slot": "attribution",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#6b7b6c",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#6b7b6c"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "attribution Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "attribution Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 671.26,
+            "width": 500.0,
+            "height": 14.8
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 10.0,
+            "lineHeight": 14.8,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "attribution Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 671.26,
+                "width": 134.98046875,
+                "height": 14.8
+              },
+              "textX": 0,
+              "baseline": 682.2976953125,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "icon",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "icon",
+          "slot": "icon",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#5c7e52",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#5c7e52"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "icon Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "icon Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 702.06,
+            "width": 236.0,
+            "height": 22.0
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 22.0,
+            "lineHeight": 22.0,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "icon Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 702.06,
+                "width": 235.490234375,
+                "height": 22.0
+              },
+              "textX": 0,
+              "baseline": 721.0629296875,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "badge",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "badge",
+          "slot": "badge",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#537243",
+            "background": {
+              "kind": "solid",
+              "color": "#eaf1e3"
+            },
+            "border": {
+              "width": 1,
+              "color": "#d8e2cd"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 4
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "badge Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "badge Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 740.06,
+            "width": 500.0,
+            "height": 23.0
+          },
+          "textStyle": {
+            "fontId": "mono400",
+            "fontSHA256": "15d73e236388b3f8f7703dc4ff04a9ec41e095d01d94bd6d243f908e3172e41b",
+            "family": "Goo Mono",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 10.0,
+            "lineHeight": 15.0,
+            "letterSpacing": 0,
+            "insetX": 14.0,
+            "insetY": 8.0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "badge Sample ABC 0123",
+              "box": {
+                "x": 7.0,
+                "y": 744.06,
+                "width": 126.0205078125,
+                "height": 15.0
+              },
+              "textX": 7.0,
+              "baseline": 755.44427734375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "custom",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "custom",
+          "slot": "custom",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "custom Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "custom Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 779.06,
+            "width": 500.0,
+            "height": 20.72
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "custom Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 779.06,
+                "width": 170.70703125,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 794.5127734375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "avatar",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "avatar",
+          "slot": "avatar",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "avatar Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "avatar Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 815.78,
+            "width": 500.0,
+            "height": 20.72
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "avatar Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 815.78,
+                "width": 163.10546875,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 831.2327734375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "button",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "button",
+          "slot": "button",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "button Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "button Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 852.5,
+            "width": 500.0,
+            "height": 20.72
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "button Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 852.5,
+                "width": 164.4794921875,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 867.9527734375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "input",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "input",
+          "slot": "input",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "input Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "input Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 889.22,
+            "width": 500.0,
+            "height": 20.72
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "input Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 889.22,
+                "width": 154.8955078125,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 904.6727734375,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "code",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "code",
+          "slot": "code",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "code Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "code Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 925.94,
+            "width": 500.0,
+            "height": 20.72
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "code Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 925.94,
+                "width": 154.9296875,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 941.3927734375001,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "presence",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "presence",
+          "slot": "presence",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "presence Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "presence Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 962.6600000000001,
+            "width": 500.0,
+            "height": 20.72
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "presence Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 962.6600000000001,
+                "width": 183.791015625,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 978.1127734375001,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "media",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "media",
+          "slot": "media",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "media Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "media Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 999.3800000000001,
+            "width": 500.0,
+            "height": 20.72
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "media Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 999.3800000000001,
+                "width": 162.052734375,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 1014.8327734375001,
+              "prefixAdvance": 0
+            }
+          ]
+        },
+        {
+          "id": "bar",
+          "parentId": "typography",
+          "kind": "text",
+          "role": "bar",
+          "slot": "bar",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#182c30",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#182c30"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "bar Sample ABC 0123"
+          },
+          "config": {},
+          "payload": "bar Sample ABC 0123",
+          "box": {
+            "x": 0,
+            "y": 1036.1000000000001,
+            "width": 500.0,
+            "height": 20.72
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 14.0,
+            "lineHeight": 20.72,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "bar Sample ABC 0123",
+              "box": {
+                "x": 0,
+                "y": 1036.1000000000001,
+                "width": 143.5068359375,
+                "height": 20.72
+              },
+              "textX": 0,
+              "baseline": 1051.5527734375,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "empty",
+    "display": {
+      "version": 1,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 120.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 120.0,
+      "height": 0,
+      "nodes": []
+    }
+  }
+]

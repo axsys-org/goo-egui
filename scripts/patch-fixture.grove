@@ -1,0 +1,22 @@
+
+fixture_replace =
+  @action
+  #on ; %/board
+  %/scene: text
+  ! foil
+  \ scene=text board=%/board
+  ^ %/board
+  | board.set_scene(scene).set_population((fixture_patch/population scene))
+
+fixture_scene =
+  @view
+  #on ; %/board
+  #for ; /sys/slot/fixture_scene
+  board => group(on = board, action = %/fixture_replace, myth = {
+    '/0x11/gov/patch_demo/scene = .input(board.scene)
+  }) {
+    col {
+      input('/0x11/gov/patch_demo/scene)
+      action("Replace disposable scene")
+    }
+  }

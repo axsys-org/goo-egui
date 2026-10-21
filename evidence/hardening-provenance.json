@@ -1,0 +1,19 @@
+{
+  "reaver_head": "c9017b835791c22ada5197e268c70f66d0d65511",
+  "sha256": {
+    "src/patch.rs": "e0de15491bda1f4b0591626a8e052b27d7ef94242a5982345015185cfdcc432b",
+    "src/explorer_app.rs": "e285083fff43783ff976e7202a1363cc543ef6d411e71b3c324622271ddaa007",
+    "tests/hardening.rs": "20bb82a46886d397b3f73eb14964cf5c31b83317e8bd261c5b1733273a75ea3d",
+    "tests/fixtures/embedded-patch.json": "6c91fc71fe69ac89a44e1d680d8d8e4d37f91ce227b8e2f56e3049a62617bc71",
+    "scripts/run-server.py": "cd9f4317ceff6c1bda930a5932cb1819398518e658ead57477cf7868de3db927",
+    "scripts/patch-fixture.grove": "46c1ad57e82fba27f865dc77bf36cb9935050759a65e1ee0b386e96d8e2feea4",
+    "scripts/patch-types.grove": "d7ae76f1c51e16a429bd5183a65d81e5d11876e2e90c67ee946efc69c756c0a7",
+    "scripts/patch-fixture.foil": "ecfd110cf45af17ef25ad1a91600ead1280c01de7db57054f85b5f3075f5e845",
+    "scripts/verify-hardening.py": "e35468b13b429f20bc7b58a3f3f37cfc09c0e6758d03045def0a4358da63553d",
+    "scripts/bundle-hardening-macos.sh": "4650bc5b2d3b87fad1bd3939a022304b7c1dfdba1bd7b21bcb441c9f1b2f52e2",
+    "scripts/bundle-surfaces-macos.sh": "6dd8680fa0580ca6e17e019b26414a954f2cace78d21907520ce663b886a9c3d"
+  },
+  "deterministic_passed": 61,
+  "live_passed": 3,
+  "native_platform": "macOS Apple Silicon, egui/eframe 0.33.3, debug build"
+}

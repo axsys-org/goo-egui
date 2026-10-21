@@ -1,0 +1,1277 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "plain text is concatenation without separators",
+      "pass": true,
+      "expected": "abcd",
+      "actual": "abcd"
+    },
+    {
+      "name": "English literal creates one run",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run codec preserves typed myth slots",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "text and path pails round trip",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "arbitrary branded pail survives slicing",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "custom pail keeps its brand",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "unsupported wire pail is not coerced",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "noncanonical slot path rejected",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "empty run array round trips",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "slice across runs",
+      "pass": true,
+      "expected": "bc",
+      "actual": "bc"
+    },
+    {
+      "name": "slice retains first descriptor",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "slice retains second descriptor",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "out of bounds slice is empty",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "zero width slice is empty",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "compiler passes preserve all runs",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition does not change measurement",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "wrapping can split every run",
+      "pass": true,
+      "expected": "4",
+      "actual": "4"
+    },
+    {
+      "name": "wrapped runs retain content",
+      "pass": true,
+      "expected": "abcd",
+      "actual": "abcd"
+    },
+    {
+      "name": "wrapped first descriptor",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "wrapped last descriptor",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "CRLF across runs and tab expansion",
+      "pass": true,
+      "expected": "a\nb    c",
+      "actual": "a\nb    c"
+    },
+    {
+      "name": "normalization retains descriptor",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "word whitespace collapse across runs",
+      "pass": true,
+      "expected": "a b",
+      "actual": "a b"
+    },
+    {
+      "name": "unsupported descriptor is diagnosed before rendering",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "empty descriptor supports existing English rendering",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "unsupported language rejected",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "duplicate descriptor keys rejected",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "image codecs never discard run metadata",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "projection disagreement rejected",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "run partition preserves wrapping 0",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 1",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 2",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 3",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 4",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 5",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 6",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 7",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 8",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 9",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "run partition preserves wrapping 10",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "normal leaf has no diagnostics",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "bad leaf diagnostic retained",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "diagnostic wording",
+      "pass": true,
+      "expected": "invalid character",
+      "actual": "invalid character"
+    },
+    {
+      "name": "span offset stays unchanged",
+      "pass": true,
+      "expected": "4",
+      "actual": "4"
+    },
+    {
+      "name": "tree shape stays unchanged",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "source group has one optional child",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "optional rank survives",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "core child order",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "normal child order",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "normalized ID",
+      "pass": true,
+      "expected": "n",
+      "actual": "n"
+    },
+    {
+      "name": "visible ID",
+      "pass": true,
+      "expected": "v",
+      "actual": "v"
+    },
+    {
+      "name": "semantic ID",
+      "pass": true,
+      "expected": "m",
+      "actual": "m"
+    },
+    {
+      "name": "semantic edge survives",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "source common origin survives",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "empty config differs from explicit false, zero and empty",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "all absent config fields",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "present false grow is preserved",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "present true primary is preserved",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "present false toggle is preserved",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "present empty label is preserved",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "option label is preserved",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "fractional max ideal is exact",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "present zero max is preserved",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "negative config scalar stays exact",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "root path accepted",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "unknown path remains open-ended",
+      "pass": true,
+      "expected": "/custom/a-b_2.name",
+      "actual": "/custom/a-b_2.name"
+    },
+    {
+      "name": "unknown path parsed",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "trusted paths alone normalize separators",
+      "pass": true,
+      "expected": "/a/b",
+      "actual": "/a/b"
+    },
+    {
+      "name": "open-ended slot conversion",
+      "pass": true,
+      "expected": "/new/role",
+      "actual": "/new/role"
+    },
+    {
+      "name": "default context",
+      "pass": true,
+      "expected": "/sys/slots/summary",
+      "actual": "/sys/slots/summary"
+    },
+    {
+      "name": "zero line invalid",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "zero column invalid",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "one-based origin",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "rank required is zero",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "rank compact is one",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "rank full is two",
+      "pass": true,
+      "expected": "2",
+      "actual": "2"
+    },
+    {
+      "name": "required rank decode",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "compact rank decode",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "full rank decode",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "unknown rank rejected",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "unknown primitive rejected",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "reject path ",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "reject path relative",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "reject path //",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "reject path /a/",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "reject path /a//b",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "reject path /a/./b",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "reject path /a/../b",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "reject path /a b",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "reject path /a?b",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "finite scalar 0",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "finite scalar 9223372036854775808",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "finite scalar 1",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "finite scalar 4609434218613702656",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "finite scalar 13832806255468478464",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "finite scalar 9218868437227405311",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "invalid scalar 9218868437227405312",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "invalid scalar 18442240474082181120",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "invalid scalar 9221120237041090560",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "invalid scalar 18446744073709551616",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "primitive button",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "primitive input",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "primitive code",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "primitive avatar",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "primitive presence",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "primitive media",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "primitive bar",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "warning is not error",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "error is error",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "missing location",
+      "pass": true,
+      "expected": "-",
+      "actual": "-"
+    },
+    {
+      "name": "located diagnostic",
+      "pass": true,
+      "expected": "2:3",
+      "actual": "2:3"
+    },
+    {
+      "name": "warnings do not reject pass",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "error after warning rejects pass",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "partial output and ordered diagnostics survive",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "pending is not successful empty",
+      "pass": true,
+      "expected": "incomplete",
+      "actual": "incomplete"
+    },
+    {
+      "name": "rejected is not successful empty",
+      "pass": true,
+      "expected": "rejected",
+      "actual": "rejected"
+    },
+    {
+      "name": "empty diagnostics still allow explicit failure",
+      "pass": true,
+      "expected": "rejected",
+      "actual": "rejected"
+    },
+    {
+      "name": "successful empty is explicit",
+      "pass": true,
+      "expected": "empty",
+      "actual": "empty"
+    },
+    {
+      "name": "successful nonempty is explicit",
+      "pass": true,
+      "expected": "nonempty",
+      "actual": "nonempty"
+    },
+    {
+      "name": "earlier outputs and failed partial retained",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "context survives rejection",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "crash is separate from rejection",
+      "pass": true,
+      "expected": "crashed",
+      "actual": "crashed"
+    },
+    {
+      "name": "crash retains earlier output and attributes failing stage",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "cancellation is not failure",
+      "pass": true,
+      "expected": "cancelled",
+      "actual": "cancelled"
+    },
+    {
+      "name": "cancellation retains checkpoint without failed entry",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "poison callback control really throws",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "unhandled exceptions propagate out of recorder",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "rejection skips later callback",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "crash skips later callback",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "cancellation skips later callback",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "success skips later callback",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "finish cannot mask failure",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "finish cannot mask cancellation",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "successful result retains semantic tree",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "decimal tenth rounds to binary64",
+      "pass": true,
+      "expected": "4591870180066957722",
+      "actual": "4591870180066957722"
+    },
+    {
+      "name": "minimum subnormal",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "underflow",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "overflow rejected",
+      "pass": true,
+      "expected": "18446744073709551616",
+      "actual": "18446744073709551616"
+    },
+    {
+      "name": "malformed decimal rejected",
+      "pass": true,
+      "expected": "18446744073709551616",
+      "actual": "18446744073709551616"
+    },
+    {
+      "name": "leading zero rejected",
+      "pass": true,
+      "expected": "18446744073709551616",
+      "actual": "18446744073709551616"
+    },
+    {
+      "name": "missing exponent rejected",
+      "pass": true,
+      "expected": "18446744073709551616",
+      "actual": "18446744073709551616"
+    },
+    {
+      "name": "tie rounds down to even",
+      "pass": true,
+      "expected": "4607182418800017408",
+      "actual": "4607182418800017408"
+    },
+    {
+      "name": "above tie rounds up",
+      "pass": true,
+      "expected": "4607182418800017409",
+      "actual": "4607182418800017409"
+    },
+    {
+      "name": "large integer tie rounds to even",
+      "pass": true,
+      "expected": "4845873199050653696",
+      "actual": "4845873199050653696"
+    },
+    {
+      "name": "integer underflow remains fractional",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "wire canonicalizes negative zero",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "scalar exact encode decode",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "finite negative config rejected",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "default full rank is constructed",
+      "pass": true,
+      "expected": "2",
+      "actual": "2"
+    },
+    {
+      "name": "summary default",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "scar default",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "synchronous stage exception retains failed stage",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "synchronous exception has no value",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "terminal stage skips throwing callback",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "native validated empty result",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "nonfinite internal result rejected",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "negative internal result rejected",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "source hexadecimal",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "source leading zero",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "wire remains strict",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "renderer profile identity",
+      "pass": true,
+      "expected": "mash-goo",
+      "actual": "mash-goo"
+    },
+    {
+      "name": "control style precedes semantic role",
+      "pass": true,
+      "expected": "sans550",
+      "actual": "sans550"
+    },
+    {
+      "name": "profile leading preserves ratio then scale arithmetic",
+      "pass": true,
+      "expected": "4629763748806629785",
+      "actual": "4629763748806629785"
+    },
+    {
+      "name": "control inset is independent of text scale",
+      "pass": true,
+      "expected": "4628011567076605952",
+      "actual": "4628011567076605952"
+    },
+    {
+      "name": "italic face has portable font identity",
+      "pass": true,
+      "expected": "italic",
+      "actual": "italic"
+    },
+    {
+      "name": "binary64 nearest-even down",
+      "pass": true,
+      "expected": "4607182418800017408",
+      "actual": "4607182418800017408"
+    },
+    {
+      "name": "binary64 nearest-even up",
+      "pass": true,
+      "expected": "4607182418800017410",
+      "actual": "4607182418800017410"
+    },
+    {
+      "name": "binary64 decimal sum",
+      "pass": true,
+      "expected": "4599075939470750516",
+      "actual": "4599075939470750516"
+    },
+    {
+      "name": "binary64 negative subtraction",
+      "pass": true,
+      "expected": "13596367275031527424",
+      "actual": "13596367275031527424"
+    },
+    {
+      "name": "binary64 negative zeros",
+      "pass": true,
+      "expected": "9223372036854775808",
+      "actual": "9223372036854775808"
+    },
+    {
+      "name": "binary64 opposite zeros",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "binary64 subnormal result",
+      "pass": true,
+      "expected": "2251799813685248",
+      "actual": "2251799813685248"
+    },
+    {
+      "name": "binary64 underflow tie",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "binary64 signed underflow",
+      "pass": true,
+      "expected": "9223372036854775808",
+      "actual": "9223372036854775808"
+    },
+    {
+      "name": "binary64 media division",
+      "pass": true,
+      "expected": "4630406710628430886",
+      "actual": "4630406710628430886"
+    },
+    {
+      "name": "binary64 leading multiplication",
+      "pass": true,
+      "expected": "4628000308077537525",
+      "actual": "4628000308077537525"
+    },
+    {
+      "name": "binary64 unscaled tracking",
+      "pass": true,
+      "expected": "13827347892720105423",
+      "actual": "13827347892720105423"
+    },
+    {
+      "name": "binary64 negative first-line room",
+      "pass": true,
+      "expected": "13846880004304011264",
+      "actual": "13846880004304011264"
+    },
+    {
+      "name": "CRLF and tab normalization",
+      "pass": true,
+      "expected": "a\nb    c\n",
+      "actual": "a\nb    c\n"
+    },
+    {
+      "name": "button words collapse",
+      "pass": true,
+      "expected": "a b",
+      "actual": "a b"
+    },
+    {
+      "name": "quantize rounds half up",
+      "pass": true,
+      "expected": "4626359308963314401",
+      "actual": "4626359308963314401"
+    },
+    {
+      "name": "quantize clamps zero",
+      "pass": true,
+      "expected": "4607182418800017408",
+      "actual": "4607182418800017408"
+    },
+    {
+      "name": "quantized cache hit skips throwing callback",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "different quantized width calls callback",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "invalid minimum rejected before planning",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "nonfinite size rejected",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "negative height rejected",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "nonfinite height rejected",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "prepared leaf valid",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "forged width rejected by painter",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "forged scale rejected by painter",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "forged lines rejected by painter",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "missing render root rejected by painter",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "unknown plan id fails preparation lookup",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "markup is escaped text",
+      "pass": true,
+      "expected": "&lt;b&gt;&amp;&lt;/b&gt;",
+      "actual": "&lt;b&gt;&amp;&lt;/b&gt;"
+    },
+    {
+      "name": "document loads the matched profile recipe",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "document does not mix legacy typography",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "display export validates preparation",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "preorder contains root and both children",
+      "pass": true,
+      "expected": "3",
+      "actual": "3"
+    },
+    {
+      "name": "first child begins at left edge",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "second child includes adjacency gap",
+      "pass": true,
+      "expected": "4634626229029306368",
+      "actual": "4634626229029306368"
+    },
+    {
+      "name": "short sibling is vertically centered",
+      "pass": true,
+      "expected": "4627026404658118656",
+      "actual": "4627026404658118656"
+    },
+    {
+      "name": "RTL first child mirrors physical x",
+      "pass": true,
+      "expected": "4634344754052595712",
+      "actual": "4634344754052595712"
+    },
+    {
+      "name": "RTL second child mirrors physical x",
+      "pass": true,
+      "expected": "4630967054332067840",
+      "actual": "4630967054332067840"
+    },
+    {
+      "name": "forged group height fails public export",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "forged group height fails HTML guard",
+      "pass": true,
+      "expected": "0",
+      "actual": "0"
+    },
+    {
+      "name": "source prepared stage includes the checked display directly",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "source prepared stage carries its profile revision",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "source prepared stage preserves measurement inspection",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "editable control has no stale static line projection",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "editable control payload preserves tabs and newlines",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    },
+    {
+      "name": "HTML emits the original editable value attribute",
+      "pass": true,
+      "expected": "1",
+      "actual": "1"
+    }
+  ]
+}

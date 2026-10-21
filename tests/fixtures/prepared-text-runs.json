@@ -1,0 +1,195 @@
+{
+  "name": "text-runs",
+  "html": "<div class=\"goo-surface\" dir=\"ltr\" style=\"width:160.0px;--goo-text-scale:1.0\"><div class=\"goo-node goo-text goo-body\" data-node=\"runs\" data-slot=\"body\" style=\"width:160.0px;margin-inline-start:0.0px\" data-leaf=\"1\"><span lang=\"en\" class=\"goo-ascii-line\">A word can cross a run </span><span lang=\"en\" class=\"goo-ascii-line\">boundary and a line can </span><span lang=\"en\" class=\"goo-ascii-line\">contain several runs.</span></div></div>",
+  "display": {
+    "version": 1,
+    "profile": {
+      "id": "mash-goo",
+      "version": 1,
+      "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+    },
+    "context": {
+      "width": 160.0,
+      "textScale": 1.0,
+      "direction": "ltr"
+    },
+    "coordinates": "absolute-css-px",
+    "width": 160.0,
+    "height": 64.35,
+    "nodes": [
+      {
+        "id": "runs",
+        "parentId": null,
+        "kind": "text",
+        "role": "body",
+        "slot": "body",
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#425650",
+          "background": {
+            "kind": "none"
+          },
+          "border": {
+            "width": 0,
+            "color": "#425650"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2,
+              "color": "#688b43",
+              "offset": 3
+            }
+          }
+        },
+        "semantics": {
+          "version": 1,
+          "role": "text",
+          "label": "A word can cross a run boundary and a line can contain several runs."
+        },
+        "config": {},
+        "payload": "A word can cross a run boundary and a line can contain several runs.",
+        "textRuns": [
+          {
+            "myth": {},
+            "lang": {
+              "en": {
+                "txt": "A word can cross a ru"
+              }
+            }
+          },
+          {
+            "myth": {},
+            "lang": {
+              "en": {
+                "txt": "n boundary and a line can contain several runs."
+              }
+            }
+          }
+        ],
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 160.0,
+          "height": 64.35
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 13.0,
+          "lineHeight": 21.45,
+          "letterSpacing": 0,
+          "insetX": 0,
+          "insetY": 0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [
+          {
+            "text": "A word can cross a run ",
+            "runs": [
+              {
+                "myth": {},
+                "lang": "en",
+                "text": "A word can cross a ru",
+                "box": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 134.66552734375,
+                  "height": 21.45
+                },
+                "textX": 0,
+                "baseline": 15.45400390625
+              },
+              {
+                "myth": {},
+                "lang": "en",
+                "text": "n ",
+                "box": {
+                  "x": 134.66552734375,
+                  "y": 0,
+                  "width": 11.3369140625,
+                  "height": 21.45
+                },
+                "textX": 134.66552734375,
+                "baseline": 15.45400390625
+              }
+            ],
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 146.00244140625,
+              "height": 21.45
+            },
+            "textX": 0,
+            "baseline": 15.45400390625,
+            "prefixAdvance": 0
+          },
+          {
+            "text": "boundary and a line can ",
+            "runs": [
+              {
+                "myth": {},
+                "lang": "en",
+                "text": "boundary and a line can ",
+                "box": {
+                  "x": 0,
+                  "y": 21.45,
+                  "width": 151.06787109375,
+                  "height": 21.45
+                },
+                "textX": 0,
+                "baseline": 36.90400390625
+              }
+            ],
+            "box": {
+              "x": 0,
+              "y": 21.45,
+              "width": 151.06787109375,
+              "height": 21.45
+            },
+            "textX": 0,
+            "baseline": 36.90400390625,
+            "prefixAdvance": 0
+          },
+          {
+            "text": "contain several runs.",
+            "runs": [
+              {
+                "myth": {},
+                "lang": "en",
+                "text": "contain several runs.",
+                "box": {
+                  "x": 0,
+                  "y": 42.9,
+                  "width": 128.1337890625,
+                  "height": 21.45
+                },
+                "textX": 0,
+                "baseline": 58.35400390625
+              }
+            ],
+            "box": {
+              "x": 0,
+              "y": 42.9,
+              "width": 128.1337890625,
+              "height": 21.45
+            },
+            "textX": 0,
+            "baseline": 58.35400390625,
+            "prefixAdvance": 0
+          }
+        ]
+      }
+    ]
+  }
+}

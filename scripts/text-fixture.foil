@@ -1,0 +1,8 @@
+- grove_app
+- goo_app/prepared_tests
+
++ text_fixture
+  + value
+    ^ goo/text/pail
+    ?> (goo/visible/text _ value) goo_prepared_tests/styled (goo/text/pail [])
+    | goo/text/pail value

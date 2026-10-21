@@ -1,0 +1,365 @@
+{
+  "date": "2026-10-19",
+  "main": "f373423",
+  "original_port": "fd7ef90c1dc11f3b18494b211bced907956c9ab0",
+  "optimized_profile_sha256": "5b6462fe528eda0a94d286518a6dfb75fbdb8dbcd1555e7f51b7e56e9354ac6a",
+  "runtime": "/nix/store/k3n6hpldvpj6x54wa47jp6l00kws4khg-enki-pgo-0.1.0/bin/wisp",
+  "compiler": "P6",
+  "target": "/0x11/app/ios_demo/note",
+  "slot": "/sys/slot/content",
+  "method": {
+    "cold_runs": "PL_CODECACHE=0; fresh disposable namespaces; concurrent startup, then serial HTTP measurements after all servers were ready and verification jobs had finished; no other benchmark server doing CPU work",
+    "normal_runs": "Inherited compiler cache, sequential fresh processes. Cache populations differ, so first-use values are observations, not a matched before/after comparison.",
+    "warm_median": "four identical 640 CSS px requests after the first request",
+    "resize_widths": [
+      420,
+      800,
+      420
+    ],
+    "trace": "Separate cache-disabled trace exceeded a 150-second read deadline; excluded from timing comparison. It showed long store.compile.law spans during the first request."
+  },
+  "responses_identical": {
+    "original_vs_optimized": "All eight raw response bodies, including three widths, match byte-for-byte in both normal and cache-disabled runs."
+  },
+  "validation": {
+    "profile_integrity_tests": 9,
+    "compiled_paint_recipes": 36,
+    "native_prepared_assertions": 15,
+    "browser_fixtures": 14,
+    "browser_boxes": 79,
+    "browser_lines": 48,
+    "native_web_assertions": 135,
+    "native_explorer_assertions": 599,
+    "native_moodboard_assertions": 43,
+    "mount_contracts": 2,
+    "live_integration_seconds": 14.91
+  },
+  "timings": {
+    "port-before": {
+      "first_seconds": 0.23463879083283246,
+      "warm_median_seconds": 0.1600648129824549,
+      "requests": [
+        {
+          "width": 640,
+          "seconds": 0.23463879083283246,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.1566865830682218,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.16110429214313626,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.15902533382177353,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.16287899995222688,
+          "bytes": 24397
+        },
+        {
+          "width": 420,
+          "seconds": 0.17521229200065136,
+          "bytes": 24744
+        },
+        {
+          "width": 800,
+          "seconds": 0.17093487503007054,
+          "bytes": 24397
+        },
+        {
+          "width": 420,
+          "seconds": 0.14772191713564098,
+          "bytes": 24744
+        }
+      ]
+    },
+    "main-before": {
+      "first_seconds": 12.339604582870379,
+      "warm_median_seconds": 0.14831949956715107,
+      "requests": [
+        {
+          "width": 640,
+          "seconds": 12.339604582870379,
+          "bytes": 18931
+        },
+        {
+          "width": 640,
+          "seconds": 0.1506581660360098,
+          "bytes": 18931
+        },
+        {
+          "width": 640,
+          "seconds": 0.14598083309829235,
+          "bytes": 18931
+        },
+        {
+          "width": 640,
+          "seconds": 0.1438791248947382,
+          "bytes": 18931
+        },
+        {
+          "width": 640,
+          "seconds": 0.1561348328832537,
+          "bytes": 18931
+        },
+        {
+          "width": 420,
+          "seconds": 0.15701870783232152,
+          "bytes": 19278
+        },
+        {
+          "width": 800,
+          "seconds": 0.15631187497638166,
+          "bytes": 18931
+        },
+        {
+          "width": 420,
+          "seconds": 0.15725058293901384,
+          "bytes": 19278
+        }
+      ]
+    },
+    "compact-prototype": {
+      "first_seconds": 7.750504416180775,
+      "warm_median_seconds": 0.15368187462445349,
+      "requests": [
+        {
+          "width": 640,
+          "seconds": 7.750504416180775,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.15366029110737145,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.15197108406573534,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.15370345814153552,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.1544476670678705,
+          "bytes": 24397
+        },
+        {
+          "width": 420,
+          "seconds": 0.16310074995271862,
+          "bytes": 24744
+        },
+        {
+          "width": 800,
+          "seconds": 0.1541134170256555,
+          "bytes": 24397
+        },
+        {
+          "width": 420,
+          "seconds": 0.14527512504719198,
+          "bytes": 24744
+        }
+      ]
+    },
+    "cold-port": {
+      "first_seconds": 88.03552541695535,
+      "warm_median_seconds": 0.15395093755796552,
+      "requests": [
+        {
+          "width": 640,
+          "seconds": 88.03552541695535,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.14700499991886318,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.1529161250218749,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.15498575009405613,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.15544249978847802,
+          "bytes": 24397
+        },
+        {
+          "width": 420,
+          "seconds": 0.18568074982613325,
+          "bytes": 24744
+        },
+        {
+          "width": 800,
+          "seconds": 0.1519051669165492,
+          "bytes": 24397
+        },
+        {
+          "width": 420,
+          "seconds": 0.14062404190190136,
+          "bytes": 24744
+        }
+      ]
+    },
+    "cold-compact": {
+      "first_seconds": 82.18543362501077,
+      "warm_median_seconds": 0.1551974375033751,
+      "requests": [
+        {
+          "width": 640,
+          "seconds": 82.18543362501077,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.15035066683776677,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.15277408296242356,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.1811828340869397,
+          "bytes": 24397
+        },
+        {
+          "width": 640,
+          "seconds": 0.15762079204432666,
+          "bytes": 24397
+        },
+        {
+          "width": 420,
+          "seconds": 0.18796637514606118,
+          "bytes": 24744
+        },
+        {
+          "width": 800,
+          "seconds": 0.14875529194250703,
+          "bytes": 24397
+        },
+        {
+          "width": 420,
+          "seconds": 0.13994275010190904,
+          "bytes": 24744
+        }
+      ]
+    },
+    "cold-main": {
+      "first_seconds": 81.12391316681169,
+      "warm_median_seconds": 0.14042654214426875,
+      "requests": [
+        {
+          "width": 640,
+          "seconds": 81.12391316681169,
+          "bytes": 18931
+        },
+        {
+          "width": 640,
+          "seconds": 0.1334322919137776,
+          "bytes": 18931
+        },
+        {
+          "width": 640,
+          "seconds": 0.13696512510068715,
+          "bytes": 18931
+        },
+        {
+          "width": 640,
+          "seconds": 0.15153470891527832,
+          "bytes": 18931
+        },
+        {
+          "width": 640,
+          "seconds": 0.14388795918785036,
+          "bytes": 18931
+        },
+        {
+          "width": 420,
+          "seconds": 0.1668557501398027,
+          "bytes": 19278
+        },
+        {
+          "width": 800,
+          "seconds": 0.1459300839342177,
+          "bytes": 18931
+        },
+        {
+          "width": 420,
+          "seconds": 0.1494521249551326,
+          "bytes": 19278
+        }
+      ]
+    }
+  },
+  "benchmark_script_end_to_end": {
+    "label": "working-tree",
+    "compiler_cache": "inherited",
+    "startup_seconds": 63.1006036659237,
+    "first_seconds": 0.19845945807173848,
+    "warm_median_seconds": 0.15524249989539385,
+    "samples": [
+      {
+        "width": 640,
+        "seconds": 0.19845945807173848,
+        "bytes": 24397
+      },
+      {
+        "width": 640,
+        "seconds": 0.15132795902900398,
+        "bytes": 24397
+      },
+      {
+        "width": 640,
+        "seconds": 0.15272291586734354,
+        "bytes": 24397
+      },
+      {
+        "width": 640,
+        "seconds": 0.15776208392344415,
+        "bytes": 24397
+      },
+      {
+        "width": 640,
+        "seconds": 0.15890116593800485,
+        "bytes": 24397
+      },
+      {
+        "width": 420,
+        "seconds": 0.16704141697846353,
+        "bytes": 24744
+      },
+      {
+        "width": 800,
+        "seconds": 0.15181554085575044,
+        "bytes": 24397
+      },
+      {
+        "width": 420,
+        "seconds": 0.14177545811980963,
+        "bytes": 24744
+      }
+    ]
+  },
+  "optimized_commit": "099fee6502e26e979c0de9afd9bb23f6a9e004c5"
+}

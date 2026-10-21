@@ -1,0 +1,18 @@
+{
+  "reaver_commit": "c9017b835791c22ada5197e268c70f66d0d65511",
+  "platform": "macOS arm64",
+  "files": {
+    "src/patch.rs": "9a2bf0a5847aaba928380bbbeb6960de9498997b8f6a6bbe6d565e49f585d1a8",
+    "src/diagram.rs": "9e50a98eec081bb8cb8729f5cec58bdceb81db0e9e55a912b9e9daa968f34f4f",
+    "src/painter.rs": "b7849ebc86621b7002e587a33f4753c17c1b80a5f36217f41f6b4c200a4cb331",
+    "src/paint_geometry.rs": "99b69ce960796871da1325ba9eea80349e1a14a76519648b456408d37fc6560a",
+    "src/images.rs": "511385785e4afefae50366c9fcfcac389f8cb24c078ac7336a47e5284bb0d092",
+    "src/model.rs": "7bee5260e48b4878f922610c1d199928fed7df16f73847f25cc751f8cbcb7882",
+    "src/explorer_app.rs": "f8c6edcf8e4bc674682d9bcee689698ec6dfc8b02e2b9e9fe086dcbff1aab6e9",
+    "src/session.rs": "1373443446574b89a507c4d705eea5c4207855c69c9cba1a58a563895ff73042",
+    "src/transport.rs": "c5ded06f9a7654b2108aa2fe768c0beff63521bcc4ef7976839f2df0d17550e5",
+    "tests/fixtures/patch-board.json": "93ab6dfd872051b71294648e6fd4be1e60ebdb43b33012800138c058187e856e",
+    "tests/fixtures/portable-displays.json": "f893065cfc80b3d5f8822422df652e4c1c1a4d801d127985ba402133c391c756",
+    "Cargo.lock": "bc16e9e7358a3138ac4d3dbad8731305b11bae050895f6ce3c11bd3ba2c93615"
+  }
+}

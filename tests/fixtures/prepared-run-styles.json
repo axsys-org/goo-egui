@@ -1,0 +1,2043 @@
+[
+  {
+    "name": "run-styles",
+    "html": "<div class=\"goo-surface\" dir=\"ltr\" style=\"width:180.0px;--goo-text-scale:1.0\"><div class=\"goo-node goo-text goo-body\" data-node=\"styled\" data-slot=\"body\" style=\"width:180.0px;margin-inline-start:0.0px\" data-leaf=\"1\"><span class=\"goo-ascii-line\">Plain <span style=\"font-family:&#39;Goo Sans&#39;;font-weight:750;font-style:normal;font-synthesis:none\">bold </span><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:italic;font-synthesis:none\">italic </span><span style=\"font-family:&#39;Goo Run italic750&#39;;font-weight:750;font-style:italic;font-synthesis:none\">bold italic </span></span><span class=\"goo-ascii-line\"><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:0.1em\">underlined </span><span style=\"font-family:&#39;Goo Run mono700&#39;;font-weight:700;font-style:normal;font-synthesis:none\">monospace </span></span><span class=\"goo-ascii-line\"><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;path&quot;,&quot;path&quot;:&quot;/demo/note&quot;}\">linked item wraps across </span></span><span class=\"goo-ascii-line\"><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;path&quot;,&quot;path&quot;:&quot;/demo/note&quot;}\">several lines </span><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;weblink&quot;,&quot;href&quot;:&quot;https://example.com/docs&quot;}\">web </span></span><span class=\"goo-ascii-line\"><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;weblink&quot;,&quot;href&quot;:&quot;https://example.com/docs&quot;}\">documentation</span></span></div></div>",
+    "display": {
+      "version": 2,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 180.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 180.0,
+      "height": 114.32763671875,
+      "nodes": [
+        {
+          "id": "styled",
+          "parentId": null,
+          "kind": "text",
+          "role": "body",
+          "slot": "body",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#425650",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#425650"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "Plain bold italic bold italic underlined monospace linked item wraps across several lines web documentation"
+          },
+          "config": {},
+          "payload": "Plain bold italic bold italic underlined monospace linked item wraps across several lines web documentation",
+          "textRuns": [
+            {
+              "myth": {},
+              "lang": {
+                "en": {
+                  "txt": "Plain "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "bold"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "bold "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "italic"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "italic "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "bold",
+                    "italic"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "bold italic "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "underline"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "underlined "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/font": {
+                  "kind": "path",
+                  "value": "/sys/font/mono"
+                },
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "bold"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "monospace "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/link": {
+                  "kind": "path",
+                  "value": "/demo/note"
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "linked item wraps across several lines "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/link": {
+                  "kind": "weblink",
+                  "value": "https://example.com/docs"
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "web documentation"
+                }
+              }
+            }
+          ],
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 180.0,
+            "height": 114.32763671875
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 13.0,
+            "lineHeight": 22.86552734375,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Plain bold italic bold italic ",
+              "runs": [
+                {
+                  "myth": {},
+                  "lang": "en",
+                  "text": "Plain ",
+                  "box": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 33.236328125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 0,
+                  "baseline": 16.48232421875
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "bold"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "bold ",
+                  "box": {
+                    "x": 33.236328125,
+                    "y": 0,
+                    "width": 31.05908203125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 33.236328125,
+                  "baseline": 16.48232421875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans750",
+                      "fontSHA256": "0423cf606b70d0bf3140a09bfce422016f4e5e5beb9d743fd058359370b40623",
+                      "family": "Goo Sans",
+                      "weight": 750,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "italic"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "italic ",
+                  "box": {
+                    "x": 64.29541015625,
+                    "y": 0,
+                    "width": 32.7919921875,
+                    "height": 22.86552734375
+                  },
+                  "textX": 64.29541015625,
+                  "baseline": 16.48232421875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "italic400",
+                      "fontSHA256": "35a38341164b786e373c2af0ae181ee4ffbf2249b307792b95f59adcae8f545a",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "italic",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "bold",
+                        "italic"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "bold italic ",
+                  "box": {
+                    "x": 97.08740234375,
+                    "y": 0,
+                    "width": 65.66650390625,
+                    "height": 22.86552734375
+                  },
+                  "textX": 97.08740234375,
+                  "baseline": 16.48232421875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "italic750",
+                      "fontSHA256": "1705b638093c33075bcf4c47724a452d3d57723ed151396daeada37927373fa1",
+                      "family": "Goo Sans",
+                      "weight": 750,
+                      "style": "italic",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 162.75390625,
+                "height": 22.86552734375
+              },
+              "textX": 0,
+              "baseline": 16.48232421875,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "underlined monospace ",
+              "runs": [
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "underline"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "underlined ",
+                  "box": {
+                    "x": 0,
+                    "y": 22.86552734375,
+                    "width": 68.9736328125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 0,
+                  "baseline": 39.3478515625,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": {
+                      "color": "#425650",
+                      "width": 1,
+                      "y": 40.647851562499994
+                    },
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/font": {
+                      "kind": "path",
+                      "value": "/sys/font/mono"
+                    },
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "bold"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "monospace ",
+                  "box": {
+                    "x": 68.9736328125,
+                    "y": 22.86552734375,
+                    "width": 78.0126953125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 68.9736328125,
+                  "baseline": 39.3478515625,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "mono700",
+                      "fontSHA256": "c0115db674622a13e9281c6433e429e6e0dc921c648445aab82a433acb95444a",
+                      "family": "Goo Mono",
+                      "weight": 700,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 0,
+                "y": 22.86552734375,
+                "width": 146.986328125,
+                "height": 22.86552734375
+              },
+              "textX": 0,
+              "baseline": 39.3478515625,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "linked item wraps across ",
+              "runs": [
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "path",
+                      "value": "/demo/note"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "linked item wraps across ",
+                  "box": {
+                    "x": 0,
+                    "y": 45.7310546875,
+                    "width": 156.43798828125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 0,
+                  "baseline": 62.21337890625,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "path",
+                        "path": "/demo/note"
+                      }
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 0,
+                "y": 45.7310546875,
+                "width": 156.43798828125,
+                "height": 22.86552734375
+              },
+              "textX": 0,
+              "baseline": 62.21337890625,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "several lines web ",
+              "runs": [
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "path",
+                      "value": "/demo/note"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "several lines ",
+                  "box": {
+                    "x": 0,
+                    "y": 68.59658203125,
+                    "width": 80.3994140625,
+                    "height": 22.86552734375
+                  },
+                  "textX": 0,
+                  "baseline": 85.07890624999999,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "path",
+                        "path": "/demo/note"
+                      }
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "weblink",
+                      "value": "https://example.com/docs"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "web ",
+                  "box": {
+                    "x": 80.3994140625,
+                    "y": 68.59658203125,
+                    "width": 29.833984375,
+                    "height": 22.86552734375
+                  },
+                  "textX": 80.3994140625,
+                  "baseline": 85.07890624999999,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "weblink",
+                        "href": "https://example.com/docs"
+                      }
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 0,
+                "y": 68.59658203125,
+                "width": 110.2333984375,
+                "height": 22.86552734375
+              },
+              "textX": 0,
+              "baseline": 85.07890624999999,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "documentation",
+              "runs": [
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "weblink",
+                      "value": "https://example.com/docs"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "documentation",
+                  "box": {
+                    "x": 0,
+                    "y": 91.462109375,
+                    "width": 91.94580078125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 0,
+                  "baseline": 107.94443359375,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "weblink",
+                        "href": "https://example.com/docs"
+                      }
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 0,
+                "y": 91.462109375,
+                "width": 91.94580078125,
+                "height": 22.86552734375
+              },
+              "textX": 0,
+              "baseline": 107.94443359375,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "run-styles-wide",
+    "html": "<div class=\"goo-surface\" dir=\"ltr\" style=\"width:420.0px;--goo-text-scale:1.0\"><div class=\"goo-node goo-text goo-body\" data-node=\"styled\" data-slot=\"body\" style=\"width:420.0px;margin-inline-start:0.0px\" data-leaf=\"1\"><span class=\"goo-ascii-line\">Plain <span style=\"font-family:&#39;Goo Sans&#39;;font-weight:750;font-style:normal;font-synthesis:none\">bold </span><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:italic;font-synthesis:none\">italic </span><span style=\"font-family:&#39;Goo Run italic750&#39;;font-weight:750;font-style:italic;font-synthesis:none\">bold italic </span><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:0.1em\">underlined </span><span style=\"font-family:&#39;Goo Run mono700&#39;;font-weight:700;font-style:normal;font-synthesis:none\">monospace </span><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;path&quot;,&quot;path&quot;:&quot;/demo/note&quot;}\">linked item </span></span><span class=\"goo-ascii-line\"><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;path&quot;,&quot;path&quot;:&quot;/demo/note&quot;}\">wraps across several lines </span><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;weblink&quot;,&quot;href&quot;:&quot;https://example.com/docs&quot;}\">web documentation</span></span></div></div>",
+    "display": {
+      "version": 2,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 420.0,
+        "textScale": 1.0,
+        "direction": "ltr"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 420.0,
+      "height": 45.7310546875,
+      "nodes": [
+        {
+          "id": "styled",
+          "parentId": null,
+          "kind": "text",
+          "role": "body",
+          "slot": "body",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#425650",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#425650"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "Plain bold italic bold italic underlined monospace linked item wraps across several lines web documentation"
+          },
+          "config": {},
+          "payload": "Plain bold italic bold italic underlined monospace linked item wraps across several lines web documentation",
+          "textRuns": [
+            {
+              "myth": {},
+              "lang": {
+                "en": {
+                  "txt": "Plain "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "bold"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "bold "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "italic"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "italic "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "bold",
+                    "italic"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "bold italic "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "underline"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "underlined "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/font": {
+                  "kind": "path",
+                  "value": "/sys/font/mono"
+                },
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "bold"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "monospace "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/link": {
+                  "kind": "path",
+                  "value": "/demo/note"
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "linked item wraps across several lines "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/link": {
+                  "kind": "weblink",
+                  "value": "https://example.com/docs"
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "web documentation"
+                }
+              }
+            }
+          ],
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 420.0,
+            "height": 45.7310546875
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 13.0,
+            "lineHeight": 22.86552734375,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Plain bold italic bold italic underlined monospace linked item ",
+              "runs": [
+                {
+                  "myth": {},
+                  "lang": "en",
+                  "text": "Plain ",
+                  "box": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 33.236328125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 0,
+                  "baseline": 16.48232421875
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "bold"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "bold ",
+                  "box": {
+                    "x": 33.236328125,
+                    "y": 0,
+                    "width": 31.05908203125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 33.236328125,
+                  "baseline": 16.48232421875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans750",
+                      "fontSHA256": "0423cf606b70d0bf3140a09bfce422016f4e5e5beb9d743fd058359370b40623",
+                      "family": "Goo Sans",
+                      "weight": 750,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "italic"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "italic ",
+                  "box": {
+                    "x": 64.29541015625,
+                    "y": 0,
+                    "width": 32.7919921875,
+                    "height": 22.86552734375
+                  },
+                  "textX": 64.29541015625,
+                  "baseline": 16.48232421875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "italic400",
+                      "fontSHA256": "35a38341164b786e373c2af0ae181ee4ffbf2249b307792b95f59adcae8f545a",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "italic",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "bold",
+                        "italic"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "bold italic ",
+                  "box": {
+                    "x": 97.08740234375,
+                    "y": 0,
+                    "width": 65.66650390625,
+                    "height": 22.86552734375
+                  },
+                  "textX": 97.08740234375,
+                  "baseline": 16.48232421875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "italic750",
+                      "fontSHA256": "1705b638093c33075bcf4c47724a452d3d57723ed151396daeada37927373fa1",
+                      "family": "Goo Sans",
+                      "weight": 750,
+                      "style": "italic",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "underline"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "underlined ",
+                  "box": {
+                    "x": 162.75390625,
+                    "y": 0,
+                    "width": 68.9736328125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 162.75390625,
+                  "baseline": 16.48232421875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": {
+                      "color": "#425650",
+                      "width": 1,
+                      "y": 17.782324218750002
+                    },
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/font": {
+                      "kind": "path",
+                      "value": "/sys/font/mono"
+                    },
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "bold"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "monospace ",
+                  "box": {
+                    "x": 231.7275390625,
+                    "y": 0,
+                    "width": 78.0126953125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 231.7275390625,
+                  "baseline": 16.48232421875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "mono700",
+                      "fontSHA256": "c0115db674622a13e9281c6433e429e6e0dc921c648445aab82a433acb95444a",
+                      "family": "Goo Mono",
+                      "weight": 700,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "path",
+                      "value": "/demo/note"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "linked item ",
+                  "box": {
+                    "x": 309.740234375,
+                    "y": 0,
+                    "width": 70.33203125,
+                    "height": 22.86552734375
+                  },
+                  "textX": 309.740234375,
+                  "baseline": 16.48232421875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "path",
+                        "path": "/demo/note"
+                      }
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 380.072265625,
+                "height": 22.86552734375
+              },
+              "textX": 0,
+              "baseline": 16.48232421875,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "wraps across several lines web documentation",
+              "runs": [
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "path",
+                      "value": "/demo/note"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "wraps across several lines ",
+                  "box": {
+                    "x": 0,
+                    "y": 22.86552734375,
+                    "width": 166.50537109375,
+                    "height": 22.86552734375
+                  },
+                  "textX": 0,
+                  "baseline": 39.3478515625,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "path",
+                        "path": "/demo/note"
+                      }
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "weblink",
+                      "value": "https://example.com/docs"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "web documentation",
+                  "box": {
+                    "x": 166.50537109375,
+                    "y": 22.86552734375,
+                    "width": 121.77978515625,
+                    "height": 22.86552734375
+                  },
+                  "textX": 166.50537109375,
+                  "baseline": 39.3478515625,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 13.0,
+                      "lineHeight": 22.86552734375,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "weblink",
+                        "href": "https://example.com/docs"
+                      }
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 0,
+                "y": 22.86552734375,
+                "width": 288.28515625,
+                "height": 22.86552734375
+              },
+              "textX": 0,
+              "baseline": 39.3478515625,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "run-styles-scaled-rtl",
+    "html": "<div class=\"goo-surface\" dir=\"rtl\" style=\"width:360.0px;--goo-text-scale:2.0\"><div class=\"goo-node goo-text goo-body\" data-node=\"styled\" data-slot=\"body\" style=\"width:360.0px;margin-inline-start:0.0px\" data-leaf=\"1\"><span class=\"goo-ascii-line\">Plain <span style=\"font-family:&#39;Goo Sans&#39;;font-weight:750;font-style:normal;font-synthesis:none\">bold </span><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:italic;font-synthesis:none\">italic </span><span style=\"font-family:&#39;Goo Run italic750&#39;;font-weight:750;font-style:italic;font-synthesis:none\">bold italic </span></span><span class=\"goo-ascii-line\"><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:0.1em\">underlined </span><span style=\"font-family:&#39;Goo Run mono700&#39;;font-weight:700;font-style:normal;font-synthesis:none\">monospace </span></span><span class=\"goo-ascii-line\"><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;path&quot;,&quot;path&quot;:&quot;/demo/note&quot;}\">linked item wraps across </span></span><span class=\"goo-ascii-line\"><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;path&quot;,&quot;path&quot;:&quot;/demo/note&quot;}\">several lines </span><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;weblink&quot;,&quot;href&quot;:&quot;https://example.com/docs&quot;}\">web </span></span><span class=\"goo-ascii-line\"><span style=\"font-family:&#39;Goo Sans&#39;;font-weight:400;font-style:normal;font-synthesis:none;color:#34573e;background:#e7eedf;box-shadow:inset 0 0 0 1px #688b43;border-radius:2px;box-decoration-break:clone\" role=\"link\" data-goo-link=\"{&quot;kind&quot;:&quot;weblink&quot;,&quot;href&quot;:&quot;https://example.com/docs&quot;}\">documentation</span></span></div></div>",
+    "display": {
+      "version": 2,
+      "profile": {
+        "id": "mash-goo",
+        "version": 1,
+        "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+      },
+      "context": {
+        "width": 360.0,
+        "textScale": 2.0,
+        "direction": "rtl"
+      },
+      "coordinates": "absolute-css-px",
+      "width": 360.0,
+      "height": 228.6552734375,
+      "nodes": [
+        {
+          "id": "styled",
+          "parentId": null,
+          "kind": "text",
+          "role": "body",
+          "slot": "body",
+          "paint": {
+            "version": 1,
+            "units": "css-px",
+            "colorSpace": "srgb",
+            "foreground": "#425650",
+            "background": {
+              "kind": "none"
+            },
+            "border": {
+              "width": 0,
+              "color": "#425650"
+            },
+            "corners": {
+              "kind": "radius",
+              "radius": 0
+            },
+            "clip": false,
+            "states": {
+              "highlight": {
+                "width": 2,
+                "color": "#688b43",
+                "offset": 3
+              }
+            }
+          },
+          "semantics": {
+            "version": 1,
+            "role": "text",
+            "label": "Plain bold italic bold italic underlined monospace linked item wraps across several lines web documentation"
+          },
+          "config": {},
+          "payload": "Plain bold italic bold italic underlined monospace linked item wraps across several lines web documentation",
+          "textRuns": [
+            {
+              "myth": {},
+              "lang": {
+                "en": {
+                  "txt": "Plain "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "bold"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "bold "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "italic"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "italic "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "bold",
+                    "italic"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "bold italic "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "underline"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "underlined "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/font": {
+                  "kind": "path",
+                  "value": "/sys/font/mono"
+                },
+                "/sys/modifiers": {
+                  "kind": "modifiers",
+                  "value": [
+                    "bold"
+                  ]
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "monospace "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/link": {
+                  "kind": "path",
+                  "value": "/demo/note"
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "linked item wraps across several lines "
+                }
+              }
+            },
+            {
+              "myth": {
+                "/sys/link": {
+                  "kind": "weblink",
+                  "value": "https://example.com/docs"
+                }
+              },
+              "lang": {
+                "en": {
+                  "txt": "web documentation"
+                }
+              }
+            }
+          ],
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360.0,
+            "height": 228.6552734375
+          },
+          "textStyle": {
+            "fontId": "sans400",
+            "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+            "family": "Goo Sans",
+            "weight": 400,
+            "style": "normal",
+            "fontSize": 26.0,
+            "lineHeight": 45.7310546875,
+            "letterSpacing": 0,
+            "insetX": 0,
+            "insetY": 0,
+            "kerning": false,
+            "ligatures": false
+          },
+          "lines": [
+            {
+              "text": "Plain bold italic bold italic ",
+              "runs": [
+                {
+                  "myth": {},
+                  "lang": "en",
+                  "text": "Plain ",
+                  "box": {
+                    "x": 34.4921875,
+                    "y": 0,
+                    "width": 66.47265625,
+                    "height": 45.7310546875
+                  },
+                  "textX": 34.4921875,
+                  "baseline": 32.9646484375
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "bold"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "bold ",
+                  "box": {
+                    "x": 100.96484375,
+                    "y": 0,
+                    "width": 62.1181640625,
+                    "height": 45.7310546875
+                  },
+                  "textX": 100.96484375,
+                  "baseline": 32.9646484375,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans750",
+                      "fontSHA256": "0423cf606b70d0bf3140a09bfce422016f4e5e5beb9d743fd058359370b40623",
+                      "family": "Goo Sans",
+                      "weight": 750,
+                      "style": "normal",
+                      "fontSize": 26.0,
+                      "lineHeight": 45.7310546875,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "italic"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "italic ",
+                  "box": {
+                    "x": 163.0830078125,
+                    "y": 0,
+                    "width": 65.583984375,
+                    "height": 45.7310546875
+                  },
+                  "textX": 163.0830078125,
+                  "baseline": 32.9646484375,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "italic400",
+                      "fontSHA256": "35a38341164b786e373c2af0ae181ee4ffbf2249b307792b95f59adcae8f545a",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "italic",
+                      "fontSize": 26.0,
+                      "lineHeight": 45.7310546875,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "bold",
+                        "italic"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "bold italic ",
+                  "box": {
+                    "x": 228.6669921875,
+                    "y": 0,
+                    "width": 131.3330078125,
+                    "height": 45.7310546875
+                  },
+                  "textX": 228.6669921875,
+                  "baseline": 32.9646484375,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "italic750",
+                      "fontSHA256": "1705b638093c33075bcf4c47724a452d3d57723ed151396daeada37927373fa1",
+                      "family": "Goo Sans",
+                      "weight": 750,
+                      "style": "italic",
+                      "fontSize": 26.0,
+                      "lineHeight": 45.7310546875,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 34.4921875,
+                "y": 0,
+                "width": 325.5078125,
+                "height": 45.7310546875
+              },
+              "textX": 34.4921875,
+              "baseline": 32.9646484375,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "underlined monospace ",
+              "runs": [
+                {
+                  "myth": {
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "underline"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "underlined ",
+                  "box": {
+                    "x": 66.02734375,
+                    "y": 45.7310546875,
+                    "width": 137.947265625,
+                    "height": 45.7310546875
+                  },
+                  "textX": 66.02734375,
+                  "baseline": 78.695703125,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 26.0,
+                      "lineHeight": 45.7310546875,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": {
+                      "color": "#425650",
+                      "width": 1,
+                      "y": 81.29570312499999
+                    },
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/font": {
+                      "kind": "path",
+                      "value": "/sys/font/mono"
+                    },
+                    "/sys/modifiers": {
+                      "kind": "modifiers",
+                      "value": [
+                        "bold"
+                      ]
+                    }
+                  },
+                  "lang": "en",
+                  "text": "monospace ",
+                  "box": {
+                    "x": 203.974609375,
+                    "y": 45.7310546875,
+                    "width": 156.025390625,
+                    "height": 45.7310546875
+                  },
+                  "textX": 203.974609375,
+                  "baseline": 78.695703125,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "mono700",
+                      "fontSHA256": "c0115db674622a13e9281c6433e429e6e0dc921c648445aab82a433acb95444a",
+                      "family": "Goo Mono",
+                      "weight": 700,
+                      "style": "normal",
+                      "fontSize": 26.0,
+                      "lineHeight": 45.7310546875,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#425650",
+                    "highlight": null,
+                    "underline": null,
+                    "semantics": {
+                      "role": "text",
+                      "target": null
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 66.02734375,
+                "y": 45.7310546875,
+                "width": 293.97265625,
+                "height": 45.7310546875
+              },
+              "textX": 66.02734375,
+              "baseline": 78.695703125,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "linked item wraps across ",
+              "runs": [
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "path",
+                      "value": "/demo/note"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "linked item wraps across ",
+                  "box": {
+                    "x": 47.1240234375,
+                    "y": 91.462109375,
+                    "width": 312.8759765625,
+                    "height": 45.7310546875
+                  },
+                  "textX": 47.1240234375,
+                  "baseline": 124.4267578125,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 26.0,
+                      "lineHeight": 45.7310546875,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "path",
+                        "path": "/demo/note"
+                      }
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 47.1240234375,
+                "y": 91.462109375,
+                "width": 312.8759765625,
+                "height": 45.7310546875
+              },
+              "textX": 47.1240234375,
+              "baseline": 124.4267578125,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "several lines web ",
+              "runs": [
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "path",
+                      "value": "/demo/note"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "several lines ",
+                  "box": {
+                    "x": 139.533203125,
+                    "y": 137.1931640625,
+                    "width": 160.798828125,
+                    "height": 45.7310546875
+                  },
+                  "textX": 139.533203125,
+                  "baseline": 170.15781249999998,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 26.0,
+                      "lineHeight": 45.7310546875,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "path",
+                        "path": "/demo/note"
+                      }
+                    }
+                  }
+                },
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "weblink",
+                      "value": "https://example.com/docs"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "web ",
+                  "box": {
+                    "x": 300.33203125,
+                    "y": 137.1931640625,
+                    "width": 59.66796875,
+                    "height": 45.7310546875
+                  },
+                  "textX": 300.33203125,
+                  "baseline": 170.15781249999998,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 26.0,
+                      "lineHeight": 45.7310546875,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "weblink",
+                        "href": "https://example.com/docs"
+                      }
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 139.533203125,
+                "y": 137.1931640625,
+                "width": 220.466796875,
+                "height": 45.7310546875
+              },
+              "textX": 139.533203125,
+              "baseline": 170.15781249999998,
+              "prefixAdvance": 0
+            },
+            {
+              "text": "documentation",
+              "runs": [
+                {
+                  "myth": {
+                    "/sys/link": {
+                      "kind": "weblink",
+                      "value": "https://example.com/docs"
+                    }
+                  },
+                  "lang": "en",
+                  "text": "documentation",
+                  "box": {
+                    "x": 176.1083984375,
+                    "y": 182.92421875,
+                    "width": 183.8916015625,
+                    "height": 45.7310546875
+                  },
+                  "textX": 176.1083984375,
+                  "baseline": 215.8888671875,
+                  "resolved": {
+                    "version": 1,
+                    "textStyle": {
+                      "fontId": "sans400",
+                      "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+                      "family": "Goo Sans",
+                      "weight": 400,
+                      "style": "normal",
+                      "fontSize": 26.0,
+                      "lineHeight": 45.7310546875,
+                      "letterSpacing": 0,
+                      "insetX": 0,
+                      "insetY": 0,
+                      "kerning": false,
+                      "ligatures": false
+                    },
+                    "foreground": "#34573e",
+                    "highlight": {
+                      "fill": "#e7eedf",
+                      "stroke": "#688b43",
+                      "width": 1,
+                      "radius": 2
+                    },
+                    "underline": null,
+                    "semantics": {
+                      "role": "link",
+                      "target": {
+                        "kind": "weblink",
+                        "href": "https://example.com/docs"
+                      }
+                    }
+                  }
+                }
+              ],
+              "box": {
+                "x": 176.1083984375,
+                "y": 182.92421875,
+                "width": 183.8916015625,
+                "height": 45.7310546875
+              },
+              "textX": 176.1083984375,
+              "baseline": 215.8888671875,
+              "prefixAdvance": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

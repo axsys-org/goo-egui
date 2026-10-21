@@ -1,0 +1,51 @@
+[
+  {
+    "label": "working-tree",
+    "compiler_cache": "inherited",
+    "startup_seconds": 63.1006036659237,
+    "first_seconds": 0.19845945807173848,
+    "warm_median_seconds": 0.15524249989539385,
+    "samples": [
+      {
+        "width": 640,
+        "seconds": 0.19845945807173848,
+        "bytes": 24397
+      },
+      {
+        "width": 640,
+        "seconds": 0.15132795902900398,
+        "bytes": 24397
+      },
+      {
+        "width": 640,
+        "seconds": 0.15272291586734354,
+        "bytes": 24397
+      },
+      {
+        "width": 640,
+        "seconds": 0.15776208392344415,
+        "bytes": 24397
+      },
+      {
+        "width": 640,
+        "seconds": 0.15890116593800485,
+        "bytes": 24397
+      },
+      {
+        "width": 420,
+        "seconds": 0.16704141697846353,
+        "bytes": 24744
+      },
+      {
+        "width": 800,
+        "seconds": 0.15181554085575044,
+        "bytes": 24397
+      },
+      {
+        "width": 420,
+        "seconds": 0.14177545811980963,
+        "bytes": 24744
+      }
+    ]
+  }
+]

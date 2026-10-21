@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-19",
+  "heads": {
+    "reaver": "04641815e49ccafb032b94d0ba59b02529273a8d",
+    "portable_server": "a1a2bb4df523419cb225f9431eab03b06e997534",
+    "uikit": "e1dbdfde6dd5870d85b41cfdef0d67e615ecd721"
+  },
+  "sha256": {
+    "/Users/test/dev/reaver-two/extras/mounts/goo/PORTABLE.md": "88a16a553f1ef511d6ea0452f7bb5b7c00f102cbf517d38ea6f569c8bc5a6fee",
+    "/Users/test/dev/reaver-two/extras/mounts/goo/HTML.md": "864b9e693678a6d5d320912b42ef81344e4c34575a91d8a4ea4106b0496f3946",
+    "/Users/test/dev/reaver-two/extras/mounts/goo/prepared.foil": "836de56ba53abf991f2360787f3511e4ee8863337fc4834a95b5b215e6d1b812",
+    "/Users/test/dev/reaver-two/extras/mounts/explorer/goo_browser.foil": "ba43b2299a7695f3a69cdd13fdbcc7d5a31a30e01680a1490db2d3ee799471ec",
+    "/Users/test/dev/reaver-two/extras/mounts/explorer/goo-actions.js": "ddd213b31261836ce0dc7e21ad8a65a71abead974d0b7c782a9236ac7e1a194e",
+    "/Users/test/dev/reaver-two/extras/mounts/explorer/goo-session.js": "559eb22aca1634ba058c77471fee049a6dab69820178e15c03e6101fba25d6d8",
+    "/Users/test/dev/reaver-two/extras/mounts/explorer/goo-panes.js": "4819cdfe94201ad91116f8553bc6abf8c5f5fcafda7f3a03f886b4760cf11f0b",
+    "/Users/test/dev/shrine_ios/GOO_RENDERER_SPEC.md": "1a518f0b1acb08750ccb0743d75dd41cd4df4322ab9e69269b92978986944e97",
+    "/Users/test/dev/shrine_ios/GOO_PARITY_ROADMAP.md": "b1c72883605d3616f99488205ccbd1a375f99acc27e7a9bd5de8f7309e90b268",
+    "/Users/test/dev/shrine_ios/README.md": "3efdacba89f992cdf40c8661138bfc4ca19502e65d4f8a8025a7946236ba790f",
+    "/Users/test/dev/shrine_ios/shrine_ios/Goo/GooClient.swift": "2ea8311a4a041a1ac6c00188e7998d0da921e8d386a2fd0937e79441b25e63bf",
+    "/Users/test/dev/shrine_ios/shrine_ios/Goo/GooEditorOwner.swift": "b77739ef2dcc8ec37812bb742179dcb8565123b4c4df9a27dc6aa3d44e3afdd1",
+    "/Users/test/dev/shrine_ios/shrine_ios/Goo/GooDeckSession.swift": "637d3b218d472350e8991fe4ed026bc617318d158bf196930a2c54a0778a9f3c",
+    "/Users/test/dev/shrine_ios/shrine_ios/Goo/GooSurfaceView.swift": "cf0c2de1aa8ec2e67831a664055422b91abf5ec52b978098c1eb16a0e5a0bd80",
+    "assets/Inter-OFL.txt": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+    "assets/goo-Sans650.ttf": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+    "assets/goo-Mono400.ttf": "15d73e236388b3f8f7703dc4ff04a9ec41e095d01d94bd6d243f908e3172e41b",
+    "assets/goo-Sans520.ttf": "7be82064c4992983a18fefe238e0f734a60c40dcddd8b83eea864acaa58427c0",
+    "assets/goo-Sans750.ttf": "0423cf606b70d0bf3140a09bfce422016f4e5e5beb9d743fd058359370b40623",
+    "assets/goo-Sans550.ttf": "1fcec774cd5d059f1526792d770516ed07c3689a281540b4c7afaf91c9d4da46",
+    "assets/goo-Sans620.ttf": "ad2721daa8d7777c6de64887aedab0b923a873213cb7b790e48e6b573b801e45",
+    "assets/goo-Sans400.ttf": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+    "assets/RobotoMono-OFL.txt": "50ab8dd54680d3473f649c9db86fece88434d097c7834475c1c72d2f8c429215",
+    "assets/assets.json": "93bd2ed88b7e9eb7dc8e801439a84cfbc070d11783b57e179d15a0d9644a9df7",
+    "assets/goo-Italic400.ttf": "35a38341164b786e373c2af0ae181ee4ffbf2249b307792b95f59adcae8f545a",
+    "assets/profile.json": "52d325ea3914472e7ce7d9d67a401c1f7eece36da876c9588586650da69808ca",
+    "tests/fixtures/deck.json": "4f3604065c8b26a7d13b0ef1708d3113d6ee44c86b7b1ebace79f9b156d3fea3",
+    "tests/fixtures/live-view.json": "aa9de5bec5432f8c7b1ad6b910944881065e0abfc0431bd7c953173452164339",
+    "tests/fixtures/portable-displays.json": "f893065cfc80b3d5f8822422df652e4c1c1a4d801d127985ba402133c391c756",
+    "tests/fixtures/deck-source.json": "98a846493059c72a800ab493ce1ac1e8df47c4a9f8a708d7b0b8669daf4fa24b"
+  },
+  "client_sha256": {
+    "src/session.rs": "9c741d256204adda66611853459655ee14a63df4404cc9a0010dbde29c68e421",
+    "src/painter.rs": "db4ede05584680c15ebb63a60254b44217e694e853df6c1eb56011cdc10f0ae8",
+    "src/transport.rs": "205f4c7c7d5103b70d2748478b92af679bba528470c553abc9dc47bee09dde2f",
+    "src/lib.rs": "55bc4aa92ae5591f803cf99c8997665da493331b361ffb6e40f563fc9fa912d0",
+    "src/main.rs": "df85a33de9203a06c1379d6c36c64105fa1e71f0c1403885f1e683af76024a0f",
+    "src/model.rs": "148677e456df8ff132f3f49d7f10db8883008f7fe442f32c51f20d8955385e5a",
+    "tests/live.rs": "e99d552010c8c83ff5fce673ac20af2e3ad6b43ad566463011cae46350af8a4b",
+    "tests/contracts.rs": "d25b1406a238e421b65a013d502f710bfdc0b276dad2ced8f3ab0d1a54fd4834",
+    "Cargo.lock": "2581038f92496ee685fbfd6abffdafddf7b85ee055e0c689cb5e1782161f21c1",
+    "scripts/verify-live.py": "a648fd8a598a7fb6cb732fffe827ffd4fd98989a650fc11616cbd52f3091a192"
+  }
+}

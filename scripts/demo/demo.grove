@@ -1,0 +1,93 @@
+#import text=lib/grove/types/text
+#import req=sys/req
+#import res=sys/res
+#import lede=sys/lede
+
+note =
+  @role
+  req: text
+  res: text
+
+editor =
+  @view
+  #on ; %/note
+  #for ; /sys/slot/content
+  note => col {
+    show(note.req, '/sys/slot/title)
+    show("Prepared by Goo. Rendered with Rust and egui.", '/sys/slot/subtitle)
+    show(note.req, '/sys/slot/body)
+    show(note.res, '/sys/slot/summary)
+    group(on = note, action = .poke, myth = {
+      '/sys/req = .input(note.req)
+      '/sys/res = .input(note.res)
+    }) {
+      col {
+        show("TITLE", '/sys/slot/label)
+        input('/sys/req)
+        show("NOTE", '/sys/slot/label)
+        input('/sys/res)
+        action("Save note")
+      }
+    }
+    show("Change a field and save. The preview above is read back from Reaver.", '/sys/slot/hint)
+  }
+
+"/note" =
+  @tree
+  req: "Hello from Reaver"
+  res: "One view, alive on your desktop."
+
+notebook =
+  @role
+  lede: text
+
+summary =
+  @view
+  #on ; %/note
+  #for ; /sys/slot/summary
+  note => col {
+    show(note.req, '/sys/slot/label)
+    show(note.res, '/sys/slot/summary)
+  }
+
+workspace =
+  @pane
+  #on ; %/notebook
+  #for ; /sys/slot/workspace
+  notebook => selection('/current, source = '/0x11/app/ios_demo/notes) {
+    split {
+      list('/notes, source = '/0x11/app/ios_demo/notes, selection = '/current, slot = '/sys/slot/summary)
+      follow('/detail, selection = '/current, slot = '/sys/slot/content)
+    }
+  }
+
+"/workspace" =
+  @tree
+  lede: "Living notes"
+
+"/notes" =
+  @tree
+
+"/notes/a" =
+  @tree
+  req: "Note A"
+  res: "A place to start. Edit me, then choose another note."
+
+"/notes/b" =
+  @tree
+  req: "Note B"
+  res: "A different object, with its own working state."
+
+"/notes/c" =
+  @tree
+  req: "Note C"
+  res: "Selection stays local. Saving changes Reaver."
+
+editors =
+  @pane
+  #on ; %/notebook
+  #for ; /sys/slot/editors
+  notebook => deck('/editors) {
+    pane(%/workspace, key = '/First)
+    pane(%/workspace, key = '/Second)
+  }

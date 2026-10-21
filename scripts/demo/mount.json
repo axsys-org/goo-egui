@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "name": "ios-demo",
+  "dependencies": [
+    "explorer",
+    "codecs"
+  ],
+  "modules": {
+    "ios_demo_mount": "activation.foil"
+  },
+  "grove": [
+    {
+      "root": [
+        "gov",
+        "ios_demo"
+      ],
+      "files": [
+        "demo.grove"
+      ]
+    }
+  ],
+  "assets": {},
+  "files": {},
+  "roots": [
+    [
+      "lib",
+      "ios_demo_mount"
+    ],
+    [
+      "gov",
+      "ios_demo"
+    ]
+  ],
+  "tests": {},
+  "activate": {
+    "module": "ios_demo_mount",
+    "entry": [
+      "ios_demo_mount",
+      "install"
+    ]
+  }
+}

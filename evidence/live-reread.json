@@ -1,0 +1,1182 @@
+{
+  "version": 1,
+  "ok": true,
+  "profile": {
+    "id": "mash-goo",
+    "version": 1,
+    "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+  },
+  "context": {
+    "width": 700.0,
+    "textScale": 1.0,
+    "direction": "ltr"
+  },
+  "snapshot": {
+    "life": "1",
+    "subject": "/0x11/app/ios_demo/note",
+    "target": "/0x11/app/ios_demo/note",
+    "expected": "2",
+    "displayed": "2",
+    "publication": "6"
+  },
+  "view": "/0x11/gov/ios_demo/editor",
+  "kind": "view",
+  "display": {
+    "version": 1,
+    "profile": {
+      "id": "mash-goo",
+      "version": 1,
+      "revision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979"
+    },
+    "context": {
+      "width": 700.0,
+      "textScale": 1.0,
+      "direction": "ltr"
+    },
+    "coordinates": "absolute-css-px",
+    "width": 700.0,
+    "height": 362.91999999999996,
+    "nodes": [
+      {
+        "id": "/0x11/gov/ios_demo/editor:0",
+        "parentId": null,
+        "kind": "group",
+        "slot": "col",
+        "payload": "",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 700.0,
+          "height": 362.91999999999996
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 14.0,
+          "lineHeight": 20.72,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#182c30",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#182c30"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "group",
+          "label": "",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:1",
+        "parentId": "/0x11/gov/ios_demo/editor:0",
+        "kind": "group",
+        "slot": "col",
+        "payload": "",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 700.0,
+          "height": 362.91999999999996
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 14.0,
+          "lineHeight": 20.72,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#182c30",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#182c30"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "group",
+          "label": "",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:2",
+        "parentId": "/0x11/gov/ios_demo/editor:1",
+        "kind": "text",
+        "slot": "title",
+        "payload": "Rust egui persisted roundtrip",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 700.0,
+          "height": 25.959999999999994
+        },
+        "textStyle": {
+          "fontId": "sans620",
+          "fontSHA256": "ad2721daa8d7777c6de64887aedab0b923a873213cb7b790e48e6b573b801e45",
+          "family": "Goo Sans",
+          "weight": 620,
+          "style": "normal",
+          "fontSize": 22.0,
+          "lineHeight": 25.959999999999994,
+          "letterSpacing": -0.65,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [
+          {
+            "text": "Rust egui persisted roundtrip",
+            "box": {
+              "x": 0.0,
+              "y": 0.0,
+              "width": 290.96542968750003,
+              "height": 25.959999999999994
+            },
+            "textX": 0.0,
+            "baseline": 20.982929687499997,
+            "prefixAdvance": 0.0
+          }
+        ],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#182c30",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#182c30"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "text",
+          "label": "Rust egui persisted roundtrip",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:3",
+        "parentId": "/0x11/gov/ios_demo/editor:1",
+        "kind": "text",
+        "slot": "/sys/slot/subtitle",
+        "payload": "Prepared by Goo. Rendered with Rust and egui.",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 41.959999999999994,
+          "width": 700.0,
+          "height": 20.72
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 14.0,
+          "lineHeight": 20.72,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [
+          {
+            "text": "Prepared by Goo. Rendered with Rust and egui.",
+            "box": {
+              "x": 0.0,
+              "y": 41.959999999999994,
+              "width": 314.384765625,
+              "height": 20.72
+            },
+            "textX": 0.0,
+            "baseline": 57.41277343749999,
+            "prefixAdvance": 0.0
+          }
+        ],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#182c30",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#182c30"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "text",
+          "label": "Prepared by Goo. Rendered with Rust and egui.",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:4",
+        "parentId": "/0x11/gov/ios_demo/editor:1",
+        "kind": "text",
+        "slot": "/sys/slot/body",
+        "payload": "Rust egui persisted roundtrip",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 78.67999999999999,
+          "width": 700.0,
+          "height": 20.72
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 14.0,
+          "lineHeight": 20.72,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [
+          {
+            "text": "Rust egui persisted roundtrip",
+            "box": {
+              "x": 0.0,
+              "y": 78.67999999999999,
+              "width": 191.5771484375,
+              "height": 20.72
+            },
+            "textX": 0.0,
+            "baseline": 94.13277343749999,
+            "prefixAdvance": 0.0
+          }
+        ],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#182c30",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#182c30"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "text",
+          "label": "Rust egui persisted roundtrip",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:5",
+        "parentId": "/0x11/gov/ios_demo/editor:1",
+        "kind": "text",
+        "slot": "summary",
+        "payload": "One view, alive on your desktop.",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 115.4,
+          "width": 700.0,
+          "height": 19.5
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 13.0,
+          "lineHeight": 19.5,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [
+          {
+            "text": "One view, alive on your desktop.",
+            "box": {
+              "x": 0.0,
+              "y": 115.4,
+              "width": 200.8271484375,
+              "height": 19.5
+            },
+            "textX": 0.0,
+            "baseline": 129.87900390624998,
+            "prefixAdvance": 0.0
+          }
+        ],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#5b6d65",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#5b6d65"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "text",
+          "label": "One view, alive on your desktop.",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:6",
+        "parentId": "/0x11/gov/ios_demo/editor:1",
+        "kind": "group",
+        "slot": "group",
+        "payload": "",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 150.89999999999998,
+          "width": 700.0,
+          "height": 175.3
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 14.0,
+          "lineHeight": 20.72,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#182c30",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#182c30"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "group",
+          "label": "",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:7",
+        "parentId": "/0x11/gov/ios_demo/editor:6",
+        "kind": "group",
+        "slot": "col",
+        "payload": "",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 150.89999999999998,
+          "width": 290.0,
+          "height": 175.3
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 14.0,
+          "lineHeight": 20.72,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#182c30",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#182c30"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "group",
+          "label": "",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:8",
+        "parentId": "/0x11/gov/ios_demo/editor:7",
+        "kind": "text",
+        "slot": "label",
+        "payload": "TITLE",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 150.89999999999998,
+          "width": 290.0,
+          "height": 15.95
+        },
+        "textStyle": {
+          "fontId": "sans650",
+          "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+          "family": "Goo Sans",
+          "weight": 650,
+          "style": "normal",
+          "fontSize": 11.0,
+          "lineHeight": 15.95,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [
+          {
+            "text": "TITLE",
+            "box": {
+              "x": 0.0,
+              "y": 150.89999999999998,
+              "width": 30.566894531250004,
+              "height": 15.95
+            },
+            "textX": 0.0,
+            "baseline": 162.87646484374997,
+            "prefixAdvance": 0.0
+          }
+        ],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#3c5750",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#3c5750"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "text",
+          "label": "TITLE",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:9",
+        "parentId": "/0x11/gov/ios_demo/editor:7",
+        "kind": "input",
+        "slot": "input",
+        "payload": "Rust egui persisted roundtrip",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 170.84999999999997,
+          "width": 290.0,
+          "height": 38.0
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 12.0,
+          "lineHeight": 18.0,
+          "letterSpacing": 0.0,
+          "insetX": 22.0,
+          "insetY": 20.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#354e41",
+          "background": {
+            "kind": "solid",
+            "color": "#fffefa",
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 1.0,
+            "color": "#bdcaba"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 5.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": {
+              "width": 3.0,
+              "color": "#6b8dba",
+              "offset": 3.0
+            }
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "textbox",
+          "label": "input",
+          "value": "Rust egui persisted roundtrip",
+          "editable": true,
+          "multiline": false,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:10",
+        "parentId": "/0x11/gov/ios_demo/editor:7",
+        "kind": "text",
+        "slot": "label",
+        "payload": "NOTE",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 224.84999999999997,
+          "width": 290.0,
+          "height": 15.95
+        },
+        "textStyle": {
+          "fontId": "sans650",
+          "fontSHA256": "c7f25f107c24f91aa8cdf2c908bd571a2c1461839f0a148e455cd3ad28971ffb",
+          "family": "Goo Sans",
+          "weight": 650,
+          "style": "normal",
+          "fontSize": 11.0,
+          "lineHeight": 15.95,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [
+          {
+            "text": "NOTE",
+            "box": {
+              "x": 0.0,
+              "y": 224.84999999999997,
+              "width": 30.80859375,
+              "height": 15.95
+            },
+            "textX": 0.0,
+            "baseline": 236.82646484374993,
+            "prefixAdvance": 0.0
+          }
+        ],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#3c5750",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#3c5750"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "text",
+          "label": "NOTE",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:11",
+        "parentId": "/0x11/gov/ios_demo/editor:7",
+        "kind": "input",
+        "slot": "input",
+        "payload": "One view, alive on your desktop.",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 244.79999999999995,
+          "width": 290.0,
+          "height": 38.0
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 12.0,
+          "lineHeight": 18.0,
+          "letterSpacing": 0.0,
+          "insetX": 22.0,
+          "insetY": 20.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#354e41",
+          "background": {
+            "kind": "solid",
+            "color": "#fffefa",
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 1.0,
+            "color": "#bdcaba"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 5.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": {
+              "width": 3.0,
+              "color": "#6b8dba",
+              "offset": 3.0
+            }
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "textbox",
+          "label": "input",
+          "value": "One view, alive on your desktop.",
+          "editable": true,
+          "multiline": false,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:12",
+        "parentId": "/0x11/gov/ios_demo/editor:7",
+        "kind": "button",
+        "slot": "action",
+        "payload": "Save note",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 292.79999999999995,
+          "width": 79.0,
+          "height": 33.4
+        },
+        "textStyle": {
+          "fontId": "sans550",
+          "fontSHA256": "1fcec774cd5d059f1526792d770516ed07c3689a281540b4c7afaf91c9d4da46",
+          "family": "Goo Sans",
+          "weight": 550,
+          "style": "normal",
+          "fontSize": 11.0,
+          "lineHeight": 15.399999999999999,
+          "letterSpacing": 0.0,
+          "insetX": 26.0,
+          "insetY": 18.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [
+          {
+            "text": "Save note",
+            "box": {
+              "x": 13.114501953125,
+              "y": 301.79999999999995,
+              "width": 52.77099609374999,
+              "height": 15.399999999999999
+            },
+            "textX": 13.114501953125,
+            "baseline": 313.50146484374994,
+            "prefixAdvance": 0.0
+          }
+        ],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#000000",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 1.0,
+            "color": "#c6d0bf"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 5.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": {
+              "width": 3.0,
+              "color": "#6b8dba",
+              "offset": 3.0
+            }
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "button",
+          "label": "Save note",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      },
+      {
+        "id": "/0x11/gov/ios_demo/editor:13",
+        "parentId": "/0x11/gov/ios_demo/editor:1",
+        "kind": "text",
+        "slot": "/sys/slot/hint",
+        "payload": "Change a field and save. The preview above is read back from Reaver.",
+        "src": null,
+        "box": {
+          "x": 0.0,
+          "y": 342.2,
+          "width": 700.0,
+          "height": 20.72
+        },
+        "textStyle": {
+          "fontId": "sans400",
+          "fontSHA256": "d8bc66455217f937fee0de60ce8bd825c740abfa09de81a0673be99e43a55a2f",
+          "family": "Goo Sans",
+          "weight": 400,
+          "style": "normal",
+          "fontSize": 14.0,
+          "lineHeight": 20.72,
+          "letterSpacing": 0.0,
+          "insetX": 0.0,
+          "insetY": 0.0,
+          "kerning": false,
+          "ligatures": false
+        },
+        "lines": [
+          {
+            "text": "Change a field and save. The preview above is read back from Reaver.",
+            "box": {
+              "x": 0.0,
+              "y": 342.2,
+              "width": 468.671875,
+              "height": 20.72
+            },
+            "textX": 0.0,
+            "baseline": 357.6527734375,
+            "prefixAdvance": 0.0
+          }
+        ],
+        "paint": {
+          "version": 1,
+          "units": "css-px",
+          "colorSpace": "srgb",
+          "foreground": "#182c30",
+          "background": {
+            "kind": "none",
+            "color": null,
+            "angleDegrees": null,
+            "stops": []
+          },
+          "border": {
+            "width": 0.0,
+            "color": "#182c30"
+          },
+          "corners": {
+            "kind": "radius",
+            "radius": 0.0
+          },
+          "clip": false,
+          "states": {
+            "highlight": {
+              "width": 2.0,
+              "color": "#688b43",
+              "offset": 3.0
+            },
+            "focus": null
+          },
+          "marker": null,
+          "image": null
+        },
+        "semantics": {
+          "version": 1,
+          "role": "text",
+          "label": "Change a field and save. The preview above is read back from Reaver.",
+          "value": null,
+          "editable": null,
+          "multiline": null,
+          "range": null
+        }
+      }
+    ]
+  },
+  "controls": [
+    {
+      "id": "/0x11/gov/ios_demo/editor:9",
+      "kind": "input",
+      "control": "0.4.0.1",
+      "slot": "/sys/req",
+      "invoke": true,
+      "become": false,
+      "captures": [],
+      "binding": {
+        "version": 1,
+        "kind": "input",
+        "nodeId": "/0x11/gov/ios_demo/editor:9",
+        "route": "0.4.0.1",
+        "slot": "/sys/req",
+        "captures": [],
+        "presented": true
+      }
+    },
+    {
+      "id": "/0x11/gov/ios_demo/editor:11",
+      "kind": "input",
+      "control": "0.4.0.3",
+      "slot": "/sys/res",
+      "invoke": true,
+      "become": false,
+      "captures": [],
+      "binding": {
+        "version": 1,
+        "kind": "input",
+        "nodeId": "/0x11/gov/ios_demo/editor:11",
+        "route": "0.4.0.3",
+        "slot": "/sys/res",
+        "captures": [],
+        "presented": true
+      }
+    },
+    {
+      "id": "/0x11/gov/ios_demo/editor:12",
+      "kind": "action",
+      "control": "0.4.0.4",
+      "slot": "/",
+      "invoke": true,
+      "become": false,
+      "captures": [],
+      "binding": {
+        "version": 1,
+        "kind": "invoke",
+        "nodeId": "/0x11/gov/ios_demo/editor:12",
+        "route": "0.4.0.4",
+        "slot": "/",
+        "captures": [],
+        "presented": true
+      }
+    }
+  ],
+  "description": null,
+  "host": null
+}

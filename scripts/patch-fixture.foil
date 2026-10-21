@@ -1,0 +1,23 @@
+
+' Disposable conformance population. The reference contract is produced by
+' the same typed native-node path used by Reaver's goo-moodboard.
++ fixture_patch
+  + native
+    \ kind=str args=list[rex]
+    ^ goo/node
+    | goo/node rex/zero_span kind args .nil
+  + named
+    \ name=str value=str
+    ^ rex
+    | rex/nest rex/zero_span "clear" "=" [(rex/word name) (rex/cord value)]
+  + population
+    \ source=str
+    ^ goo_patch/population
+    ?> (./some scene) (patch_demo/read source) (goo_patch/population [])
+    ? !((patch_demo/nodes scene).any((\ n (eq (patch_demo/text "key" n) "source")))) (goo_patch/population [])
+    = named fixture_patch/named
+      args (list/one (rex/cord "note")).snoc((named "target" "/0x11/app/ios_demo/note")).snoc((named "slot" "/sys/slot/content")).snoc((named "label" "Embedded note")).snoc((named "width" "400")).snoc((named "height" "340")).snoc((named "top" "0"))
+      handle (fixture_patch/native "patch_handle" (list/one (rex/cord "move")).snoc((named "label" "Move source")))
+      port (fixture_patch/native "patch_port" (list/one (rex/cord "out")).snoc((named "label" "source out")))
+      body (list/one handle).snoc((fixture_patch/native "patch_presentation" args)).snoc(port)
+    | goo_patch/population [(goo_patch/occurrence "patch_node" "source" body)]

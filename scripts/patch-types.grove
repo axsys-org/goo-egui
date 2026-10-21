@@ -1,0 +1,20 @@
+population_type =
+  @type
+  ! foil
+  goo_patch/population
+  + read
+    \ value=pail
+    ^ maybe[population_type]
+    ?> result=goo_patch/population value .none
+    | ./some result
+  + write
+    \ value=population_type
+    ^ pail
+    value
+  + contract
+    ^ curb
+    | curb/of_type (^ goo_patch/population)
+
+population =
+  @slot
+
