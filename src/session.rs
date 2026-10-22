@@ -22,6 +22,7 @@ pub struct Editor {
     pub publication: Option<String>,
     pub presentation: Option<Presentation>,
     pub fields: BTreeMap<String, Field>,
+    pub rich_fields: BTreeMap<String, crate::rich_text::Draft>,
     pub pending: Option<Invocation>,
     pub sending: bool,
     pub suspended: bool,
@@ -44,6 +45,7 @@ impl Editor {
             publication: None,
             presentation: None,
             fields: BTreeMap::new(),
+            rich_fields: BTreeMap::new(),
             pending: None,
             sending: false,
             suspended: false,
@@ -111,11 +113,50 @@ impl Editor {
                 .as_ref()
                 .is_some_and(|v| *v != p.snapshot.publication);
         let seeds = p.seeds();
+        let changes_encoding = self.presentation.as_ref().is_some_and(|old| {
+            old.controls
+                .iter()
+                .filter(|c| c.kind == "input" && c.binding.presented)
+                .any(|c| {
+                    let rich = |p: &Presentation| {
+                        p.controls
+                            .iter()
+                            .find(|next| next.slot == c.slot && next.binding.presented)
+                            .and_then(|next| {
+                                p.display
+                                    .as_ref()
+                                    .unwrap()
+                                    .nodes
+                                    .iter()
+                                    .find(|n| n.id == next.id)
+                            })
+                            .is_some_and(|n| n.editing.is_some())
+                    };
+                    rich(old) != rich(&p)
+                })
+        });
+        let incompatible_style = self.rich_fields.iter().any(|(slot, draft)| {
+            p.controls
+                .iter()
+                .find(|c| &c.slot == slot && c.binding.presented)
+                .and_then(|c| {
+                    p.display
+                        .as_ref()
+                        .unwrap()
+                        .nodes
+                        .iter()
+                        .find(|n| n.id == c.id)
+                })
+                .and_then(|n| n.editing.as_ref())
+                .is_some_and(|edit| draft.runs().iter().any(|r| edit.style(&r.myth).is_none()))
+        });
         let loses = self
             .fields
             .iter()
             .any(|(k, f)| f.dirty() && !seeds.contains_key(k));
-        if self.composing || ((replacing || loses) && self.dirty()) {
+        if self.composing
+            || ((replacing || loses || changes_encoding || incompatible_style) && self.dirty())
+        {
             self.candidate = Some(p);
             self.status = "Prepared replacement staged; draft retained".into();
             return Ok(false);
@@ -134,8 +175,9 @@ impl Editor {
                 .is_some_and(|v| *v != p.snapshot.publication),
             "Publication replaced; reload declared tabs"
         );
-        if replacing {
+        if replacing || changes_encoding {
             self.fields.clear();
+            self.rich_fields.clear();
             self.id = Uuid::new_v4();
         }
         self.mount(p);
@@ -154,6 +196,39 @@ impl Editor {
                 (k, Field { seed, value })
             })
             .collect();
+        self.rich_fields.retain(|slot, _| {
+            p.controls.iter().any(|c| {
+                &c.slot == slot
+                    && c.binding.presented
+                    && p.display
+                        .as_ref()
+                        .unwrap()
+                        .nodes
+                        .iter()
+                        .any(|n| n.id == c.id && n.editing.is_some())
+            })
+        });
+        for c in &p.controls {
+            if p.display
+                .as_ref()
+                .unwrap()
+                .nodes
+                .iter()
+                .any(|n| n.id == c.id && n.editing.is_some())
+            {
+                let value = &self.fields[&c.slot].value;
+                if self
+                    .rich_fields
+                    .get(&c.slot)
+                    .is_none_or(|d| d.wire() != *value)
+                {
+                    let runs: Vec<TextRun> =
+                        serde_json::from_str(value).expect("structured rich draft");
+                    self.rich_fields
+                        .insert(c.slot.clone(), crate::rich_text::Draft::new(&runs));
+                }
+            }
+        }
         self.presentation = Some(p);
         self.mounted_generation = self.generation;
         self.candidate = None;
@@ -186,6 +261,7 @@ impl Editor {
             "Reload deck to replace membership/publication"
         );
         self.fields.clear();
+        self.rich_fields.clear();
         self.id = Uuid::new_v4();
         self.mount(p);
         Ok(())

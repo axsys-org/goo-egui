@@ -13,3 +13,7 @@ pub mod paint_geometry;
 pub mod patch;
 
 pub mod diagram;
+
+pub mod rich_text;
+
+pub mod protobuf;

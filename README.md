@@ -20,7 +20,7 @@ The unmodified Inspector declaration supplies recursive panes, a namespace outli
 
 Selection, recipe, path and source changes are staged before retiring editors. Dirty departures offer **Stay** or **Discard draft and continue**; unresolved saves and composition block retirement. Compatible refresh and resize retain drafts and widget identities. Window suspension disables actions; resuming refreshes before re-enabling them and retains drafts. Mount publication requires clean, resolved editors; failures retain the installed workspace. An uncertain rescan is not automatically retried: **Check mount status** observes publication without issuing another scan.
 
-**Received workspace Goo** shows the full workspace response. Ordinary surfaces and native content retain right-click inspection; prepared tree rows can also be inspected, and their context menu exposes the member/bundle contract. Nested row/native packets are extracted from received JSON; their formatted fragment is not claimed to be an independent HTTP response. Values uses the server's explicit read-only prepared display; raw typed-value editing through the browser's custom HTML editor is outside this milestone. Use a declared ordinary editor for changes.
+**Received workspace Goo** shows the full workspace response. Ordinary surfaces and native content retain right-click inspection; prepared tree rows can also be inspected, and their context menu exposes the member/bundle contract. Nested row/native packets are extracted from the decoded response; their formatted fragment is not claimed to be an independent HTTP response. Values uses the server's explicit read-only prepared display; raw typed-value editing through the browser's custom HTML editor is outside this milestone. Use a declared ordinary editor for changes.
 
 Explorer admits the Inspector's recursive pane/split/stack, tree selection, follower-with-native-fallback, navigation, and configured mount-rescan contracts. Arbitrary Goo decks still use the separate bounded deck mode. The milestone-2 additions below extend the same owner and action machinery.
 
@@ -139,7 +139,7 @@ Choose a member in either tab, edit TITLE or NOTE, then use the server-declared 
 
 ## Inspect received Goo
 
-Right-click any rendered Goo component to open **Received Goo**, or choose **Inspect Goo** in the toolbar to browse the mounted view's nodes (including groups). **Node + bindings** shows the received node's geometry, text lines, fonts, paint, semantics, and controls joined by `binding.nodeId`. **Full response** includes every received field, including fields this renderer does not consume. It is formatted by default; **Verbatim** shows the original body, and **Copy original response** copies that body exactly.
+Right-click any rendered Goo component to open **Received Goo**, or choose **Inspect Goo** in the toolbar to browse the mounted view's nodes (including groups). **Node + bindings** shows the received node's geometry, text lines, fonts, paint, semantics, and controls joined by `binding.nodeId`. **Full response** includes every received field, including fields this renderer does not consume. It is formatted by default; **Compact JSON** shows the retained JSON representation, and **Copy response as JSON** copies it. For protobuf this is a decoded projection; exact binary bytes are retained separately.
 
 Inspection is a frozen, read-only capture labelled with the originating editor, mounted generation, target, declaration, and publication. Refreshing, switching tabs, or replacing an editor cannot silently retarget it. Right-click again or use **Inspect Goo** to capture the current mounted response. Local unsaved drafts remain separate from server input seeds. Inspection is local and does not issue server requests or activate controls.
 
@@ -220,3 +220,94 @@ Custom namespace fields can carry `goo/text/pail` and use the explicit
 `text(field, slot)` constructor, as in `scripts/text-fixture.grove` and
 `scripts/run-server.py`. Automatic `show()` dispatch currently recognizes only
 registered types. The core text value remains `row[goo/runt]`.
+
+### Rich-text input
+
+Run the disposable typed-save fixture:
+
+```sh
+python3 scripts/run-server.py --reaver ../reaver --port 8199 --explorer --rich-input
+GOO_SERVER=http://127.0.0.1:8199 ./scripts/cargo-macos.sh run -- --single
+```
+
+Select text in the rich editor and use **⌘B / ⌘I / ⌘U** (Ctrl on other platforms),
+or **right-click** for formatting, font selection, and internal/web links.
+Typing at a caret inherits its run's formatting. Undo/redo includes formatting.
+IME preedit is grouped into one undo transaction. History is bounded to 100
+snapshots and approximately 65,536 stored characters (at least one snapshot).
+Clipboard interchange is plain text; pasted text inherits the insertion style.
+English/ASCII remains the server's supported repertoire. Unsupported characters
+stay in the draft and block Save with a diagnostic.
+
+The editor uses egui TextEdit for caret, selection, IME and native input events.
+It uses server-supplied formatting recipes with the toolkit's editing layout;
+static rendered text still uses Reaver's prepared lines and baselines. Structured
+run drafts, selection and undo history belong to the editor owner. A typed save
+freezes the complete run JSON in the existing invocation body and exact retries
+reuse it unchanged.
+
+An input whose stored value is `goo/text/pail` receives display v3 and an explicit
+`editing` contract. Use a declared action argument codec calling `goo_edit/decode`
+to accept the wire string and produce a typed stored value; the disposable
+example is in `scripts/rich-input.grove` and `scripts/text-fixture.grove`.
+The ordinary `.poke` string-input shortcut does not decode rich text.
+Other clients must reject unsupported display v3. Browser rich editing and
+UIKit rich editing are not implemented.
+Links in the editor use the supplied highlight fill; the static renderer also
+paints their supplied border. Link metadata does not enable navigation.
+
+```sh
+./scripts/cargo-macos.sh test --test rich_input
+python3 scripts/verify-live.py --reaver ../reaver --port 8204 --rich-input
+```
+
+The second command creates and removes its own disposable server and delay proxy;
+it tests typed save/reread, draft retention on resize, an unknown outcome, and an
+exact retry without executing the save twice.
+
+
+## Goo protobuf transport
+
+The egui client requests `wire=protobuf-v2` for ordinary prepared views, panes,
+source pages, snapshots and action receipts. The schema is
+`../reaver/extras/mounts/goo/protocol/goo.proto`: named domain messages with
+binary64 geometry, typed text/style/paint records and explicit branded myth
+entries. The rejected generic Value/Object prototype is no longer supported.
+
+```sh
+python3 scripts/run-server.py --rich-input --port 8206
+GOO_SERVER=http://127.0.0.1:8206 ./scripts/cargo-macos.sh run -- --single
+python3 scripts/verify-live.py --rich-input --protobuf --port 8204
+python3 scripts/generate-protobuf-fixtures.py --reaver ../reaver
+```
+
+Ordinary prepared views project the actual preparation objects into typed Foil
+records, then BAT chunks, flattened once at the socket boundary. This path does
+not construct a JSON display or HTML fragment. The existing profile paint table
+and binding descriptors still have small JSON adapters. Pane/tree adapters
+currently project existing server domain APIs into their named message types.
+
+The client deserializes ordinary presentations and sources directly into its
+Rust models. It retains the received protobuf bytes; the inspector builds a JSON
+projection on demand. Pipeline capture, patch packets, and the all-views catalog
+explicitly use their existing JSON endpoints pending dedicated schemas. Native
+inspection capture metadata is also still JSON. Unsupported binary requests for
+pipeline/patch contracts fail explicitly; they are never wrapped in generic
+protobuf values. A render resolving to a patch returns a typed 415 with
+`code=json-contract`; only that explicit read capability permits a JSON retry.
+Actions and receipts never downgrade formats. JSON remains available to
+browser/UIKit consumers.
+
+Requests remain URL-encoded, including frozen action bodies and exact retries.
+Persisted receipt storage is unchanged. This does not alter validation, native
+editing, editor identity, draft guards or unknown-outcome recovery.
+
+
+
+A repeatable JSON/protobuf benchmark is available in
+[tools/transport-bench](tools/transport-bench/README.md). It measures 40 warm
+paired HTTP requests per case on a fresh disposable server, release-mode client
+decoding, payload sizes and client allocation calls. It keeps raw samples and
+checks domain parity (optional presence and empty repeated fields normalized,
+HTML excluded, legacy decimal geometry tolerance 1e-10). Current measurements
+and limits are in [VERIFICATION.md](VERIFICATION.md#domain-protobuf-v2--october-22-2026).

@@ -18,7 +18,10 @@ parser.add_argument('--patch', action='store_true', help='Add the real portable 
 parser.add_argument('--embedded-patch', action='store_true', help='Disposable patch with an embedded note and scene replacement editor')
 parser.add_argument('--tree-fixture', action='store_true', help='Add disposable deep/wide tree conformance records')
 parser.add_argument('--text-fixture', action='store_true', help='Include typed styled text in the disposable editable note')
+parser.add_argument('--rich-input', action='store_true', help='Enable disposable rich-text editing and a typed save action')
 args = parser.parse_args()
+if args.rich_input:
+    args.text_fixture = True
 root = args.reaver.resolve()
 if not (root / 'x/eden').is_file():
     parser.error('Pass --reaver /path/to/reaver')
@@ -46,7 +49,14 @@ with tempfile.TemporaryDirectory(prefix='goo-egui-') as temporary:
         source = source.replace('  req: text\n  res: text', '  req: text\n  res: text\n  %/styled: %/run_text_type', 1)
         source = source.replace('    show(note.res,', '    text(note.styled, \'/sys/slot/body)\n    show(note.res,', 1)
         source = source.replace('\n  res: "', '\n  %/styled: text_fixture/value\n  res: "')
-        (demo / 'demo.grove').write_text((Path(__file__).resolve().parent / 'text-fixture.grove').read_text() + source)
+        prefix = (Path(__file__).resolve().parent / 'text-fixture.grove').read_text()
+        if args.rich_input:
+            source = source.replace('action = .poke', 'action = %/save_rich')
+            source = source.replace("      '/sys/res = .input(note.res)", "      '/sys/res = .input(note.res)\n      '/0x11/gov/ios_demo/styled = .input(note.styled)")
+            source = source.replace('        action("Save note")', '        show("RICH TEXT - select text and right-click to format", \'/sys/slot/label)\n        input(\'/0x11/gov/ios_demo/styled)\n        action("Save note")')
+            prefix = prefix.replace('    ?> value=goo/text/pail value .none\n    | ./some value', '    | goo_edit/decode value')
+            source += (Path(__file__).resolve().parent / 'rich-input.grove').read_text()
+        (demo / 'demo.grove').write_text(prefix + source)
     if args.embedded_patch:
         if args.no_demo:
             parser.error('--embedded-patch requires ios-demo')

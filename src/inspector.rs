@@ -61,10 +61,13 @@ impl Inspection {
             .presentation
             .as_ref()
             .ok_or_else(|| anyhow!("No mounted Goo response"))?;
-        let source = p
-            .received_json
-            .clone()
-            .ok_or_else(|| anyhow!("Original response was not retained"))?;
+        let source = if let Some(bytes) = &p.received_protobuf {
+            serde_json::to_string(&crate::protobuf::decode(bytes)?)?.into()
+        } else {
+            p.received_json
+                .clone()
+                .ok_or_else(|| anyhow!("Original response was not retained"))?
+        };
         let received: Value = serde_json::from_str(&source)?;
         let picked = selected.clone();
         let selected = selected.or_else(|| {
@@ -257,7 +260,7 @@ impl Inspection {
         ui.selectable_value(&mut self.tab, Tab::Response, "Full response");
         ui.selectable_value(&mut self.tab, Tab::Component, "Render node details");
         if self.tab == Tab::Response {
-            ui.checkbox(&mut self.verbatim, "Verbatim");
+            ui.checkbox(&mut self.verbatim, "Compact JSON");
         }
         if self.tab == Tab::Pipeline {
             ui.horizontal(|ui| {
@@ -267,7 +270,7 @@ impl Inspection {
         }
         if ui
             .button(if self.tab == Tab::Response {
-                "Copy original response"
+                "Copy response as JSON"
             } else {
                 "Copy output"
             })

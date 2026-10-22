@@ -43,7 +43,7 @@ fn live_recipe_change_scaled_rtl_and_later_draft_guard() {
     p.validate(&ctx, target).unwrap();
     std::fs::write(
         "evidence/surfaces-rtl-controls.json",
-        p.received_json.as_ref().unwrap().as_bytes(),
+        serde_json::to_vec(&p.received_value().unwrap()).unwrap(),
     )
     .unwrap();
     let mut e = Editor::new(target.into(), "/sys/slot/edit".into());

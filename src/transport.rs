@@ -58,9 +58,27 @@ impl Invocation {
             inputs.keys().eq(p.seeds().keys()) && inputs.values().all(|v| ascii(v)),
             "Input slots mismatch or unsupported non-ASCII text; draft retained"
         );
+        for c in &p.controls {
+            if let Some(n) = p
+                .display
+                .as_ref()
+                .unwrap()
+                .nodes
+                .iter()
+                .find(|n| n.id == c.id)
+                && let Some(edit) = &n.editing
+            {
+                edit.decode(
+                    inputs
+                        .get(&c.slot)
+                        .ok_or_else(|| anyhow::anyhow!("Missing rich input"))?,
+                )?;
+            }
+        }
         let id = Uuid::new_v4().to_string();
         let s = &p.snapshot;
         let mut fields = vec![
+            ("wire".into(), "protobuf-v2".into()),
             ("target".into(), s.subject.clone()),
             ("subject".into(), s.target.clone()),
             ("view".into(), p.view.clone()),
@@ -146,6 +164,25 @@ impl Client {
         ensure!(data.len() <= 8 * 1024 * 1024, "Response exceeds 8 MiB");
         Ok((status, data))
     }
+    fn read_proto(r: reqwest::blocking::Response) -> Result<(u16, Vec<u8>)> {
+        if r.status().is_success() {
+            ensure!(
+                r.headers()
+                    .get(reqwest::header::CONTENT_TYPE)
+                    .and_then(|v| v.to_str().ok())
+                    .and_then(|v| v.split(';').next())
+                    == Some(crate::protobuf::MIME),
+                "Server did not return Goo protobuf"
+            );
+        }
+        let success = r.status().is_success();
+        let result = Self::read(r)?;
+        ensure!(
+            !success || !crate::protobuf::is_json(&result.1),
+            "Expected binary protobuf response"
+        );
+        Ok(result)
+    }
     pub fn render(
         &self,
         target: &str,
@@ -162,19 +199,41 @@ impl Client {
             ("direction".into(), ctx.direction.clone()),
         ];
         append_pipeline(&mut fields);
-        let body = form(fields);
-        let (status, data) = Self::read(
-            self.http
+        let mut binary = !fields.iter().any(|(k, v)| k == "pipeline" && v == "1");
+        if binary {
+            fields.push(("wire".into(), "protobuf-v2".into()));
+        }
+        let body = form(fields.clone());
+        let response = self
+            .http
+            .post(format!("{}/goo/render", self.base))
+            .timeout(self.render_timeout)
+            .header("Content-Type", "application/x-www-form-urlencoded")
+            .body(body)
+            .send()?;
+        let (mut status, mut data) = if binary {
+            Self::read_proto(response)?
+        } else {
+            Self::read(response)?
+        };
+        // Only this explicit domain capability response permits a read-only
+        // JSON request. Actions and receipts never renegotiate or recapture.
+        if binary && status == 415 && json_contract(&data) {
+            fields.retain(|(key, _)| key != "wire");
+            let response = self
+                .http
                 .post(format!("{}/goo/render", self.base))
                 .timeout(self.render_timeout)
                 .header("Content-Type", "application/x-www-form-urlencoded")
-                .body(body)
-                .send()?,
-        )?;
+                .body(form(fields))
+                .send()?;
+            (status, data) = Self::read(response)?;
+            binary = false;
+        }
         ensure!(
             (200..300).contains(&status),
             "Render HTTP {status}: {}",
-            String::from_utf8_lossy(&data)
+            response_error(&data)
         );
         let p = Presentation::decode(&data)?;
         ensure!(
@@ -186,8 +245,16 @@ impl Client {
             "Prepared recipe differs from request"
         );
         if selector == "slot" {
-            let raw: serde_json::Value = serde_json::from_slice(&data)?;
-            ensure!(raw["slot"] == value, "Prepared slot differs from request");
+            #[derive(Deserialize)]
+            struct Slot {
+                slot: String,
+            }
+            let slot: Slot = if binary {
+                crate::protobuf::deserialize(&data)?
+            } else {
+                serde_json::from_slice(&data)?
+            };
+            ensure!(slot.slot == value, "Prepared slot differs from request");
         }
         Ok(p)
     }
@@ -212,6 +279,23 @@ impl Client {
         {
             append_pipeline(&mut fields);
         }
+        let protobuf = matches!(
+            endpoint,
+            "/goo/render"
+                | "/goo/source"
+                | "/goo/status"
+                | "/goo/operation-status"
+                | "/goo/edit-value"
+        ) && !fields
+            .iter()
+            .any(|(k, v)| (k == "pipeline" && v == "1") || (k == "workspace" && !v.is_empty()))
+            && (endpoint != "/goo/render"
+                || fields
+                    .iter()
+                    .any(|(k, v)| ["view", "slot", "role"].contains(&k.as_str()) && !v.is_empty()));
+        if protobuf {
+            fields.push(("wire".into(), "protobuf-v2".into()));
+        }
         let url = format!("{}{}", self.base, endpoint);
         let request = if post {
             self.http
@@ -221,11 +305,16 @@ impl Client {
         } else {
             self.http.get(url).query(&fields)
         };
-        let (status, data) = Self::read(request.timeout(self.render_timeout).send()?)?;
+        let response = request.timeout(self.render_timeout).send()?;
+        let (status, data) = if protobuf {
+            Self::read_proto(response)?
+        } else {
+            Self::read(response)?
+        };
         ensure!(
             (200..300).contains(&status),
             "HTTP {status}: {}",
-            String::from_utf8_lossy(&data)
+            response_error(&data)
         );
         Ok(data)
     }
@@ -235,19 +324,17 @@ impl Client {
         post: bool,
         fields: Vec<(String, String)>,
     ) -> Result<serde_json::Value> {
-        Ok(serde_json::from_slice(
-            &self.explorer_bytes(endpoint, post, fields)?,
-        )?)
+        crate::protobuf::decode_value(&self.explorer_bytes(endpoint, post, fields)?)
     }
     pub fn source(&self, path: &str, axis: &str) -> Result<Source> {
-        let (status, data) = Self::read(
+        let (status, data) = Self::read_proto(
             self.http
                 .get(format!("{}/goo/source", self.base))
-                .query(&[("target", path), ("axis", axis)])
+                .query(&[("target", path), ("axis", axis), ("wire", "protobuf-v2")])
                 .send()?,
         )?;
         ensure!((200..300).contains(&status), "Source HTTP {status}");
-        Ok(serde_json::from_slice(&data)?)
+        crate::protobuf::deserialize(&data)
     }
     pub fn activate(&self, i: &Invocation) -> Outcome {
         let response = self
@@ -257,33 +344,27 @@ impl Client {
             .body(i.body.clone())
             .send()
             .map_err(anyhow::Error::from)
-            .and_then(Self::read);
+            .and_then(Self::read_proto);
         match response {
-            Ok((s, data)) if (200..300).contains(&s) => {
-                match serde_json::from_slice::<Snapshot>(&data) {
-                    Ok(s) if !s.expected.is_empty() && !s.publication.is_empty() => {
-                        Outcome::Accepted
-                    }
-                    _ => Outcome::Unknown("Malformed success response".into()),
-                }
-            }
-            Ok((s, data)) if (400..500).contains(&s) => {
-                Outcome::Rejected(String::from_utf8_lossy(&data).into_owned())
-            }
-            Ok((s, _)) => Outcome::Unknown(format!("HTTP {s}")),
+            Ok((status, data)) => activation_outcome(status, &data),
             Err(e) => Outcome::Unknown(e.to_string()),
         }
     }
+
     pub fn status(&self, i: &Invocation) -> Outcome {
         let get = || -> Result<Outcome> {
-            let (status, data) = Self::read(
+            let (status, data) = Self::read_proto(
                 self.http
                     .get(format!("{}/goo/operation-status", self.base))
-                    .query(&[("target", i.target()), ("invocation", i.id())])
+                    .query(&[
+                        ("target", i.target()),
+                        ("invocation", i.id()),
+                        ("wire", "protobuf-v2"),
+                    ])
                     .send()?,
             )?;
             ensure!((200..300).contains(&status), "Receipt HTTP {status}");
-            let v: serde_json::Value = serde_json::from_slice(&data)?;
+            let v = crate::protobuf::decode(&data)?;
             ensure!(v["operationId"] == i.id(), "Mismatched receipt");
             Ok(match v["outcome"].as_str() {
                 Some("accepted") => Outcome::Accepted,
@@ -298,5 +379,86 @@ impl Client {
 fn append_pipeline(fields: &mut Vec<(String, String)>) {
     if crate::inspector::capture_pipeline() && !fields.iter().any(|(key, _)| key == "pipeline") {
         fields.push(("pipeline".into(), "1".into()));
+    }
+}
+
+fn json_contract(data: &[u8]) -> bool {
+    #[derive(Deserialize)]
+    struct Capability {
+        code: Option<String>,
+        error: String,
+    }
+    crate::protobuf::deserialize::<Capability>(data).is_ok_and(|v| {
+        v.code.as_deref() == Some("json-contract") && v.error == "Goo JSON-only contract"
+    })
+}
+
+// Validation failures may be protobuf; HTTP/parser failures may still be text.
+fn response_error(data: &[u8]) -> String {
+    crate::protobuf::decode(data)
+        .map(|value| value.to_string())
+        .unwrap_or_else(|_| String::from_utf8_lossy(data).into_owned())
+}
+
+fn activation_outcome(status: u16, data: &[u8]) -> Outcome {
+    if (200..300).contains(&status) {
+        match crate::protobuf::deserialize::<Snapshot>(data) {
+            Ok(snapshot) if !snapshot.expected.is_empty() && !snapshot.publication.is_empty() => {
+                Outcome::Accepted
+            }
+            _ => Outcome::Unknown("Malformed success response".into()),
+        }
+    } else if (400..500).contains(&status) {
+        Outcome::Rejected(response_error(data))
+    } else {
+        Outcome::Unknown(format!("HTTP {status}"))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn json_contract_requires_the_explicit_typed_read_capability() {
+        let why = b"Goo JSON-only contract";
+        let code = b"json-contract";
+        let mut body = vec![10, why.len() as u8];
+        body.extend(why);
+        let mut without = vec![8, 2, 58, body.len() as u8];
+        without.extend(&body);
+        assert!(!json_contract(&without));
+        body.extend([34, code.len() as u8]);
+        body.extend(code);
+        let mut response = vec![8, 2, 58, body.len() as u8];
+        response.extend(body);
+        assert!(json_contract(&response));
+        response[1] = 1;
+        assert!(!json_contract(&response));
+        assert!(!json_contract(b"Unsupported Goo wire format"));
+    }
+    #[test]
+    fn malformed_success_remains_unknown_and_never_becomes_a_rejection() {
+        for bytes in [b"{}".as_slice(), &[8, 1, 18], &[8, 1, 18, 2, 16, 0]] {
+            assert!(matches!(
+                activation_outcome(200, bytes),
+                Outcome::Unknown(_)
+            ));
+        }
+        assert!(matches!(
+            activation_outcome(500, b"failure"),
+            Outcome::Unknown(_)
+        ));
+    }
+    #[test]
+    fn rejected_binary_and_text_responses_keep_readable_diagnostics() {
+        // Response(failure=Failure(error="no")), independently encoded bytes.
+        assert_eq!(
+            activation_outcome(409, &[8, 2, 58, 4, 10, 2, b'n', b'o']),
+            Outcome::Rejected(r#"{"error":"no"}"#.into())
+        );
+        assert_eq!(
+            activation_outcome(415, b"Unsupported Goo wire format"),
+            Outcome::Rejected("Unsupported Goo wire format".into())
+        );
     }
 }

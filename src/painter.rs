@@ -168,7 +168,7 @@ fn surface_inner(
             polygons.push(boundary.clone());
         }
         // Paint order resolves overlapping nodes; clipping also applies to inspection.
-        // Secondary clicks never dispatch a domain action or edit a working input.
+        // Rich input secondary clicks belong to the formatting menu; other nodes inspect.
         if editor.is_some()
             && ui.rect_contains_pointer(r.intersect(clip))
             && ui.input(|i| i.pointer.hover_pos()).is_some_and(|p| {
@@ -178,7 +178,7 @@ fn surface_inner(
             })
             && ui.input(|i| i.pointer.secondary_clicked())
         {
-            inspected = Some(n.id.clone());
+            inspected = n.editing.is_none().then(|| n.id.clone());
         }
         curved.insert(n.id.clone(), polygons.clone());
         let start = ui
@@ -267,8 +267,46 @@ fn surface_inner(
                 (n.text_style.inset_x / 2.).min(b.width / 2.) as f32,
                 (n.text_style.inset_y / 2.).min(b.height / 2.) as f32,
             ));
-            let out = ui
-                .scope_builder(UiBuilder::new().max_rect(inner), |ui| {
+            let out = if let Some(contract) = &n.editing {
+                let mut draft = editor
+                    .as_deref_mut()
+                    .and_then(|e| e.rich_fields.remove(slot))
+                    .unwrap_or_else(|| crate::rich_text::Draft::new(n.text_runs.as_ref().unwrap()));
+                let before = draft.wire();
+                let out = ui
+                    .scope_builder(UiBuilder::new().max_rect(inner), |ui| {
+                        ui.set_clip_rect(clip.intersect(r));
+                        let outside = ui.input(|i| {
+                            i.pointer.any_pressed()
+                                && i.pointer.hover_pos().is_some_and(|p| {
+                                    !polygons
+                                        .iter()
+                                        .all(|v| crate::paint_geometry::contains(p, v))
+                                })
+                        });
+                        crate::rich_text::widget(
+                            ui,
+                            input_id,
+                            inner,
+                            &mut draft,
+                            contract,
+                            editor.as_ref().is_some_and(|e| e.composing),
+                            editor.is_some() && !outside,
+                        )
+                    })
+                    .inner;
+                if let Some(e) = editor.as_deref_mut() {
+                    let after = draft.wire();
+                    if before != after {
+                        e.edit(slot, after);
+                    }
+                    e.rich_fields.insert(slot.clone(), draft);
+                }
+                out.on_hover_text(
+                    "Select text, then use ⌘B / ⌘I / ⌘U or right-click for fonts and links",
+                )
+            } else {
+                ui.scope_builder(UiBuilder::new().max_rect(inner), |ui| {
                     ui.set_clip_rect(clip.intersect(r));
                     if editor.is_some()
                         && ui.input(|i| {
@@ -301,10 +339,12 @@ fn surface_inner(
                             .desired_width(inner.width()),
                     )
                 })
-                .inner;
+                .inner
+            };
             out.ctx
                 .accesskit_node_builder(out.id, |node| node.set_label(n.semantics.label.clone()));
-            if out.changed()
+            if n.editing.is_none()
+                && out.changed()
                 && let Some(e) = editor.as_deref_mut()
             {
                 e.edit(slot, value);

@@ -73,7 +73,7 @@ fn live_workspace_contract() {
     let workspace = client.workspace(entry).unwrap();
     std::fs::write(
         "tests/fixtures/explorer-workspace.json",
-        workspace.packet.received_json.as_ref().unwrap().as_ref(),
+        serde_json::to_vec(&workspace.packet.received_value().unwrap()).unwrap(),
     )
     .unwrap();
     let tree = Tree::new(
@@ -99,7 +99,7 @@ fn live_workspace_contract() {
         .unwrap();
     std::fs::write(
         "tests/fixtures/explorer-values.json",
-        p.received_json.as_ref().unwrap().as_ref(),
+        serde_json::to_vec(&p.received_value().unwrap()).unwrap(),
     )
     .unwrap();
     p.validate(&Context::new(720.), "/0x11/app/ios_demo/note")

@@ -218,6 +218,8 @@ pub struct Node {
     pub payload: String,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub text_runs: Option<Vec<TextRun>>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub editing: Option<crate::rich_text::Editing>,
     pub src: Option<String>,
     pub r#box: Box2,
     pub text_style: TextStyle,
@@ -225,7 +227,7 @@ pub struct Node {
     pub paint: Paint,
     pub semantics: Semantics,
 }
-fn validate_run_myth(myth: &RunDescriptor) -> Result<()> {
+pub(crate) fn validate_run_myth(myth: &RunDescriptor) -> Result<()> {
     for (slot, pail) in myth {
         let object = pail
             .as_object()
@@ -323,7 +325,7 @@ fn validate_runs(
         for r in runs {
             validate_run_myth(&r.myth)?;
             ensure!(
-                node.kind != "input" || r.myth.is_empty(),
+                node.kind != "input" || node.editing.is_some() || r.myth.is_empty(),
                 "Styled native editing is not supported"
             );
         }
@@ -474,9 +476,11 @@ pub struct Control {
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Presentation {
-    /// Original HTTP response, retained verbatim for inspection (never action authority).
+    /// JSON source or decoded protobuf projection for inspection (never action authority).
     #[serde(skip)]
     pub received_json: Option<std::sync::Arc<str>>,
+    #[serde(skip)]
+    pub received_protobuf: Option<std::sync::Arc<[u8]>>,
     pub version: u32,
     pub ok: bool,
     pub profile: Profile,
@@ -516,17 +520,46 @@ pub fn ascii(s: &str) -> bool {
     s.bytes().all(|b| matches!(b, 32..=126 | 9 | 10 | 13))
 }
 impl Presentation {
-    pub fn decode(data: &[u8]) -> Result<Self> {
-        let mut p: Self = serde_json::from_slice(data)?;
-        let raw: serde_json::Value = serde_json::from_slice(data)?;
-        if p.display.is_none() && raw.get("readOnlyDisplay").is_some() {
-            ensure!(
-                p.view == "/sys/slot/synthetic" && p.kind == "view" && p.controls.is_empty(),
-                "Read-only Values cannot grant action authority"
-            );
-            p.display = Some(serde_json::from_value(raw["readOnlyDisplay"].clone())?);
+    pub fn received_value(&self) -> Result<serde_json::Value> {
+        if let Some(bytes) = &self.received_protobuf {
+            crate::protobuf::decode(bytes)
+        } else if let Some(text) = &self.received_json {
+            Ok(serde_json::from_str(text)?)
+        } else {
+            bail!("Original response was not retained")
         }
-        p.received_json = Some(std::str::from_utf8(data)?.into());
+    }
+    pub fn decode(data: &[u8]) -> Result<Self> {
+        let binary = !crate::protobuf::is_json(data);
+        let mut p: Self = if binary {
+            crate::protobuf::deserialize(data)?
+        } else {
+            serde_json::from_slice(data)?
+        };
+        if p.display.is_none() {
+            #[derive(Deserialize)]
+            #[serde(rename_all = "camelCase")]
+            struct ReadOnly {
+                read_only_display: Option<Display>,
+            }
+            let fallback: ReadOnly = if binary {
+                crate::protobuf::deserialize(data)?
+            } else {
+                serde_json::from_slice(data)?
+            };
+            if let Some(display) = fallback.read_only_display {
+                ensure!(
+                    p.view == "/sys/slot/synthetic" && p.kind == "view" && p.controls.is_empty(),
+                    "Read-only Values cannot grant action authority"
+                );
+                p.display = Some(display);
+            }
+        }
+        if binary {
+            p.received_protobuf = Some(data.into());
+        } else {
+            p.received_json = Some(std::str::from_utf8(data)?.into());
+        }
         Ok(p)
     }
     pub fn lifetime(&self) -> String {
@@ -584,7 +617,7 @@ impl Presentation {
             .as_ref()
             .ok_or_else(|| anyhow::anyhow!("Missing prepared display"))?;
         ensure!(
-            matches!(d.version, 1 | 2)
+            matches!(d.version, 1..=3)
                 && d.profile == self.profile
                 && d.context == self.context
                 && d.coordinates == "absolute-css-px",
@@ -643,12 +676,12 @@ impl Presentation {
                     n.lines.is_empty()
                         && n.semantics.value.is_some()
                         && n.semantics.editable == Some(true)
-                        && n.semantics.multiline == Some(false),
+                        && n.semantics.multiline == Some(n.editing.is_some()),
                     "Unsupported editing semantics"
                 );
             }
             ensure!(
-                d.version == 2
+                d.version >= 2
                     || !n
                         .text_runs
                         .as_ref()
@@ -660,6 +693,72 @@ impl Presentation {
                             .any(|r| r.resolved.is_some()),
                 "Styled runs require display version 2"
             );
+            if let Some(edit) = &n.editing {
+                ensure!(
+                    d.version == 3
+                        && n.kind == "input"
+                        && edit.version == 1
+                        && edit.encoding == "goo-text-v1"
+                        && edit.max_bytes == 65536
+                        && !edit.styles.is_empty()
+                        && edit.styles.len() <= 256,
+                    "Unsupported rich-text editing contract"
+                );
+                let mut keys = BTreeSet::new();
+                for style in &edit.styles {
+                    validate_run_myth(&style.myth)?;
+                    ensure!(
+                        !style.myth.contains_key("/sys/link")
+                            && keys.insert(serde_json::to_string(&crate::rich_text::style_key(
+                                &style.myth
+                            ))?),
+                        "Duplicate/invalid editing style"
+                    );
+                    validate_text_style(&style.resolved.text_style, &fonts, &manifest, &extension)?;
+                    ensure!(
+                        style.resolved.version == 1
+                            && color_valid(&style.resolved.foreground)
+                            && style.resolved.semantics.role == "text"
+                            && style.resolved.semantics.target.is_none()
+                            && style.resolved.highlight.is_none(),
+                        "Invalid editing paint"
+                    );
+                    if let Some(u) = &style.resolved.underline {
+                        ensure!(
+                            color_valid(&u.color)
+                                && u.width.is_finite()
+                                && u.y.is_finite()
+                                && (0. ..=10.).contains(&u.width),
+                            "Invalid editing underline"
+                        );
+                    }
+                }
+                let link = &edit.link_style;
+                validate_text_style(&link.text_style, &fonts, &manifest, &extension)?;
+                let h = link
+                    .highlight
+                    .as_ref()
+                    .ok_or_else(|| anyhow::anyhow!("Missing link highlight"))?;
+                ensure!(
+                    link.version == 1
+                        && link.semantics.role == "link"
+                        && matches!(&link.semantics.target, Some(RunLink::Path { path }) if path == "/")
+                        && link.underline.is_none()
+                        && color_valid(&link.foreground)
+                        && color_valid(&h.fill)
+                        && color_valid(&h.stroke)
+                        && h.width.is_finite()
+                        && (0. ..=10.).contains(&h.width)
+                        && h.radius.is_finite()
+                        && (0. ..=100.).contains(&h.radius),
+                    "Invalid editing link paint"
+                );
+                let runs = n
+                    .text_runs
+                    .as_ref()
+                    .ok_or_else(|| anyhow::anyhow!("Missing rich-text value"))?;
+                edit.decode(&serde_json::to_string(runs)?)?;
+            }
             validate_runs(n, &fonts, &manifest, &extension)?;
             let p = &n.paint;
             ensure!(
@@ -843,7 +942,14 @@ impl Presentation {
                     .iter()
                     .find(|n| n.id == c.id)
                     .unwrap();
-                (c.slot.clone(), n.semantics.value.clone().unwrap())
+                (
+                    c.slot.clone(),
+                    if n.editing.is_some() {
+                        crate::rich_text::Draft::new(n.text_runs.as_ref().unwrap()).wire()
+                    } else {
+                        n.semantics.value.clone().unwrap()
+                    },
+                )
             })
             .collect()
     }

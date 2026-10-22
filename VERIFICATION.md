@@ -382,3 +382,206 @@ Runs keep the actual `myth` type. `/sys/font` carries a typed path, `/sys/modifi
 - Inspected **Shrine Goo Run Styles** on native macOS: bold, italic, bold italic, underline, bold mono, and filled bordered internal/web links rendered at supplied baselines. Window narrowing wrapped link boxes across lines. An edited title survived Refresh and resize, then Save yielded a clean persisted reread showing the new title. Restored the disposable title afterward. Read-only link accessibility nodes are present; full screen-reader operation was not certified.
 - All six added font files match the manifest SHA-256 in Reaver, explorer assets and egui. They derive from existing pinned font sources, with the generator and provenance in `extras/mounts/goo/run-fonts/`.
 - Limits: English/ASCII; pinned sans and mono font registry only; mono italic and styled native inputs explicitly rejected. Arbitrary namespace font loading, Unicode shaping, rich-text editing, and link navigation are not implemented. UIKit is unchanged and should reject styled display v2. HTML emits styling, but browser mixed-font baseline/line-height parity has not been verified. Delayed/unknown-save and IME live scenarios were not rerun in this pass; existing deterministic owner/action tests remain in the full suite.
+
+
+## Rich-text input — 2026-10-21
+
+Prepared display v3 adds an explicit rich-input editing contract: structured Goo
+runs, allowed metadata combinations, resolved font/paint recipes, a link recipe,
+and a 64 KiB wire limit. Reaver recognizes stored `goo/text/pail` inputs and
+supplies the multiline box. egui uses TextEdit for selection, caret, input events,
+IME, editing layout and internal scrolling; static output retains supplied lines.
+Formatting and typing preserve the actual run myth slots. A declared typed action
+codec uses `goo_edit/decode` to validate the submitted JSON and store a typed pail.
+The ordinary string `.poke` shortcut is unchanged.
+
+- **231 Foil checks passed**, no top-level compiler errors; **19 prepared fixtures**
+  emitted. All **18 preceding fixtures are exactly unchanged**. Evidence:
+  `evidence/rich-input-foil.json`, `evidence/rich-input-fixtures.json`.
+- Full Rust suite: **97 passed, 0 failed, 8 opt-in live tests ignored**. Nine new
+  deterministic rich-input tests cover malformed contracts/values, font identity,
+  atomic formatting, metadata preservation, structured undo/redo, simulated IME
+  preedit/commit as one undo step, stale responses, dirty refresh/composition,
+  incarnation/encoding replacement, guard supersession, frozen captures, exact
+  retries, newer edits after a late save, independent tab drafts, reorder/removal
+  guards, and secondary-click isolation from the inspector. Evidence:
+  `evidence/rich-input-tests.log`. Strict clippy across all targets, formatting,
+  native build and diff whitespace checks passed.
+- **One mutating integration test passed** against the disposable Reaver fixture
+  on 8199 and delay proxy on 8200. It persisted formatted multiline runs through
+  the declared typed action, retained a dirty draft during a narrower prepare,
+  observed an unknown outcome after a 350ms timeout, recovered an accepted
+  receipt, retried the identical invocation ID/body without a second mutation,
+  and reread the exact saved runs. Completion targeted the suspended owner.
+  The original rich value was restored. Evidence: `evidence/rich-input-live.log`
+  and `evidence/rich-input-live-view.json`.
+- Native macOS inspection showed the actual live multiline rich input with bold,
+  italic, bold italic, mono and filled links. Selected text became bold with
+  Command-B; Command-Z and Command-Shift-Z restored/reapplied it. Native inspection
+  caught right-click opening both formatting and inspection; that conflict is
+  fixed and covered by an egui pointer-event test. The Mac locked before the final
+  native menu and save-flow recheck; those final UI checks remain unverified.
+  Typed saves are verified through the real server integration test. Hardware
+  IME, assistive-technology operation and other operating systems are not certified.
+- Scope: ASCII/English, bundled fonts, inline bold/italic/underline and internal/web
+  link metadata. Clipboard interchange is plain text. Unsupported Unicode remains
+  in the draft and blocks Save. Editor links show the supplied fill; static output
+  also shows the supplied border. Links grant no navigation authority. Undo history
+  is bounded. Browser and UIKit rich editing, rich clipboard formats, arbitrary
+  font loading, paragraph/list formatting, and Unicode shaping are not implemented.
+
+Run the fixture and client with the commands in README's Rich-text input section.
+`python3 scripts/verify-live.py --reaver ../reaver --port 8204 --rich-input`
+creates and removes its own disposable server/proxy for the integration test.
+
+
+## Native rich-input follow-up — 2026-10-22
+
+Completed the native macOS menu/save check after unlock. The inspector no longer
+opens on a rich-input context click. Native testing revealed that egui collapsed
+the selection on secondary pointer press; the rich editor now preserves that
+range in both its owner and TextEdit state before opening the formatting menu.
+The native widget regression exercises pointer press/release with a selected
+range and verifies that subsequent replacement and structured undo still work.
+
+- All **9 focused rich-input tests passed**, with the one opt-in live test ignored
+  (`evidence/rich-input-native-followup-tests.log`). Strict all-target clippy,
+  formatting, native build, bundle signing and diff whitespace checks passed.
+- In the rebuilt native app against disposable Reaver on 8199, selected `Plain`
+  in Note B, opened the formatting menu, and confirmed the selection remained.
+  Chose Bold, observed the dirty draft, clicked Save note, and observed a clean
+  persisted reread with `Plain` bold in both the editor and server-prepared output.
+  Removed that formatting through the same menu and saved the original fixture.
+- This closes the previously blocked native context-menu and save/reread checks.
+  Hardware IME and assistive-technology operation remain unverified. No server,
+  protocol or action-transport changes were needed in this follow-up; the full
+  suite and delayed/unknown-save integration test were not rerun for this pointer
+  selection fix.
+
+## Historical generic protobuf prototype — October 22, 2026
+
+**Superseded and rejected.** The section below records the earlier v1 experiment,
+not the current implementation. Its shared live fixture/parity paths have since
+been replaced with v2 evidence. See the domain-protocol verification below.
+
+Implemented in the sibling Reaver checkout and this client. Requests remain
+URL-encoded; `wire=protobuf-v1` selects binary responses. Legacy JSON responses
+remain available to UIKit/browser consumers. See Reaver's
+`extras/mounts/goo/protocol/goo.proto` and `PORTABLE.md` for the exact contract.
+
+Verification on macOS:
+
+- `./scripts/cargo-macos.sh test`: **103 passed, 0 failed, 9 opt-in live tests ignored**.
+- `./scripts/cargo-macos.sh clippy --all-targets -- -D warnings`: passed.
+- `./scripts/cargo-macos.sh fmt --check` and both repositories' `git diff --check`: passed.
+- Reaver `WISP=<flake-pinned BAT-capable runtime> python3 extras/x/check --mount explorer --jobs 2`: **617 Explorer checks, 135 web checks, mount contract gate, 9 profile tests passed**. Result directory: `/var/folders/l5/9q999r8j6fvdwz9xv2k9zmhc0000gn/T/shrine-extras-tests-l8g6eiui`.
+- Nine Foil wire checks compare BAT sizes and exact protobuf bytes with protoc, including HTTP Content-Length and a final zero byte. Four Rust wire tests cover independently encoded full-view/scalar goldens, every truncated prefix of the scalar golden, invalid wire types/versions/bools/null/UTF-8, overflow, duplicate evidence, limits, and unknown fields.
+- Two transport classification tests ensure malformed successful replies stay unknown, server failures stay unknown, and binary/text rejections retain readable diagnostics.
+- `python3 scripts/verify-live.py --rich-input --port 8204`: passed in 124.84 seconds after server startup. Fresh disposable namespace and real delay proxy: typed save/reread, dirty resize, timeout while suspended, accepted receipt recovery, exact retry with no second mutation, draft settlement, and restoration. Both processes cleaned up by the harness.
+- Read-only `live_json_protobuf_parity` against a separate disposable server on 8206: passed in 23.65 seconds. Exact decoded equality for ordinary rich view, pipeline capture, two-tab deck, source, paged tree, status and unknown receipt. Unknown and duplicate wire selectors rejected with 415 before action admission.
+- Standard `protoc --decode=goo.wire.v1.Response` decoded [the live binary response](evidence/protobuf-live-view.pb) successfully.
+- Native app `Shrine Goo Protobuf.app` displayed the live rich view, native text inputs, save control, styled runs and filled link boxes. The full-response inspector displayed the decoded projection with **Compact JSON** and **Copy response as JSON** labels. [Screenshot](evidence/protobuf-native.png).
+
+Timing is an end-to-end warm loopback sample, not an allocation profiler or a
+compiler microbenchmark: warm both modes, alternate order, five pairs per case,
+report medians. Raw data: [protobuf-parity.json](evidence/protobuf-parity.json).
+
+| Response | JSON bytes | Protobuf bytes | JSON median ms | Protobuf median ms |
+|---|---:|---:|---:|---:|
+| Rich view | 129,872 | 144,186 | 336.42 | 387.37 |
+| Pipeline capture | 332,588 | 371,495 | 637.90 | 504.04 |
+| Deck | 4,807 | 5,230 | 7.18 | 6.00 |
+| Source | 799 | 894 | 1.84 | 1.76 |
+| Paged tree | 1,379 | 1,516 | 2.70 | 2.41 |
+| Status | 200 | 225 | 0.92 | 0.94 |
+| Receipt | 56 | 65 | 0.83 | 0.86 |
+
+The large prepared response path builds shared BAT chunks and flattens the HTTP
+header/body/sentinel once; it avoids intermediate serialized JSON and body
+buffers. This does not eliminate value IR/BAT node allocations, retained model
+and inspector projections, or existing receipt JSON parsing. The v1 extensible
+value schema keeps field names and is larger than JSON in these live examples.
+Performance is mixed; **no universal speedup or allocation-count reduction is
+claimed**. Cold P6 preparation time is not addressed by this migration.
+
+Patch-query/value-edit protobuf branches compile and preserve their legacy
+counterparts, but their successful live mutations were not re-exercised in this
+transport verification. UIKit was not migrated or rerun; it still uses legacy
+JSON. Host/session bootstrap and asset protocols are unchanged. This task did
+not run the unrelated full core test inventory.
+
+
+## Domain protobuf v2 — October 22, 2026
+
+Replaced the generic JSON-value envelope with 55 named domain messages in
+Reaver's `extras/mounts/goo/protocol/goo.proto`. Ordinary/native views project
+actual preparation objects and binary64 scalar bits into typed Foil records and
+BAT chunks. They do not build a JSON display or HTML fragment. Rust decodes
+borrowed wire fields directly into application models, retaining original bytes
+for the inspector's on-demand diagnostic projection.
+
+Remaining adapters are explicit: small paint/semantics/binding APIs and
+pane/tree APIs still originate in existing JSON-returning server APIs. Patch,
+pipeline, inspection captures and catalogs remain JSON pending actual schemas.
+An ordinary render that resolves to a patch returns a typed HTTP 415 Failure
+with `code=json-contract`; the client may repeat that read in JSON. No action or
+receipt changes format on retry. Requests remain URL-encoded, receipt storage
+is unchanged, and UIKit continues using JSON.
+
+Verification:
+
+- Rust all-target tests: 104 passed, 0 failed, 9 opt-in live tests ignored.
+- Strict all-target Clippy, formatting and both repositories' whitespace checks passed.
+- Reaver explorer mount suite: 614 Explorer checks, 135 web checks, two mount
+  contract checks and nine profile tests passed. Six typed-wire checks include
+  independent byte goldens, final-zero HTTP framing, direct resolved-run parity
+  and parity for all 122 editing-palette styles.
+- Protoc independently encoded Rust fixtures and decoded the actual live v2
+  response. Decoder tests cover required/presence checks, duplicates, old v1,
+  malformed wire data, truncation, unknown extensions, exact finite binary64
+  geometry and rejection of NaN/infinities.
+- `python3 scripts/verify-live.py --rich-input --protobuf --port 8212`: fresh
+  disposable server and delay proxy; rich save/reread, dirty resize, unknown
+  completion while suspended, receipt recovery and exact retry without another
+  mutation passed (27.72 seconds). JSON/domain-protobuf parity across rich view,
+  deck, source, paged tree, status and receipt passed (57.68 seconds). Unsupported
+  and duplicate selectors reject before action admission. Owned processes cleaned up.
+- Native macOS app displayed the live typed rich view, native inputs, styled
+  runs, filled link boxes and Save control. Inspector displayed both painted
+  geometry and the full response projected from retained protobuf bytes.
+  [Native screenshot](evidence/protobuf-v2-native.png).
+
+Benchmark: 40 paired requests per case, five warmups per format, balanced
+shuffled format order and shuffled cases, one fresh server, loopback without
+compression. Cold startup/first-use excluded and recorded separately. Raw
+samples, source hashes, allocation counts and decode timings are retained in
+[transport-benchmark-v2.json](evidence/transport-benchmark-v2.json).
+
+| Response | JSON bytes | Protobuf bytes | JSON median ms | Protobuf median ms |
+|---|---:|---:|---:|---:|
+| rich-480 | 129,872 | 46,589 | 310.905 | 157.927 |
+| rich-960 | 128,248 | 46,194 | 302.747 | 160.650 |
+| deck | 4,807 | 2,556 | 6.628 | 4.671 |
+| source | 799 | 448 | 1.820 | 1.540 |
+| tree | 1,379 | 715 | 2.585 | 1.969 |
+| status | 200 | 71 | 0.989 | 0.977 |
+| receipt | 56 | 33 | 0.894 | 0.929 |
+
+For the 480px rich view, protobuf is 64.1% smaller and median HTTP latency is
+49.2% lower. This measures the whole native response path, including avoiding
+unused HTML; it is not an isolated protobuf-encoding comparison. Long tails
+remain: rich-480 p95 was 2,614.7 ms JSON versus 544.1 ms protobuf, with maxima of
+14,467.1 and 3,463.4 ms. This run does not establish the cause of those stalls.
+
+Release-mode client decoding uses the same typed models, 31 alternating batches
+of 128 decodes per format after 64 warmups. Rich-480 median was **208.0 µs JSON
+versus 303.2 µs protobuf**. Protobuf currently performs structural prevalidation
+and then deserialization, with temporary field collections: **7,024 allocation
+calls / 1,201,848 requested bytes**, versus JSON's **3,191 / 497,461**. No client
+speedup, zero-allocation claim, or server allocation count is inferred. Semantic
+validation, inspector projection and painting are outside these decode timings.
+
+Reproduce using `tools/transport-bench/README.md`. The old `run1`/`run2` reports
+measure the rejected generic prototype and are not current protocol evidence.
+Hardware IME and assistive-technology operation were not retested here; neither
+were UIKit or the unrelated full core test inventory.

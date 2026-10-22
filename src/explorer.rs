@@ -119,7 +119,7 @@ impl Bundle {
                 "Mixed layout lifetimes"
             );
             basis = Some(identity);
-            if l.render.received_json.is_none() {
+            if l.render.received_json.is_none() && l.render.received_protobuf.is_none() {
                 l.render.received_json = Some(serde_json::to_string(&l.render)?.into());
             }
         }
@@ -387,12 +387,7 @@ impl Workspace {
             packet.kind == "pane" && packet.controls.is_empty() && packet.display.is_none(),
             "Expected workspace pane"
         );
-        let raw: Value = serde_json::from_str(
-            packet
-                .received_json
-                .as_ref()
-                .ok_or_else(|| anyhow::anyhow!("Missing original workspace packet"))?,
-        )?;
+        let raw = packet.received_value()?;
         let nodes = raw["description"]
             .as_array()
             .ok_or_else(|| anyhow::anyhow!("Missing structure"))?
@@ -627,9 +622,9 @@ impl Client {
             fields.push(("after".into(), after.into()));
         }
         let bytes = self.explorer_bytes("/goo/source", false, fields)?;
-        let raw: Value = serde_json::from_slice(&bytes)?;
-        let mut page: Page = serde_json::from_slice(&bytes)?;
-        page.received_json = Some(std::str::from_utf8(&bytes)?.into());
+        let raw = crate::protobuf::decode_value(&bytes)?;
+        let mut page: Page = serde_json::from_value(raw.clone())?;
+        page.received_json = Some(serde_json::to_string(&raw)?.into());
         for (packet, original) in page
             .presentations
             .iter_mut()

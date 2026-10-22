@@ -1,0 +1,11 @@
+
+save_rich =
+  @action
+  #on ; %/note
+  req: text
+  res: text
+  %/styled: %/run_text_type
+  ! foil
+  \ req=text res=text styled=%/run_text_type note=%/note
+  ^ %/note
+  | note.set_req(req).set_res(res).set_styled(styled)
