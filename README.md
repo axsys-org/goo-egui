@@ -1,6 +1,108 @@
 # Goo for Rust and egui
 
-A bounded native desktop consumer of Reaver's **prepared** Goo output. This implements the namespace Explorer workspace, diagram topology, portable patch editing, ordinary prepared editors, and a server-declared deck of independent list/follower panes. The supported milestone-2 surfaces are working; full browser parity remains bounded as listed below.
+A native desktop consumer of Reaver's **prepared** Goo output, built with Rust
+and egui. It implements namespace browsing, diagram topology, portable patch
+editing, ordinary and rich-text editors, and a separate server-declared deck of
+independent list/follower panes.
+
+Reaver supplies static layout, text lines/baselines, fonts, paint and action
+bindings. The client renders those preparations and owns interaction, drafts and
+save recovery. Native text inputs use egui's editing layout; diagram topology and
+workspace chrome are also host arrangements. The client never parses server HTML.
+
+Start with [Run on macOS](#run-on-macos) and [Current capabilities](#current-capabilities).
+[CONTRACTS.md](CONTRACTS.md) describes admission, ownership and protocol boundaries;
+[capabilities.json](capabilities.json) is a descriptive inventory, not a negotiated
+capability protocol. [VERIFICATION.md](VERIFICATION.md) records dated results and
+which supporting artifacts are included in this repository.
+
+## Run on macOS
+
+Install Rust with edition-2024 support, Python 3, Xcode command-line tools, and
+the compatible Reaver checkout's Nix dependencies. The recorded native checks
+used Apple Silicon macOS, Rust 1.98.1 and egui 0.33.3; these are the recorded test
+environment, not a declared minimum Rust version.
+
+The server is a separate checkout. `scripts/run-server.py` defaults to the sibling
+`../reaver`; pass `--reaver /path/to/reaver` when it lives elsewhere. It must include
+domain **protobuf v2**, the matching pinned Goo profile/fonts, and the server
+contracts for the features you use. The original portable-contract port alone is
+insufficient. See [Server compatibility](CONTRACTS.md#server-compatibility) for
+required source paths and the limits of the recorded revision provenance.
+
+From this directory, start a disposable server:
+
+```sh
+python3 scripts/run-server.py --reaver ../reaver --port 8142
+```
+
+In another terminal:
+
+```sh
+./scripts/cargo-macos.sh run
+# Ordinary standalone view instead of the declared deck:
+./scripts/cargo-macos.sh run -- --single
+```
+
+The compiler wrapper and Cargo target configuration use Apple's compiler/linker,
+avoiding stale Nix shell overrides. Client dependency versions are pinned in
+`Cargo.lock`; use `--locked` for
+reproducible dependency resolution. Ordinary renders and Explorer preparation
+requests allow up to 120 seconds for cold compilation. Action submission and
+`Client::status` receipt lookup use 20 seconds; Explorer requests routed through
+`explorer_bytes` use the preparation timeout. See
+[Transport](CONTRACTS.md#transport) for format selection and read-only JSON fallback.
+
+The default CLI modes and overrides are:
+
+| Mode | Command arguments | Server | Initial target/path |
+|---|---|---|---|
+| Deck | none | `http://127.0.0.1:8142` | `/0x11/app/ios_demo/workspace` |
+| Ordinary editor | `--single` | `http://127.0.0.1:8142` | `/0x11/app/ios_demo/note` |
+| Explorer | `--explorer` | `http://127.0.0.1:8164` | `/0x11/app/ios_demo` |
+| Patch demo | `--surfaces` | `http://127.0.0.1:8172` | `/0x11/app/patch_demo` |
+
+Start Explorer's fixture with `--explorer --port 8164`, or the patch fixture with
+`--explorer --patch --port 8172`, as shown in their walkthroughs below. Setting
+`GOO_SERVER` overrides the client mode's default; it does not change the server
+runner's `--port`.
+
+Environment variables:
+
+| Variable | Default |
+|---|---|
+| `GOO_SERVER` | Server for the selected mode, as above |
+| `GOO_TARGET` | `/0x11/app/ios_demo/workspace` (deck), `/0x11/app/ios_demo/note` (`--single`) |
+| `GOO_WORKSPACE` | `/0x11/gov/ios_demo/editors` |
+| `GOO_SLOT` | `/sys/slot/content` (`--single`) |
+| `GOO_ENDPOINT` | `/goo-inspector` (Explorer and surfaces) |
+| `GOO_PATH` | Initial namespace path for Explorer/surfaces, as above |
+
+For a Finder-launchable local app, run `./scripts/bundle-macos.sh` and open `target/Shrine Goo.app`. The script ad-hoc signs the local build. It is not a distributed/notarized application.
+
+Choose a member in either tab, edit TITLE or NOTE, then use the server-declared **Save note** button. The static preview changes only when the server reread arrives. **Refresh view** and window resize preserve compatible dirty inputs. **Reverse tabs** retains owners; **Close tab** and selection changes offer Stay/Discard when needed. Closing a tab is local only. **Refresh declared tabs** restores server declarations, creating new incarnations for previously removed panes. Unknown saves expose **Check save status** and **Retry exact save**; resolve them before removing their owner.
+
+## Current capabilities
+
+| Area | Current implementation | Boundary |
+|---|---|---|
+| Versions | Envelope/profile v1; display v1 ordinary text, v2 styled text, v3 rich inputs; paint/semantics/bindings v1 | Unsupported versions/descriptors fail admission |
+| Rendering | Supplied absolute CSS-pixel geometry and lines; pinned fonts; group, text, code, button, input, image/media/avatar/presence and progress bar primitives | Static content is not wrapped or laid out locally; media uses image decoding, not video playback |
+| Paint/context | Solid/linear-gradient fills, inside borders, rounded/ellipse backgrounds, content clipping, status markers; LTR/RTL placement; text scale 0.25–4 | Explorer offers 1×/1.5×/2×; RTL does not imply Unicode bidi/shaping |
+| Editing | Plain single-line inputs and v3 multiline rich inputs; selection, clipboard, undo/redo, formatting, IME event integration and AccessKit semantics | English/ASCII and bundled fonts; clipboard interchange is plain text; hardware IME and VoiceOver are not certified |
+| Deck | Up to eight keyed panes, each with a finite direct-child list/follower of at most 64 members | Separate mode; no general deck composition inside Explorer |
+| Explorer | Recursive pane/split/stack, tree paging, prepared row bundles, Outline/Diagram, following Values, recipe picker, navigation and mount rescan/status | Up to 4096 materialized tree nodes; Values is read-only unless a declared editor is selected |
+| Patch | One scene through supported wrappers; prepared bodies and embedded references; move, connect, reconnect and disconnect | No query/create/reveal offers, arbitrary nested occurrence layouts or patch-body recipe changes |
+| Recipe changes | `become` and `invoke-and-become` for ordinary Explorer editors | Standalone/deck and patch-body recipe changes are rejected |
+| Inspection | Frozen received response, node/binding inspection, opt-in pipeline text and painted overlays | Preview is read-only; no failed-compilation history or invented pre-ID geometry |
+| Transport/recovery | Domain protobuf v2 plus explicit JSON contracts; immutable invocation IDs/bodies, status lookup and exact retry | Recovery remains in process memory; no authentication adapter or offline queue |
+
+Compatible refresh/resize and keyed reorder preserve drafts and widget identities.
+Structural changes stage and validate replacements before retiring owners; dirty
+departures require Stay/Discard, and unresolved saves or composition block
+retirement. Hidden completions reach their originating owner. Resume requires a
+fresh preparation before actions are enabled. One CSS pixel is one egui logical
+point; screen density affects rasterization. Keyboard UI zoom is disabled.
 
 ## Namespace Explorer
 
@@ -20,46 +122,19 @@ The unmodified Inspector declaration supplies recursive panes, a namespace outli
 
 Selection, recipe, path and source changes are staged before retiring editors. Dirty departures offer **Stay** or **Discard draft and continue**; unresolved saves and composition block retirement. Compatible refresh and resize retain drafts and widget identities. Window suspension disables actions; resuming refreshes before re-enabling them and retains drafts. Mount publication requires clean, resolved editors; failures retain the installed workspace. An uncertain rescan is not automatically retried: **Check mount status** observes publication without issuing another scan.
 
-**Received workspace Goo** shows the full workspace response. Ordinary surfaces and native content retain right-click inspection; prepared tree rows can also be inspected, and their context menu exposes the member/bundle contract. Nested row/native packets are extracted from the decoded response; their formatted fragment is not claimed to be an independent HTTP response. Values uses the server's explicit read-only prepared display; raw typed-value editing through the browser's custom HTML editor is outside this milestone. Use a declared ordinary editor for changes.
+**Received workspace Goo** shows the full workspace response. Ordinary surfaces and native content retain right-click inspection; prepared tree rows can also be inspected, and their context menu exposes the member/bundle contract. Nested row/native packets are extracted from the decoded response; their formatted fragment is not claimed to be an independent HTTP response. Values uses the server's explicit read-only prepared display; raw typed-value editing through the browser's custom HTML editor is outside this client's supported slice. Use a declared ordinary editor for changes.
 
-Explorer admits the Inspector's recursive pane/split/stack, tree selection, follower-with-native-fallback, navigation, and configured mount-rescan contracts. Arbitrary Goo decks still use the separate bounded deck mode. The milestone-2 additions below extend the same owner and action machinery.
+Explorer admits the Inspector's recursive pane/split/stack, tree selection, follower-with-native-fallback, navigation, and configured mount-rescan contracts. Arbitrary Goo decks still use the separate bounded deck mode. The surface features below extend the same owner and action machinery.
 
 For disposable shared-fixture conformance, including the 80-child tree and deferred grandchild:
 
 ```sh
-python3 scripts/verify-explorer.py --reaver /Users/test/dev/reaver --port 8170
+python3 scripts/verify-explorer.py --reaver ../reaver --port 8170
 ```
 
 The runner owns both server and delay proxy, refuses occupied ports, runs scenarios sequentially, and shuts them down afterward. It tests workspace/Values admission, prepared tree paging, stale epochs, out-of-source parents, and the existing real save/unknown-outcome/exact-retry suite. Logs are in `evidence/explorer-*.log`.
 
-## Compilation pipeline inspector
-
-Enable **Capture pipeline**, refresh the workspace/view, then right-click a prepared component (or use **Inspect Goo**). The inspector opens in **Visual pipeline**. Capture is off by default and applies to subsequent requests. An already-open inspection stays frozen; inspect again to capture a newer mounted generation. Local drafts are neither sent nor substituted into compiler output.
-
-**Visual pipeline** paints the complete frozen view through the production painter, with non-editable received input values. Choose a stage to overlay bounds, measured widths, layout rows, adjacency, text-line boxes/baselines, or presented control routes. Click a region for its stage details in the sidebar; select its parent to inspect container rows. Bounds and ID labels can be toggled. Drag to pan, pinch/Ctrl-scroll to zoom, or use **Fit view**. One scene unit is one logical CSS pixel; zoom transforms paint and annotations together without preparing a new layout. Nested fragments have a chooser and retain independent coordinate spaces. Unsupported fragments show validation diagnostics.
-
-The final painted output is the reference for every stage. Correspondence uses explicit node IDs only. Pre-ID source/core, parse/read, and HTML have no geometric mapping; nodes without final boxes remain available in **Pipeline text**. Input controls have no server-supplied text lines, so baseline overlays apply only where lines were supplied. The preview cannot edit or invoke actions.
-
-**Prepared view** shows the complete prepared response, including display nodes, bindings and context, with pipeline/HTML payloads omitted for readability. The view path and target appear at the top of the resizable left sidebar. Modes, stage selection, copy/capture controls, and capture details stay in that sidebar; the right pane is reserved for selectable output, with independent scrolling and text wrapping.
-
-The stage browser shows evaluated **source → core → normalized → visible → semantic → metrics → layout → trace → prepared → display → bindings → HTML**. Stages default to the whole view. When a response includes multiple captured fragments, each is shown with its response path rather than merged into an invented compiler tree. **Render node details** and **Inspect one render node** provide optional drill-down by explicit node ID. Before normalization there are no node IDs, so source/core always show the whole compilation. Copy exports the displayed output, while **Full response** preserves all received fields. Nested native patch bodies and prepared tree rows carry their own captures.
-
-**Pipeline text** defaults to **Readable** formatting: indented declaration trees, measured-size columns, row allocations, relationship decisions, wrapped text lines, display summaries and control routes. Repeated node prefixes use a printed `#n` legend when unambiguous. Numbers are rounded to three decimal places; common bookkeeping and detailed paint/measurement bundles are summarized. **Raw JSON** retains every stage field and exact numeric values; HTML remains literal source text. **Copy output** copies the selected format. These are diagnostic projections of the frozen response, never inputs to rendering or action dispatch.
-
-This requires the accompanying Reaver changes in `extras/mounts/explorer`. Ordinary requests omit pipeline data. Opt-in render requests use `pipeline=1`; stages are attached to the same snapshot as the prepared output, never fetched by a separate replay. Old servers explicitly show “No pipeline captured.” Parse/read artifacts from publication are not retained by live preparation and appear as skipped; synthetic views bypass those stages. Structural pane/tree/patch host contracts remain in the full response, not fabricated Goo stages. Failed render attempts still use the existing error path; the inspector does not retain a partial failed compilation. HTML is selectable text, never executed.
-
-For a separate disposable native demo:
-
-```sh
-python3 scripts/run-server.py --explorer --patch --port 8184
-# In another terminal:
-./scripts/bundle-pipeline-macos.sh
-open 'target/Shrine Goo Pipeline.app'
-# Read-only cross-stage conformance and warm timing checks:
-python3 scripts/check-pipeline.py --server http://127.0.0.1:8184
-```
-
-## Milestone 2: diagrams, patches, paint and recipe transitions
+## Diagrams, patches, paint and recipe transitions
 
 ```sh
 python3 scripts/run-server.py --explorer --patch --tree-fixture --port 8172
@@ -78,12 +153,12 @@ python3 scripts/run-server.py --explorer --patch --tree-fixture --port 8172
 **Received patch Goo** exposes the exact root response and nested prepared node/control joins. Individual prepared bodies retain component inspection. Host graph lines/handles are interaction chrome; their source geometry and affordances are in the root patch response.
 
 ```sh
-python3 scripts/verify-surfaces.py --reaver /Users/test/dev/reaver --port 8174
+python3 scripts/verify-surfaces.py --reaver ../reaver --port 8174
 ```
 
 This runs six live scenarios against disposable servers and real delayed replies. Ports PORT through PORT+2 must be free. The shared `panes` recipe fixture uses a separate namespace because its structural card role overlaps `ios-demo`; combining their content recipes makes slot selection ambiguous. For a manual recipe fixture use `scripts/run-server.py --no-demo --pane-fixture --explorer --port 8174`, then `GOO_SERVER=http://127.0.0.1:8174 GOO_PATH=/0x11/app/panes/cards ./scripts/cargo-macos.sh run -- --explorer`.
 
-## Patch interaction hardening
+## Patch interaction and embedded editors
 
 Native macOS drags now capture the handle at pointer press and consume the final movement even when press/move/release arrive in one frame. Escape or suspension cancels the capture; an incoming projection cannot silently replace an active gesture. The existing frozen invocation, coverage and exact-retry path handles submission.
 
@@ -103,93 +178,12 @@ Select **board**, then `/0x11/gov/patch_demo/editor`. The fixture uses Reaver's 
 For automated owner-transition verification with an owned server and delay proxy:
 
 ```sh
-python3 scripts/verify-hardening.py --reaver /Users/test/dev/reaver --port 8180
+python3 scripts/verify-hardening.py --reaver ../reaver --port 8180
 ```
 
 The scenario covers a dirty embedded refresh, a real accepted save with its response delayed past the client deadline, later typing, hidden completion, refused dirty node removal/replacement, resume requiring a fresh preparation, persisted reread, exact retry, and a fresh owner after explicit discard and incarnation replacement. Cold fixture startup can take several minutes; the runner waits for its own server's readiness announcement. See [VERIFICATION.md](VERIFICATION.md) for the measured results and remaining platform gaps.
 
-## Run on macOS
-
-Install Rust, Xcode command-line tools, and the Reaver checkout's Nix dependencies. From this directory, start a disposable server:
-
-```sh
-python3 scripts/run-server.py --reaver /Users/test/dev/reaver --port 8142
-```
-
-In another terminal:
-
-```sh
-./scripts/cargo-macos.sh run
-# Ordinary standalone view instead of the declared deck:
-./scripts/cargo-macos.sh run -- --single
-```
-
-The compiler wrapper and Cargo target configuration use Apple's compiler/linker, avoiding stale Nix shell overrides. Dependencies are pinned in Cargo.lock. The default server checkout is the sibling `reaver`, with the portable contract port on top of main. Read-only preparations allow up to 120 seconds for cold P6 compilation; save and status requests keep their 20-second deadline. The default endpoint is `http://127.0.0.1:8142`. Optional environment variables:
-
-| Variable | Default |
-|---|---|
-| `GOO_SERVER` | `http://127.0.0.1:8142` |
-| `GOO_TARGET` | `/0x11/app/ios_demo/workspace` (deck), `/0x11/app/ios_demo/note` (`--single`) |
-| `GOO_WORKSPACE` | `/0x11/gov/ios_demo/editors` |
-| `GOO_SLOT` | `/sys/slot/content` (`--single`) |
-
-For a Finder-launchable local app, run `./scripts/bundle-macos.sh` and open `target/Shrine Goo.app`. The script ad-hoc signs the local build. It is not a distributed/notarized application.
-
-Choose a member in either tab, edit TITLE or NOTE, then use the server-declared **Save note** button. The static preview changes only when the server reread arrives. **Refresh view** and window resize preserve compatible dirty inputs. **Reverse tabs** retains owners; **Close tab** and selection changes offer Stay/Discard when needed. Closing a tab is local only. **Refresh declared tabs** restores server declarations, creating new incarnations for previously removed panes. Unknown saves expose **Check save status** and **Retry exact save**; resolve them before removing their owner.
-
-## Inspect received Goo
-
-Right-click any rendered Goo component to open **Received Goo**, or choose **Inspect Goo** in the toolbar to browse the mounted view's nodes (including groups). **Node + bindings** shows the received node's geometry, text lines, fonts, paint, semantics, and controls joined by `binding.nodeId`. **Full response** includes every received field, including fields this renderer does not consume. It is formatted by default; **Compact JSON** shows the retained JSON representation, and **Copy response as JSON** copies it. For protobuf this is a decoded projection; exact binary bytes are retained separately.
-
-Inspection is a frozen, read-only capture labelled with the originating editor, mounted generation, target, declaration, and publication. Refreshing, switching tabs, or replacing an editor cannot silently retarget it. Right-click again or use **Inspect Goo** to capture the current mounted response. Local unsaved drafts remain separate from server input seeds. Inspection is local and does not issue server requests or activate controls.
-
-The node inspector captures mounted prepared surfaces. Explorer additionally exposes workspace and tree contracts. Rejected responses and unmounted staged replacements are outside this inspector; it is not a response-history recorder.
-
-## Supported slice
-
-- Version-1 `mash-goo` prepared views with pinned fonts, supplied absolute CSS-pixel boxes, explicit lines/baselines, resolved normal/state paint, and semantics.
-- Group, text, code, button, single-line input, image/media/avatar/presence and progress bars. Solid/gradient fills, inside borders, rounded/ellipse backgrounds and content clipping, status markers, LTR/RTL prepared placement and text scales 0.25–4. Unsupported descriptors fail before mounting.
-- egui text editing, selection, clipboard, focus, IME event integration, scrolling, and AccessKit semantic labels/roles. Stable editor/slot widget IDs retain the caret/undo state through compatible preparation. One CSS pixel equals one egui logical point; screen density affects rasterization. Keyboard UI zoom is disabled.
-- A declared deck of up to eight keyed panes, each with one finite direct-child selection/list/follower, at most 64 members. Selections, drafts, generations, and invocations belong to owners independent of widgets.
-- Validation/staging before structural retirement, guarded selection/source/member/publication replacement, work-revision and intent checks against superseded guards, creation-only selection seeds, and distinct recreated owners.
-- Frozen receiver/subject/publication/control evidence, input values, and selection operands. Accepted/rejected/unknown outcomes remain distinct; retry sends the original bytes and invocation ID. Hidden saves update their original editor. Resume requires a successful fresh preparation before action enablement.
-
-## Deliberate gaps
-
-This uses egui controls hosted by a native macOS window, **not AppKit NSTextField controls**. Native pointer/keyboard editing and AccessKit exposure were exercised; hardware IME composition and VoiceOver workflows were not certified. See the precise evidence in [VERIFICATION.md](VERIFICATION.md).
-
-Static text and action submission remain limited to the pinned ASCII preparation contract; RTL here means supplied placement and input alignment, not Unicode bidi/shaping. Hardware IME, VoiceOver and touch gestures are not certified. Diagram geometry is a native host arrangement, not browser pixel parity.
-
-Patch support is bounded to one scene through pane/split/stack wrappers and the four implemented offers. Query/create/reveal offers, arbitrary nested occurrence arrangements and recipe transitions inside patch bodies are diagnosed before mounting. Connection picking currently uses route bounds, rather than exact curve distance; connection routes remain the supplied projection during a move preview. General Goo deck composition inside Explorer, arbitrary pane alternatives, editable list rows, raw Values editing and other host workflows remain gaps. Embedded references, advanced labels, grid and edge-pan branches have narrower verification than the live patch-demo; see VERIFICATION.md.
-
-No authentication adapter, offline queue, or process-termination recovery exists. Drafts and unresolved invocations survive tab suspension within the process only. Window close is refused while work is dirty/unresolved; forced process termination loses in-memory recovery. There is no detached operation store. Long requests use bounded-time worker threads and stale-ticket rejection rather than transport cancellation. Only macOS was built and inspected.
-
-## Verify
-
-```sh
-./scripts/cargo-macos.sh test
-./scripts/cargo-macos.sh clippy --all-targets -- -D warnings
-python3 scripts/verify-live.py --reaver /Users/test/dev/reaver --port 8148
-```
-
-The last command creates an isolated Reaver namespace and a local proxy, runs the opt-in Rust integration test, and terminates both process groups. It never targets an existing namespace. The proxy forwards actual requests and holds actual replies; it does not fabricate Goo output. Ports `PORT` and `PORT+1` must be free. Direct execution of the ignored test requires explicit `GOO_DISPOSABLE=1`, `GOO_TEST_SERVER`, and `GOO_TEST_PROXY` settings and mutates its demo objects.
-
-For a manual hidden-save rehearsal, run `python3 scripts/delay-goo.py --upstream http://127.0.0.1:8142 --port 8151 --seconds 0 --action-seconds 5`, then launch with `GOO_SERVER=http://127.0.0.1:8151 ./scripts/cargo-macos.sh run`. Save Note A and switch tabs before the reply. The proxy delays Note A only; its `/_delay/events.json` endpoint records delivery timing.
-
-[CONTRACTS.md](CONTRACTS.md) records the implementation boundary and provenance. [VERIFICATION.md](VERIFICATION.md) separates deterministic, live-server, and native-window evidence. The shared profile assets retain their upstream font licenses in `assets/`.
-
-## Measure rendering
-
-`python3 scripts/benchmark-render.py --reaver /Users/test/dev/reaver --baseline f373423 --baseline fd7ef90 --output /tmp/goo-render-benchmark`
-
-This archives the requested revisions without changing the checkout, boots each
-with the disposable note fixture, and records startup, first render, warm reads,
-and width changes separately. It disables the shared PLAN compiler/memo cache
-by default; that deliberately tests a much harsher cold start than restarting a
-server on a development machine. Use `--warm-cache` to measure with the normal
-cache settings. Run on an otherwise idle machine. Results and exact received
-responses are saved under the output directory; the script sends no actions and
-stops its own server processes afterward.
+## Styled text
 
 Text travels through Goo as English runs with a real Foil `myth` for metadata.
 Reaver resolves `/sys/font`, `/sys/modifiers` (bold, italic, underline), and
@@ -200,9 +194,9 @@ Link targets are visible on hover and retained as descriptive accessibility
 semantics; clicking a highlight does not navigate or invoke an action.
 
 Supported fonts are the pinned sans weights (including matching italics), plus
-regular/bold mono. Arbitrary namespace fonts, mono italic, Unicode shaping and
-styled native editing are not supported. Ordinary native inputs retain their
-existing owners, drafts and save behavior.
+regular/bold mono. Arbitrary namespace fonts, mono italic and Unicode shaping
+are not supported. Styled native editing requires the display-v3 contract below;
+ordinary native inputs retain their existing owners, drafts and save behavior.
 
 Disposable styled-note fixture and read-only verification:
 
@@ -221,7 +215,7 @@ Custom namespace fields can carry `goo/text/pail` and use the explicit
 `scripts/run-server.py`. Automatic `show()` dispatch currently recognizes only
 registered types. The core text value remains `row[goo/runt]`.
 
-### Rich-text input
+## Rich-text input
 
 Run the disposable typed-save fixture:
 
@@ -265,6 +259,40 @@ The second command creates and removes its own disposable server and delay proxy
 it tests typed save/reread, draft retention on resize, an unknown outcome, and an
 exact retry without executing the save twice.
 
+## Inspect received Goo
+
+Right-click a rendered Goo component (rich inputs use right-click for formatting instead) to open **Received Goo**, or choose **Inspect Goo** in the toolbar to browse the mounted view's nodes (including groups). **Node + bindings** shows the received node's geometry, text lines, fonts, paint, semantics, and controls joined by `binding.nodeId`. **Full response** includes every received field, including fields this renderer does not consume. It is formatted by default; **Compact JSON** shows the retained JSON representation, and **Copy response as JSON** copies it. For protobuf this is a decoded projection; exact binary bytes are retained separately.
+
+Inspection is a frozen, read-only capture labelled with the originating editor, mounted generation, target, declaration, and publication. Refreshing, switching tabs, or replacing an editor cannot silently retarget it. Right-click again or use **Inspect Goo** to capture the current mounted response. Local unsaved drafts remain separate from server input seeds. Inspection is local and does not issue server requests or activate controls.
+
+The node inspector captures mounted prepared surfaces. Explorer additionally exposes workspace and tree contracts. Rejected responses and unmounted staged replacements are outside this inspector; it is not a response-history recorder.
+
+## Compilation pipeline inspector
+
+Enable **Capture pipeline**, refresh the workspace/view, then right-click a prepared component (or use **Inspect Goo**). The inspector opens in **Visual pipeline**. Capture is off by default and applies to subsequent requests. An already-open inspection stays frozen; inspect again to capture a newer mounted generation. Local drafts are neither sent nor substituted into compiler output.
+
+**Visual pipeline** paints the complete frozen view through the production painter, with non-editable received input values. Choose a stage to overlay bounds, measured widths, layout rows, adjacency, text-line boxes/baselines, or presented control routes. Click a region for its stage details in the sidebar; select its parent to inspect container rows. Bounds and ID labels can be toggled. Drag to pan, pinch/Ctrl-scroll to zoom, or use **Fit view**. One scene unit is one logical CSS pixel; zoom transforms paint and annotations together without preparing a new layout. Nested fragments have a chooser and retain independent coordinate spaces. Unsupported fragments show validation diagnostics.
+
+The final painted output is the reference for every stage. Correspondence uses explicit node IDs only. Pre-ID source/core, parse/read, and HTML have no geometric mapping; nodes without final boxes remain available in **Pipeline text**. Input controls have no server-supplied text lines, so baseline overlays apply only where lines were supplied. The preview cannot edit or invoke actions.
+
+**Prepared view** shows the complete prepared response, including display nodes, bindings and context, with pipeline/HTML payloads omitted for readability. The view path and target appear at the top of the resizable left sidebar. Modes, stage selection, copy/capture controls, and capture details stay in that sidebar; the right pane is reserved for selectable output, with independent scrolling and text wrapping.
+
+The stage browser shows evaluated **source → core → normalized → visible → semantic → metrics → layout → trace → prepared → display → bindings → HTML**. Stages default to the whole view. When a response includes multiple captured fragments, each is shown with its response path rather than merged into an invented compiler tree. **Render node details** and **Inspect one render node** provide optional drill-down by explicit node ID. Before normalization there are no node IDs, so source/core always show the whole compilation. Copy exports the displayed output, while **Full response** preserves all received fields. Nested native patch bodies and prepared tree rows carry their own captures.
+
+**Pipeline text** defaults to **Readable** formatting: indented declaration trees, measured-size columns, row allocations, relationship decisions, wrapped text lines, display summaries and control routes. Repeated node prefixes use a printed `#n` legend when unambiguous. Numbers are rounded to three decimal places; common bookkeeping and detailed paint/measurement bundles are summarized. **Raw JSON** retains every stage field and exact numeric values; HTML remains literal source text. **Copy output** copies the selected format. These are diagnostic projections of the frozen response, never inputs to rendering or action dispatch.
+
+This requires the accompanying Reaver changes in `extras/mounts/explorer`. Ordinary requests omit pipeline data. Opt-in render requests use `pipeline=1`; stages are attached to the same snapshot as the prepared output, never fetched by a separate replay. Old servers explicitly show “No pipeline captured.” Parse/read artifacts from publication are not retained by live preparation and appear as skipped; synthetic views bypass those stages. Structural pane/tree/patch host contracts remain in the full response, not fabricated Goo stages. Failed render attempts still use the existing error path; the inspector does not retain a partial failed compilation. HTML is selectable text, never executed.
+
+For a separate disposable native demo:
+
+```sh
+python3 scripts/run-server.py --explorer --patch --port 8184
+# In another terminal:
+./scripts/bundle-pipeline-macos.sh
+open 'target/Shrine Goo Pipeline.app'
+# Read-only cross-stage conformance and warm timing checks:
+python3 scripts/check-pipeline.py --server http://127.0.0.1:8184
+```
 
 ## Goo protobuf transport
 
@@ -311,3 +339,54 @@ decoding, payload sizes and client allocation calls. It keeps raw samples and
 checks domain parity (optional presence and empty repeated fields normalized,
 HTML excluded, legacy decimal geometry tolerance 1e-10). Current measurements
 and limits are in [VERIFICATION.md](VERIFICATION.md#domain-protobuf-v2--october-22-2026).
+
+## Deliberate gaps
+
+This uses egui controls hosted by a native macOS window, **not AppKit NSTextField controls**. Native pointer/keyboard editing and AccessKit exposure were exercised; hardware IME composition and VoiceOver workflows were not certified. See the precise evidence in [VERIFICATION.md](VERIFICATION.md).
+
+Static text and action submission remain limited to the pinned ASCII preparation contract; RTL here means supplied placement and input alignment, not Unicode bidi/shaping. Hardware IME, VoiceOver and touch gestures are not certified. Diagram geometry is a native host arrangement, not browser pixel parity.
+
+Patch support is bounded to one scene through pane/split/stack wrappers and the four implemented offers. Query/create/reveal offers, arbitrary nested occurrence arrangements and recipe transitions inside patch bodies are diagnosed before mounting. Connection picking currently uses route bounds, rather than exact curve distance; connection routes remain the supplied projection during a move preview. General Goo deck composition inside Explorer, arbitrary pane alternatives, editable list rows, raw Values editing and other host workflows remain gaps. Embedded references, advanced labels, grid and edge-pan branches have narrower verification than the live patch-demo; see VERIFICATION.md.
+
+No authentication adapter, offline queue, or process-termination recovery exists. Drafts and unresolved invocations survive tab suspension within the process only. Window close is refused while work is dirty/unresolved; forced process termination loses in-memory recovery. There is no detached operation store. Long requests use bounded-time worker threads and stale-ticket rejection rather than transport cancellation. Only macOS was built and inspected.
+
+## Verify
+
+```sh
+./scripts/cargo-macos.sh test --locked --all-targets
+./scripts/cargo-macos.sh clippy --locked --all-targets -- -D warnings
+./scripts/cargo-macos.sh fmt -- --check
+python3 scripts/verify-live.py --reaver ../reaver --port 8148
+```
+
+The live runner creates an isolated Reaver namespace and a local proxy, runs the opt-in Rust integration test, and terminates both process groups. It never targets an existing namespace. The proxy forwards actual requests and holds actual replies; it does not fabricate Goo output. Ports `PORT` and `PORT+1` must be free. Direct execution of the ignored test requires explicit `GOO_DISPOSABLE=1`, `GOO_TEST_SERVER`, and `GOO_TEST_PROXY` settings and mutates its demo objects.
+
+For a manual hidden-save rehearsal, run `python3 scripts/delay-goo.py --upstream http://127.0.0.1:8142 --port 8151 --seconds 0 --action-seconds 5`, then launch with `GOO_SERVER=http://127.0.0.1:8151 ./scripts/cargo-macos.sh run`. Save Note A and switch tabs before the reply. The proxy delays Note A only; its `/_delay/events.json` endpoint records delivery timing.
+
+[CONTRACTS.md](CONTRACTS.md) records the implementation boundary and provenance. [VERIFICATION.md](VERIFICATION.md) separates deterministic, live-server, and native-window evidence. The shared profile assets retain their upstream font licenses in `assets/`.
+
+The default Rust run skips opt-in live tests. Run the rich-input and binary/domain
+parity scenarios explicitly:
+
+```sh
+python3 scripts/verify-live.py --reaver ../reaver --rich-input --protobuf --port 8204
+```
+
+Explorer, patch/recipe and embedded-owner runners are shown in their walkthroughs.
+Read-only pipeline and styled-text checks are likewise listed with those features.
+These are commands to run locally, not a claim that all suites were rerun together
+at the latest source revision. See [Verification status](VERIFICATION.md#verification-status)
+for the most recent recorded results and missing artifacts.
+
+## Measure rendering
+
+`python3 scripts/benchmark-render.py --reaver ../reaver --baseline f373423 --baseline fd7ef90 --output /tmp/goo-render-benchmark`
+
+This archives the requested revisions without changing the checkout, boots each
+with the disposable note fixture, and records startup, first render, warm reads,
+and width changes separately. It disables the shared PLAN compiler/memo cache
+by default; that deliberately tests a much harsher cold start than restarting a
+server on a development machine. Use `--warm-cache` to measure with the normal
+cache settings. Run on an otherwise idle machine. Results and exact received
+responses are saved under the output directory; the script sends no actions and
+stops its own server processes afterward.

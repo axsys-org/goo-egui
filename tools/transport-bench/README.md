@@ -1,11 +1,16 @@
 # Goo transport benchmark
 
-From the egui repository root:
+This compares the current domain **protobuf v2** path against JSON. Use a
+compatible Reaver checkout as described in
+[Server compatibility](../../CONTRACTS.md#server-compatibility); the runner defaults
+to sibling `../reaver`, or accepts `--reaver /path/to/reaver`.
+
+From the egui repository root (the commands below use the macOS wrapper):
 
 ```sh
 ./scripts/cargo-macos.sh build --release --locked \
   --manifest-path tools/transport-bench/Cargo.toml --target-dir target
-python3 scripts/benchmark-transport.py --samples 40 --warmup 5 --port 8210
+python3 scripts/benchmark-transport.py --reaver ../reaver --samples 40 --warmup 5 --port 8210
 ```
 
 The Python runner owns a fresh disposable rich-input Reaver instance, refuses
@@ -55,7 +60,14 @@ target/release/goo-transport-bench target/transport-benchmark/captures
 Run on an otherwise quiet machine. Bootstrap intervals describe this run's
 samples; they do not account for systematic machine/runtime/workload differences.
 
-The `evidence/transport-benchmark-run1.json` and `run2.json` reports measure the
-rejected generic v1 prototype. They are historical, not v2 performance results.
+The historical `evidence/transport-benchmark-run1.json` and `run2.json` reports
+measured the rejected generic v1 prototype. Those files and the reported
+`evidence/transport-benchmark-v2.json` are not included in this checkout. The latest
+recorded v2 numbers and their qualifications are in
+[VERIFICATION.md](../../VERIFICATION.md#domain-protobuf-v2--october-22-2026);
+raw samples must be regenerated to inspect or independently confirm them. A fresh
+run writes HTTP results to `target/transport-benchmark/http.json`, client decode
+results to `decode.json`, and responses to `captures/` (or under your `--output`
+directory).
 Ordinary v2 preparation also avoids producing unused HTML; HTTP results measure
 that whole native response path, not isolated protobuf serialization.
