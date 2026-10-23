@@ -1,8 +1,61 @@
-# Verification — 2026-10-19
+# Verification history
+
+## Verification status
+
+Current behavior and admission boundaries are documented in [CONTRACTS.md](CONTRACTS.md)
+and [README.md](README.md#current-capabilities). This file preserves chronological
+reports from implementation work; it is not a claim that every scenario was rerun
+at the latest revision. Each dated result applies to the code/environment and
+scope described in that section. Later follow-ups can supersede earlier limits.
+
+| Area | Most recent recorded result | Qualification |
+|---|---|---|
+| Rust/default checks | 104 passing all-target tests; 9 opt-in live tests ignored; strict Clippy/formatting reported passing | Domain protobuf v2, 2026-10-22; default checks do not run the live scenarios |
+| Real-server rich save/recovery and v2 parity | Disposable rich save/reread, resize retention, unknown outcome, suspended-owner completion, receipt lookup, exact retry and JSON/domain parity reported passing | Domain protobuf v2; no claim that every earlier Explorer/patch runner was rerun in that pass |
+| Native editing | Rich-input menu selection and save/reread checked; v2 app and inspector displayed | Native rich-input follow-up and domain protobuf v2; hardware IME/VoiceOver remain unverified |
+| Patch interaction | Native drag persisted; embedded draft/caret survived node movement and save/reread | Patch hardening, 2026-10-19; this supersedes the earlier failed-drag note |
+| Pipeline preview | Painted overlays, region picking, native scroll-panning and Fit inspected; drag/zoom tested deterministically | Painted overlays, 2026-10-21; native preview dragging was not confirmed |
+| Platforms | Apple Silicon macOS native inspection | Linux, Windows, touch and full browser pixel parity were not verified |
+| Performance | v2 rich responses smaller and lower median HTTP latency; client decoding slower with more allocations in the recorded run | Loopback workload, excluding cold startup; see the v2 methodology and artifact availability below |
+
+The 2026-10-23 documentation reconciliation inspected implementation source at
+`3f21ac1` and repository artifact/link availability. It did not rerun Rust,
+Reaver integration, native UI or performance checks. Reproduction commands are in
+[README Verify](README.md#verify) and the
+[transport benchmark guide](tools/transport-bench/README.md).
+
+## Artifact availability
+
+This checkout contains selected JSON responses, fixtures, provenance records and
+early native screenshots in `evidence/` and `tests/fixtures/`. It does not contain
+all artifacts mentioned in the reports below. In particular, `evidence/*.log` is
+Git-ignored, and the rich-input reports, v2 benchmark JSON and v2 native screenshot
+cited by the later reports are not included. An artifact filename records what
+was reported/generated during that run; it does not establish that the file is
+available in this checkout. Missing local Markdown links are rendered below as
+filenames marked **not included** rather than links to nonexistent files.
+
+The historical counts/timings are retained as reported results, not independently
+reconfirmed results of this documentation update. Existing fixtures can support
+new checks but cannot substitute for missing raw logs, timings or screenshots.
+Run the relevant harness to generate fresh artifacts; do not infer an exact
+current server pin from older provenance. See
+[Server compatibility](CONTRACTS.md#server-compatibility).
+
+## Reading the history
+
+The initial slice, Explorer, surface expansion, text-run and generic-protobuf
+records describe their state at the time. Trees/patches, rich editing and domain
+protobuf v2 were added later. The generic protobuf v1 experiment is rejected and
+historical. The domain-v2 section at the end is the latest recorded transport
+result. References to local macOS paths, running demo apps or leftover disposable
+servers describe those historical sessions, not resources present on your machine.
+
+## Initial slice — 2026-10-19
 
 Target: Apple Silicon macOS, Rust 1.98.1, eframe/egui 0.33.3, native OpenGL window, AccessKit enabled. Reaver: P6 compiler, disposable `ios-demo` mount from `scripts/demo`, portable checkout and source hashes in `evidence/provenance.json`.
 
-## Deterministic checks
+### Deterministic checks
 
 `./scripts/cargo-macos.sh test`: **24 passed, 0 failed**; the mutating live test is intentionally ignored by default. `./scripts/cargo-macos.sh clippy --all-targets -- -D warnings`: **passed**. Logs: `evidence/tests.log`, `evidence/clippy.log`.
 
@@ -12,7 +65,7 @@ Painter tests render the real note fixture through egui, drive pointer/keyboard 
 
 The 14 shared server display fixtures are enumerated. `row-wrap` and `empty` are admitted in the reduced ordinary contract; the other 12 explicitly reject unsupported primitives, markers, context, or absent input bindings. This is **not a claim of full 14-fixture renderer conformance**. The ordinary interactive note fixture separately passes full binding admission and actual painting.
 
-## Real server integration
+### Real server integration
 
 `python3 scripts/verify-live.py --reaver /Users/test/dev/reaver-two --port 8154`: **1 live test passed, 0 failed**, 3.84 seconds for the test after server startup. The runner booted a fresh namespace and terminated its server/proxy process groups afterward. `evidence/integration-hardened.log` and `evidence/integration-proxy.log` retain output. This final run used occupied-port refusal and the newly launched server's own readiness announcement before mutation.
 
@@ -27,7 +80,7 @@ The Rust live test performs:
 
 This is a Rust transport/session integration test using the same production client/session code as the UI. It does not automate a whole OS keyboard/IME workflow.
 
-## Native macOS inspection
+### Native macOS inspection
 
 The actual packaged `.app` was launched and inspected with screenshots and its AccessKit accessibility tree. Verified:
 
@@ -42,7 +95,7 @@ Screenshots: `evidence/native-dirty-resize.png`, `evidence/native-removal-guard.
 
 A separate native delayed-save rehearsal was started but not completed; its result is not counted. Hidden delayed/unknown completion is verified by the real-server Rust integration above. Native hardware IME composition, VoiceOver navigation/announcements, OS quit/relaunch recovery, other operating systems, and browser pixel-equivalence are not verified. AccessKit exposes fields/buttons and supplied labels; accessibility SetValue was not effective in the manual tool, while pointer/keyboard editing worked. Do not interpret semantic-tree presence as full assistive-technology certification.
 
-## Scope and residual limits
+### Scope and residual limits
 
 This paragraph describes the original slice; the namespace Explorer follow-up below supersedes its tree and host-operation boundaries. No HTML parsing, guessed role palette, or second Goo layout engine was introduced. Pending recovery remains in memory. General prepared-summary lists, richer paint primitives, and recipe-changing bindings are deferred explicitly.
 
@@ -104,9 +157,9 @@ and guarded removal.
 
 See [raw timings and provenance](evidence/render-performance.json),
 [response hashes](evidence/performance-response-parity.json),
-[profile log](evidence/performance-profile.log),
-[native contract log](evidence/performance-native.log), and
-[live integration log](evidence/performance-live.log).
+profile log (`evidence/performance-profile.log`, **not included**),
+native contract log (`evidence/performance-native.log`, **not included**), and
+live integration log (`evidence/performance-live.log`, **not included**).
 
 The new benchmark script also passed an end-to-end run with `--warm-cache`:
 63.101 s of server startup, followed by a 0.198-second first HTTP render and a
@@ -129,17 +182,17 @@ Final automated results:
   ignored in the default run. New cases cover atomic page admission, epoch/life
   joins, duplicate/missing preparations, scope identity, compatible draft merges,
   frozen pending saves, replacement, refusal, and structural-response supersession.
-  [Test log](evidence/explorer-tests.log).
+  Test log (`evidence/explorer-tests.log`, **not included**).
 - Strict Clippy (`--all-targets -- -D warnings`), formatting, Python script
   compilation, and the ad-hoc signed macOS bundle build passed.
-  [Clippy log](evidence/explorer-clippy.log).
+  Clippy log (`evidence/explorer-clippy.log`, **not included**).
 - **86 Explorer Node tests passed**, 0 failures.
-  [Node log](evidence/explorer-node-tests.log).
+  Node log (`evidence/explorer-node-tests.log`, **not included**).
 - **9 profile tests and 745 compiled native assertions passed**: web 135,
   mount contracts 2, Explorer 608. Suite times were 80.2, 109.8, and 149.8 seconds
   respectively; these are verification runtimes, not rendering benchmarks.
-  [Native summary](evidence/explorer-native-contracts.log),
-  [Explorer assertions](evidence/explorer-native-explorer.log).
+  Native summary (`evidence/explorer-native-contracts.log`, **not included**),
+  Explorer assertions (`evidence/explorer-native-explorer.log`, **not included**).
 - `python3 scripts/verify-explorer.py --reaver /Users/test/dev/reaver --port 8170`
   passed against its own fresh disposable namespace and proxy, then stopped them.
   **2 Explorer live scenarios passed in 16.07 s**: installed session/host/workspace,
@@ -149,8 +202,8 @@ Final automated results:
   timeout/unknown, receipt recovery, byte-identical retry without second mutation,
   delayed stale render, and guarded removal. These are test times excluding
   compilation and server startup.
-  [Explorer live log](evidence/explorer-explorer-live.log),
-  [Save/recovery log](evidence/explorer-live-live.log).
+  Explorer live log (`evidence/explorer-explorer-live.log`, **not included**),
+  Save/recovery log (`evidence/explorer-live-live.log`, **not included**).
 
 Native macOS checks used a separate disposable server at port 8164. Screenshots
 and AccessKit state were inspected during interaction. Verified the Inspector
@@ -181,7 +234,7 @@ The earlier milestones above are historical, including their unsupported-feature
 lists. README.md contains the current capability boundary.
 
 - **54 deterministic Rust tests passed**, 0 failures; **6 live tests ignored** in
-  the default run. [Final log](evidence/surfaces-tests.log).
+  the default run. Final log (`evidence/surfaces-tests.log`, **not included**).
   Added patch admission/offer joins, malformed identity/geometry/ports, frozen
   gestures, occurrence replacement, dirty refusal, stale projection/encounter,
   retired embedded-owner responses, stale action IDs, explicit operation coverage,
@@ -195,24 +248,24 @@ lists. README.md contains the current capability boundary.
   rendering-path verification, not a pixel-diff against UIKit or HTML.
 - Strict Clippy (`--all-targets -- -D warnings`), formatting, Python compilation,
   and the signed macOS bundle build passed.
-  [Clippy](evidence/surfaces-clippy.log), [build](evidence/surfaces-build.log).
+  Clippy (`evidence/surfaces-clippy.log`, **not included**), build (`evidence/surfaces-build.log`, **not included**).
 - `scripts/verify-surfaces.py --port 8174` passed **all six live scenarios**, with
   its own disposable servers/proxies and automatic cleanup. The shared recipe
   fixture runs in a separate namespace because its role overlaps ios-demo and
   makes their `/sys/slot/content` selection ambiguous if both are installed.
   Test execution times below exclude compilation and server startup:
   - Explorer workspace/host/Values and paged-tree scenarios: **2 passed, 10.98 s**.
-    [Log](evidence/surfaces-explorer-live.log).
+    Log (`evidence/surfaces-explorer-live.log`, **not included**).
   - Original save/deck/recovery scenario: **1 passed, 5.61 s**, including persisted
     reread, dirty resize, hidden completion, delayed stale response, unknown outcome,
     status recovery and byte-identical retry without a second mutation.
-    [Log](evidence/surfaces-live-live.log).
+    Log (`evidence/surfaces-live-live.log`, **not included**).
   - Patch scenarios: **2 passed, 5.62 s**, including persisted move/connect/reconnect/
     disconnect, explicit coverage, exact retry, real delayed reply timeout, hidden
-    originating owner and receipt recovery. [Log](evidence/surfaces-patch-live.log).
+    originating owner and receipt recovery. Log (`evidence/surfaces-patch-live.log`, **not included**).
   - Recipe scenario: **1 passed, 1.01 s**, including actual become/edit binding,
     invoke-and-become save, scale-2 RTL preparation, persisted reread, and a later
-    dirty draft refusing departure. [Log](evidence/surfaces-recipes-live.log).
+    dirty draft refusing departure. Log (`evidence/surfaces-recipes-live.log`, **not included**).
 
 Native macOS inspection used a separate disposable server at port 8172 and the
 signed Shrine Goo Surfaces.app. Inspected screenshots and AccessKit state for the
@@ -248,7 +301,7 @@ After final request-context validation and server-relative image URL fixes, the 
 54-test deterministic suite, strict Clippy and signed bundle were rerun successfully.
 The live persisted patch operation scenario was also rerun against the task-owned
 8172 fixture: **1 passed, 3.95 s**.
-[Final live regression](evidence/surfaces-final-patch-live.log).
+Final live regression (`evidence/surfaces-final-patch-live.log`, **not included**).
 The packaged app and disposable demo server are left available; the extra delay
 proxy and the integration runner's servers were stopped.
 
@@ -479,12 +532,12 @@ Verification on macOS:
 - Two transport classification tests ensure malformed successful replies stay unknown, server failures stay unknown, and binary/text rejections retain readable diagnostics.
 - `python3 scripts/verify-live.py --rich-input --port 8204`: passed in 124.84 seconds after server startup. Fresh disposable namespace and real delay proxy: typed save/reread, dirty resize, timeout while suspended, accepted receipt recovery, exact retry with no second mutation, draft settlement, and restoration. Both processes cleaned up by the harness.
 - Read-only `live_json_protobuf_parity` against a separate disposable server on 8206: passed in 23.65 seconds. Exact decoded equality for ordinary rich view, pipeline capture, two-tab deck, source, paged tree, status and unknown receipt. Unknown and duplicate wire selectors rejected with 415 before action admission.
-- Standard `protoc --decode=goo.wire.v1.Response` decoded [the live binary response](evidence/protobuf-live-view.pb) successfully.
-- Native app `Shrine Goo Protobuf.app` displayed the live rich view, native text inputs, save control, styled runs and filled link boxes. The full-response inspector displayed the decoded projection with **Compact JSON** and **Copy response as JSON** labels. [Screenshot](evidence/protobuf-native.png).
+- Standard `protoc --decode=goo.wire.v1.Response` decoded the live binary response (`evidence/protobuf-live-view.pb`, **not included**) successfully.
+- Native app `Shrine Goo Protobuf.app` displayed the live rich view, native text inputs, save control, styled runs and filled link boxes. The full-response inspector displayed the decoded projection with **Compact JSON** and **Copy response as JSON** labels. Screenshot (`evidence/protobuf-native.png`, **not included**).
 
 Timing is an end-to-end warm loopback sample, not an allocation profiler or a
 compiler microbenchmark: warm both modes, alternate order, five pairs per case,
-report medians. Raw data: [protobuf-parity.json](evidence/protobuf-parity.json).
+report medians. Raw data: protobuf-parity.json (`evidence/protobuf-parity.json`, **not included**).
 
 | Response | JSON bytes | Protobuf bytes | JSON median ms | Protobuf median ms |
 |---|---:|---:|---:|---:|
@@ -549,13 +602,13 @@ Verification:
 - Native macOS app displayed the live typed rich view, native inputs, styled
   runs, filled link boxes and Save control. Inspector displayed both painted
   geometry and the full response projected from retained protobuf bytes.
-  [Native screenshot](evidence/protobuf-v2-native.png).
+  Native screenshot (`evidence/protobuf-v2-native.png`, **not included**).
 
 Benchmark: 40 paired requests per case, five warmups per format, balanced
 shuffled format order and shuffled cases, one fresh server, loopback without
 compression. Cold startup/first-use excluded and recorded separately. Raw
 samples, source hashes, allocation counts and decode timings are retained in
-[transport-benchmark-v2.json](evidence/transport-benchmark-v2.json).
+transport-benchmark-v2.json (`evidence/transport-benchmark-v2.json`, **not included**).
 
 | Response | JSON bytes | Protobuf bytes | JSON median ms | Protobuf median ms |
 |---|---:|---:|---:|---:|

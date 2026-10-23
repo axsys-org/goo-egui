@@ -4,22 +4,36 @@
   "profileRevision": "sha256:501b4af82a920e82624e655ffae9fbba76f874c0ef5adac746d3ab7724773979",
   "context": {
     "direction": [
-      "ltr"
+      "ltr",
+      "rtl"
     ],
     "textScale": [
-      1
-    ]
+      1,
+      1.5,
+      2
+    ],
+    "textScaleRange": {
+      "min": 0.25,
+      "max": 4
+    },
+    "textScaleNote": "textScale lists Explorer UI presets; textScaleRange is the inclusive admission range. RTL is prepared placement, not Unicode shaping."
   },
   "primitives": [
     "group",
     "text",
     "code",
     "input",
-    "button"
+    "button",
+    "image",
+    "media",
+    "avatar",
+    "presence",
+    "bar"
   ],
   "fill": [
     "none",
-    "solid"
+    "solid",
+    "linear-gradient"
   ],
   "maxPanes": 8,
   "maxMembersPerSource": 64,
@@ -27,29 +41,133 @@
   "bindingKinds": [
     "input",
     "invoke",
-    "none"
+    "none",
+    "become",
+    "invoke-and-become"
   ],
   "unsupported": [
-    "images",
-    "avatar",
-    "presence",
-    "media",
-    "bar",
-    "markers",
-    "gradients",
-    "ellipse",
-    "rounded-content-clip",
-    "become",
-    "invoke-and-become",
-    "trees",
-    "patch",
-    "host",
-    "layout-bundles",
-    "prepared-list-summaries"
+    "unicode-shaping-and-bidi",
+    "non-ASCII-submission",
+    "arbitrary-namespace-fonts",
+    "mono-italic",
+    "rich-clipboard",
+    "paragraph-and-list-formatting",
+    "link-navigation",
+    "video-playback",
+    "general-explorer-decks",
+    "arbitrary-pane-alternatives",
+    "editable-tree-rows",
+    "raw-values-editing",
+    "patch-query-create-reveal",
+    "arbitrary-nested-patch-occurrences",
+    "patch-body-recipe-transitions",
+    "authentication-adapter",
+    "offline-queue",
+    "process-termination-recovery"
   ],
   "recovery": "in-memory",
   "platformVerified": [
     "macOS arm64"
   ],
-  "nativeTextWidget": "egui TextEdit with winit IME/clipboard and AccessKit, not AppKit NSTextField"
+  "nativeTextWidget": "egui TextEdit with winit IME/clipboard and AccessKit, not AppKit NSTextField",
+  "description": "Descriptive implementation inventory; not runtime capability negotiation. See CONTRACTS.md for admission and per-mode limits.",
+  "displayVersions": [
+    1,
+    2,
+    3
+  ],
+  "wireFormats": {
+    "ordinary": "protobuf-v2",
+    "jsonContracts": [
+      "workspace-bootstrap",
+      "workspace-declaration",
+      "patch",
+      "pipeline",
+      "all-views-catalog",
+      "inspection-capture-metadata"
+    ],
+    "readFallback": "Only ordinary render HTTP 415 with the typed json-contract capability; actions and receipts never downgrade"
+  },
+  "paintFeatures": [
+    "inside-borders",
+    "rounded-corners",
+    "ellipse",
+    "rounded-content-clip",
+    "circle-status-markers"
+  ],
+  "limitScope": "maxPanes, maxMembersPerSource and sourceTopology describe the separate finite deck mode; Explorer has separate limits.",
+  "explorer": {
+    "components": [
+      "pane",
+      "split",
+      "pane_stack",
+      "selection",
+      "topos",
+      "follow",
+      "native",
+      "navigate"
+    ],
+    "fallback": "Only follow/native or alternatives",
+    "treeRenderers": [
+      "list_tree",
+      "diagram_tree"
+    ],
+    "preparedRows": "pane-v1 sm/md/lg bundles",
+    "maxChildrenPerPage": 64,
+    "maxMaterializedTreeNodes": 4096,
+    "maxWorkspaceComponents": 512,
+    "navigation": "workspace-session",
+    "hostOperations": [
+      "mount-rescan"
+    ],
+    "valuesEditing": "read-only display or a declared ordinary editor"
+  },
+  "patch": {
+    "contentVersion": 1,
+    "maxScenes": 1,
+    "maxNodes": 4096,
+    "maxConnections": 8192,
+    "operations": [
+      "moveNodes",
+      "connect",
+      "reconnect",
+      "disconnect"
+    ],
+    "embeddedPreparedEditors": true
+  },
+  "recipeTransitionScope": "Ordinary Explorer editors only; standalone/deck and patch-body transitions are rejected.",
+  "text": {
+    "language": "en",
+    "repertoire": "ASCII",
+    "metadata": [
+      "/sys/font",
+      "/sys/modifiers",
+      "/sys/link"
+    ],
+    "fonts": "Bundled pinned sans/italic and regular/bold mono registry",
+    "plainInput": "single-line",
+    "richInput": {
+      "displayVersion": 3,
+      "editingVersion": 1,
+      "encoding": "goo-text-v1",
+      "maxWireBytes": 65536,
+      "maxRuns": 10000,
+      "formatting": [
+        "bold",
+        "italic",
+        "underline",
+        "font",
+        "internal-link",
+        "web-link"
+      ],
+      "clipboard": "plain-text"
+    },
+    "linkActivation": false
+  },
+  "verificationLimits": [
+    "Linux and Windows not verified",
+    "Hardware IME, VoiceOver and touch workflows not certified",
+    "Native pipeline-preview drag not confirmed",
+    "No full browser pixel parity"
+  ]
 }
